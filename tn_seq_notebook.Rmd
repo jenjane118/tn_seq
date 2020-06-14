@@ -39,7 +39,7 @@ output: html_notebook
 # Project Directory Organisation
 
 
-```
+```{bash}
 bash -l
 alias rm="rm -i"
 cd /d/in16/u/sj003
@@ -384,7 +384,7 @@ done
 echo "Running MultiQC..."
 /s/software/python/v3/bin/multiqc -f . -o /d/in16/u/sj003/dejesus_mtb/multiqc
 ```
-![MultiQC Sequence Quality](~/Tn_seq_project/seq_quality.png)
+![MultiQC Sequence Quality](images/seq_quality.png)
 
 [MultiQC report Mtb data](mtb_multiqc_report.html)
 
@@ -494,7 +494,39 @@ Doesn't work any better
 need to find out whether these were uploaded after trimming, or something else going on?
 These are libraries 2, 12, 4, 8, 9 10
 
+14/06/20
+After email correspondence w/ T. Ioerger, informed that R1 and R2 have been switched in NCBI. Checked this for all 6 libraries with grep of tranposon tag which is present in 'R2' reads. Switched names (_2 to _1 and _1 to _22) and ran paired-end tpp again (with slightly altered bash script using list of altered libraries, seq_list.txt).
 
+```{bash}
+nohup bash $my_path/scripts/dejesus_iterate_tpp.sh seq_list.txt >& dejesus_iterate_tpp.out &
+```
+
+```{bash}
+#!/bin/bash
+
+input=$1
+while IFS= read -r line
+#for i in $(ls *.fastq | rev | cut -c 9- | rev | uniq)
+
+do
+	filename=$(basename "$line")
+	filename="${filename%.*}"
+
+	echo "File on the loop:		$line"
+	echo "Read 1:			${filename}_1.fastq"
+	echo "Read 2:			${line}_22.fastq"
+
+	tpp -bwa /s/software/bwa/bwa/bwa -ref /d/in16/u/sj003/refseqs/Mtb/Mtb_H37Rv.fasta -reads1 ${line}_1.fastq -reads2 ${line}_22.fastq -output /d/in16/u/sj003/dejesus_mtb/tpp_results/paired_end/${line}
+
+
+done <"$input"
+
+```
+
+
+
+
+**How important is using both reads/barcode deduplication?**
 What is typical read/template ratio (for those that mapped)?
 27: 4.43
 29, 31, 32, 33, 35, 36, 37: 1.12-1.76 range
@@ -750,15 +782,15 @@ $my_path/my_scripts/iterate_samstats.sh
 
 MultiQC report for bwa aln (default params):
 
-![BWA_aln_mbovis MultiQC](bwa_aln_mbovis.png)
+![BWA_aln_mbovis MultiQC](images/bwa_aln_mbovis.png)
 
-[MultiQC report aln](aln_multiqc_report.html)
+[MultiQC report aln](images/aln_multiqc_report.html)
 
 MultiQc report for bwa mem (default params):
 
-![BWA_mem_mbovis MultiQC](bwa_mem_mbovis.png)
+![BWA_mem_mbovis MultiQC](images/bwa_mem_mbovis.png)
 
-[MultiQC report mem](multiqc_mem_report.html)
+[MultiQC report mem](images/multiqc_mem_report.html)
 
 
 to run R script in command line:
