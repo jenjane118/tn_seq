@@ -39,7 +39,7 @@ output: html_notebook
 # Project Directory Organisation
 
 
-```{bash}
+```
 bash -l
 alias rm="rm -i"
 cd /d/in16/u/sj003
@@ -384,8 +384,7 @@ done
 echo "Running MultiQC..."
 /s/software/python/v3/bin/multiqc -f . -o /d/in16/u/sj003/dejesus_mtb/multiqc
 ```
-
-![MultiQC Sequence Quality](seq_quality.png)
+![MultiQC Sequence Quality](~/Tn_seq_project/seq_quality.png)
 
 [MultiQC report Mtb data](mtb_multiqc_report.html)
 
