@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1592140332352.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2398554695",
+    "id" : "1973166F",
+    "lastKnownWriteTime" : 1592146895,
+    "last_content_update" : 1592146895812,
+    "path" : "~/git/myco_tnseq/tn_seq_notebook.Rmd",
+    "project_path" : "tn_seq_notebook.Rmd",
+    "properties" : {
+        "chunk_output_type" : "inline",
+        "cursorPosition" : "582,1",
+        "scrollLine" : "573"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
