@@ -190,6 +190,10 @@ It seems that the reads are not barcoded (but as adapters are trimmed in MiSeq p
 
 ## Downloading Mycobacterium sequences (gff and feature tables)
 
+**16/06/2020 UPDATE**
+
+must use .gff file "LT708304_updated_aug19.gff" because there was a mistake in the NCBI uploaded sequence. This is file Dong has given me to use from Stephen Gordon's group who re-annotated genome https://www.microbiologyresearch.org/content/journal/acmi/10.1099/acmi.0.000129?crawler=true
+
 **from NCBI/Genbank to BBK server (08/06/2020):**
 
 There are two assemblies, but should be quite similar? v2 is from 2020
@@ -386,7 +390,7 @@ echo "Running MultiQC..."
 ```
 ![MultiQC Sequence Quality](images/seq_quality.png)
 
-[MultiQC report Mtb data](mtb_multiqc_report.html)
+[MultiQC report Mtb data](images/mtb_multiqc_report.html)
 
 [FastQC docs](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
 [MultiQC docs](https://multiqc.info/docs/)
@@ -428,8 +432,30 @@ for single-end, single sample:
 tpp -bwa /s/software/bwa/bwa/bwa -ref $my_path/refseqs/Mtb/Mtb_H37Rv.fasta -reads1 $my_path/ncbi/files/dejesus/SRR4113427_1.fastq -output dejesus-Mtb-SRR4113427_singleread
 ```
 
+script to iterate with single-end processing:
+```{bash}
+#!/bin/bash
+# module load python/v3
+# usage: nohup bash $my_path/scripts/mtb_single_tpp.sh >& mtb_single.out &
+# run from: /d/in16/u/sj003/dejesus_mtb/data/ 
 
-to iterate through all 14 samples, run from in $my_path/dejesus_mtb/data:
+
+FILES=*_1.fastq
+for file in $FILES
+
+do
+        filename=$(basename "$file")
+        filename="${filename%.*}"
+
+        echo "File on the loop:         ${file}"
+        
+        tpp -bwa /s/software/bwa/bwa/bwa -ref /d/in16/u/sj003/refseqs/Mtb/Mtb_H37Rv.fasta -reads1 ${file} -output /d/in16/u/sj003/dejesus_mtb/tpp_results/${filename}
+
+
+done 
+```
+
+to iterate through all 14 samples, run from: $my_path/dejesus_mtb/data
 
 ```{bash}
 nohup bash $my_path/scripts/dejesus_iterate_tpp.sh >& dejesus_iterate_tpp.out &
@@ -526,15 +552,9 @@ done <"$input"
 
 
 
-**How important is using both reads/barcode deduplication?**
-What is typical read/template ratio (for those that mapped)?
-27: 4.43
-29, 31, 32, 33, 35, 36, 37: 1.12-1.76 range
-
-
-
 
 ### Run tpp on mbovis libraries (3)
+
 
 ```$my_path/scripts/mbovis_iterate_tpp.sh```
 
@@ -561,14 +581,20 @@ done <"$input"
 ```
 
 did run in paired-end mode, but there were no barcodes found
+(data is definitely not bar-coded)
+
+**How important is using both reads/barcode deduplication?**
+What is typical read/template ratio in dejesus data (for those that mapped)?
+27: 4.43
+29, 31, 32, 33, 35, 36, 37: 1.12-1.76 range
+
+Could de-duplicate, potentially, using paired end reads with samtools markdup?
+http://www.htslib.org/doc/samtools-markdup.html
 
 do we want to run this with custom primer (transposon sequence)?
 ours is: tag=GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTA, but it says not to put in whole thing, just beginning
 Probably not necessary, as tpp has default sequences for himar1
 this is sequence they use: ACTTATCAGCCAACCTGTTA (just shorter version?). Just needs to start between base 0 and 20.
-
-
-
 
 list of files for each sample after tpp:
 ```
@@ -580,6 +606,30 @@ B_S1_L001_R1_001_tpp.trimmed1
 B_S1_L001_R1_001_tpp.trimmed1_failed_trim
 B_S1_L001_R1_001_tpp.wig
 ```
+
+renamed all files with bash script "rename_files.sh"
+```{bash}
+#!/bin/bash
+
+FILES=*_tpp.*
+
+for file in $FILES
+
+do
+	filename=${file:0:1} 
+	extension="${file##*.}"
+
+	echo "${file}"
+	echo "${filename}"
+	echo "${extension}"
+
+	mv ${file} ${filename}_R1.$extension	
+
+
+done
+```
+
+
 .tn_stats gives all read counts, mapped reads, TA sites hit, insertion density, NZ_mean, etc (not max read count and skewness)
 
 ```
@@ -614,18 +664,53 @@ B_S1_L001_R1_001_tpp.wig
 # mean_R1_genomic_length: 115.9 bp
 ```
 
+create stats.txt file for multiqc: 
+```{bash}
+bash $my_path/scripts/iterate_samstats.sh
+```
+
+```{bash}
+#!/bin/bash
+
+FILES=*.sam
+for file in $FILES
+
+do
+        filename=$(basename "$file")
+        filename="${filename%.*}"
+
+        echo "File on the loop:         $filename"
+
+        #call samtools stats
+        /s/software/samtools/v1.10/bin/samtools stats ${file} > ${filename}.stats.txt
+
+        echo -e "########################\n\n"
+done
+
+
+# Run MultiQC
+echo "Running MultiQC..."
+/s/software/anaconda/python3/bin/multiqc -f .
+~                                                 
+```
+
+[MultiQC Report TPP mbovis](images/mbovis_tpp_multiqc_report.html)
+
+maybe change yaml of multiqc to recognise tn_stats files to save this step?
 
 .wig files are used for analysis (what are these exactly? seems like nucleotide number and number of hits?)
 
 
-
-**for MultiQC, have to create sam_stats file**
-
+can change sorted .bam to .wig with samtools:
 ```{bash}
-stats D_S2_L001_R1_001_tpp.sam
+samtools mpileup -BQ0 run.sorted.bam | perl -pe '($c, $start, undef, $depth) = split;if ($c ne $lastC || $start != $lastStart+1) {print "fixedStep chrom=$c start=$start step=1 span=1\n";}$_ = $depth."\n";($lastC, $lastStart) = ($c, $start);' | gzip -c > run.wig.gz
+
 ```
 
-results in D_S2_L001_R1_001_tpp.stats.txt
+https://www.ecseq.com/support/ngs-snippets/how-to-get-a-coverage-graph-in-wig-file-format-directly-from-an-alignment-bam
+
+http://www.htslib.org/doc/samtools-mpileup.html
+
 
 
 **establish quality of tpp data with transit tnseq_stats:**
@@ -680,12 +765,65 @@ From Ioerger, Transit docs:
 
 [Transit docs](https://transit.readthedocs.io/en/latest/transit_running.html)
 
+have to generate prot_table from .gff file, or use Mtb prot_table
+
+```{bash}
+transit.py convert gff_to_prot_table <.gff> <.prot_table>
+```
+
+normalise datasets:
+
+```{bash}
+transit normalize infile.wig outfile_TTR.wig -n TTR
+```
+
+```{bash}
+#!/bin/bash
+
+# iterate transit normalisation on files in directory
+
+FILES=*.wig
+
+for file in $FILES
+
+do
+  # are both steps necessary? can't I just use one step: "${file%.*}"?
+	filename=$(basename "$file")    
+	filename="${filename%.*}"
+
+	echo "File on the loop:		${file}"	
+
+	transit normalize ${file} ${filename}_TTR.wig -n TTR
+
+	echo "normalised file: 		${filename}_TTR.wig"
+
+done
+```
+
+or do i want to do all three reads together? seems more the point, but need prot table first? I'm confused at why you can normalise with and without prot table?
+
+```{bash}
+python transit.py norm glycerol_H37Rv_rep1.wig,glycerol_H37Rv_rep2.wig H37Rv.prot_table glycerol_TTR.txt -n TTR
+```
+
+https://transit.readthedocs.io/en/latest/transit_console_cheatsheet.html
+
+can normalise to a 'combined .wig format' which is what I think we want to do with B, C and G 'sub-libraries'?  (but this is for different methods/labs?)
+
+-no I think we just want to add -mean to transit hmm tool to avg the read counts of the replicates
+
+TTR=trimmed total reads
+
+>"Trimmed Total Reads (TTR), normalized by the total read-counts (like totreads), but trims top and bottom 5% of read-counts. This is the recommended normalization method for most cases as it has the beneffit of normalizing for difference in saturation in the context of resampling." (transit docs)
+
 
 
 ```{bash}
 # transit with HMM:
 transit hmm $my_path/dejesus_mtb/tpp_results/dejesus-Mtb-SRR4113427.wig $my_path/refseqs/mtbH37Rv.prot_table dejesus-Mtb-SRR4113427.txt 
 ```
+
+
 
 
 **Using BioTradis**
