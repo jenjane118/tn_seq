@@ -1,5 +1,5 @@
 ## try http:// if https:// URLs are not supported
-source("https://bioconductor.org/biocLite.R")
+#source("https://bioconductor.org/biocLite.R")
 ##biocLite("rtracklayer") *this is deprecated use biocmanager instead
 
 #BiocManager::install("rtracklayer")
@@ -99,7 +99,7 @@ for (i in 1:nrow(prot_table)){
   # GAP
   prot_table$GAP[i]<-"-"
   
-  #gene name
+  # enter cells in dataframe if note is present:
   if (length(note)>0){
     # aa_length
     if (length(aa_len)>0){
@@ -123,9 +123,6 @@ for (i in 1:nrow(prot_table)){
     prot_table$ORF_ID[i]<-substr(bovis_df$descr.locus_tag[i],8, nchar(bovis_df$descr.locus_tag[i]))
   }
 }
-
- # maybe try this way to avoid warnings? 
-#claims$newprocall <- ifelse(is.na(claims$newproc.x), claims$newproc.y, claims$newproc.x)
 
 View(prot_table)
 
