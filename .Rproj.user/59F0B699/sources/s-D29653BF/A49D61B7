@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1592582780559.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "A49D61B7",
+    "lastKnownWriteTime" : 1592672312,
+    "last_content_update" : 1592672471529,
+    "path" : "~/git/tn_seq/gff_parse.R",
+    "project_path" : "gff_parse.R",
+    "properties" : {
+        "cursorPosition" : "132,0",
+        "scrollLine" : "113",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

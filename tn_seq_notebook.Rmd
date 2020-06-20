@@ -185,7 +185,7 @@ sed '9321,+3d' B_S1_L001_R1_001.fastq > B_S1_L001_R1_001_edited.fastq
 
 Unfortunately, more discrepancies kept popping up. Means we can't use paired reads for this library unless we try to get another copy. However, as these reads are already de-duplicated by the Illumina MiSeq software and do not contain barcodes, there is no further need for the R2. (See email from Ian: unlikely to map with certainty to particular TA site except for reads with some of transposon tag sequenced.)
 
-It seems that the reads are not barcoded (but as adapters are trimmed in MiSeq processing, can't know for sure), so there is no way to 'de-duplicate' the data as specified in DeJesus, etc, using a unique barcode and genomic suffix combination. Still unable to get clarity on adapter sequences used.
+It seems that the reads are not barcoded (but as adapters are trimmed in MiSeq processing, can't know for sure), so there is no way to 'de-duplicate' the data as specified in DeJesus, etc, using a unique barcode and genomic suffix combination. 
 
 
 ## Downloading Mycobacterium sequences (gff and feature tables)
@@ -719,7 +719,7 @@ http://www.htslib.org/doc/samtools-mpileup.html
 #!/bin/bash
 
 # establish quality of tpp data with transit
-# iterate_tnseq_stats.sh
+# iterate_tnseq_stats.sh from inside file directory
 
 FILES=*.wig
 
@@ -732,7 +732,7 @@ do
   echo "File on the loop: 	    $filename"
   echo  "File on the loop:      ${file}"
 
-  transit tnseq_stats $my_path/dejesus_mtb/tpp_results/${file} -o ${filename}.dat
+  transit tnseq_stats ${file} -o ${filename}.dat
   
   echo -e "#####################################\n\n"
   
@@ -755,7 +755,39 @@ From Ioerger, Transit docs:
 >While there are not rigorous criteria for defining “bad” datasets, rules of thumb I use for “good” datasets are: density>30% (ideally >50%) and NZmean>10 (ideally >50). In addition, I look at MaxReadCount and Skewness as indicators. Typically, MaxReadCount will be in the range of a few thousand to tens-of-thousands. If you see individual sites with counts in the range of 10^5^-10^6^, it might mean you have some positive selection at a site (e.g. biological, or due to PCR jackpotting), and this can have the effect of reducing counts and influencing the distribution at all the other sites. If MaxReadCount<100, that is also probably problematic (either not enough reads, or possibly skewing). Also, skewness>30 often (but not always) signals a problem. Kurtosis doesn’t seem to be very meaningful.
 
 
+to analyse the files together, will need a comma-separated list:
 
+```{python}
+#!/usr/bin python3
+# comma_list.py
+# make comma separated list of files from directory
+
+import os
+os.chdir(".")
+with open ('wig_list.txt', 'w') as f:
+    file_list = []
+    for root, dirs, files in os.walk("."):
+        for filename in files:
+            if filename.endswith('.wig'):
+                file_list.append(filename)
+    file_string = ','.join(file_list)
+    f.write(file_string)
+f.close()
+```
+
+then make combined wig file:
+
+```{bash}
+python3 src/transit.py export combined_wig <comma-separated .wig files> <annotation .prot_table> <output file>
+```
+
+this doesn't seem to work with list of files instead of actual files:
+
+```{bash}
+transit export combined_wig wig_list.txt $my_path/refseqs/Mtb/mtbH37Rv.prot_table mtb_SE_combined.wig
+```
+
+is this worth it?
 
 
 
@@ -766,6 +798,28 @@ From Ioerger, Transit docs:
 [Transit docs](https://transit.readthedocs.io/en/latest/transit_running.html)
 
 have to generate prot_table from .gff file, or use Mtb prot_table
+
+
+what is required by prot_table:
+
+gene function description
+
+start coordinate
+
+end coordinate
+
+strand
+
+length of protein product (in amino acids)
+
+don’t care
+
+don’t care
+
+gene name (like “dnaA”)
+
+ORF id (like Rv0001)
+
 
 ```{bash}
 transit.py convert gff_to_prot_table <.gff> <.prot_table>
@@ -988,5 +1042,4 @@ Error in 1:(grep("##FASTA", GFF[, 1]) - 1) : argument of length 0
 Calls: [ -> [.data.frame
 Execution halted
 ```
-
-So I should just parse myself for what we need.
+just commented out that line and all else seems to work (maybe it was relevant for original annotation file?). however, need a bit more info for prot_table: length of amino acid, product, gene name (does Dong use ORF id for gene name?). so this requires parsing descr note for aa len and orf name
