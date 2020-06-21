@@ -1138,7 +1138,7 @@ for (i in 1:nrow(prot_table)){
   }
   
   # strand
-  prot_table$STRAND[i]<-bovis_df[i,8]
+  prot_table$STRAND[i]<-as.character(bovis_df[i,8])
   
   # type
   if (!is.na(bovis_df$descr.type)[i]){
@@ -1173,7 +1173,7 @@ for (i in 1:nrow(prot_table)){
 
 View(prot_table)
 
-write.table(prot_table,"mbovis.prot_table",sep="\t", row.names = F)
+write.table(prot_table,"mbovis.prot_table",sep="\t", row.names = F, quote=F)
 ```
 
 transferred script and prot_table file to server. not sure if this will work better than the one they assemble with their function--look pretty much the same, but maybe more complete? the one they make (and one for mtb appear to only have cds entries where product listed).

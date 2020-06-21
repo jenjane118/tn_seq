@@ -10,7 +10,7 @@ browseVignettes("rtracklayer")
 library("rtracklayer")
 library(GenomicRanges)
 
-bovisTrack <- import("LT708304_updated_aug19.gff")
+bovisTrack <- import("short_bovis.gff")
 
 genome(bovisTrack)
 #LT708304.1 
@@ -46,7 +46,7 @@ first20@elementMetadata@listData[["type"]]
 
 # use only relevant columns in dataframe (keep locus tag b/c 'gene' features don't have note)
 bovis_df<-data.frame(descr = elementMetadata(bovisTrack)[,c("gene", "type", "note", "product", "locus_tag")], 
-           start = start(bovisTrack), end = end(bovisTrack), strand = as.factor(strand(bovisTrack)), stringsAsFactors = False)
+           start = start(bovisTrack), end = end(bovisTrack), strand = as.factor(strand(bovisTrack)))
 View(bovis_df)
 
 # if we want only CDS features:
@@ -57,9 +57,21 @@ View(cds)
 
 prot_table<-data.frame(matrix(NA,ncol=9,nrow=nrow(bovis_df)), stringsAsFactors = FALSE)
 
+# #prot_table<-data.frame(PRODUCT=character(),
+#                        START=integer(),
+#                        END=integer(),
+#                        STRAND=factor(),
+#                        AA_LEN=character(),
+#                        TYPE=character(),
+#                        GAP=character(),
+#                        NAME=character(),
+#                        ORF_ID=character(),
+#                                   stringsAsFactors=FALSE)
+
 colnames(prot_table)<-c("PRODUCT","START", "END", "STRAND", "AA_LEN", "TYPE", "GAP", "NAME", "ORF_ID")
 
-for (i in 1:nrow(prot_table)){
+
+for (i in 1:nrow(bovis_df)){
 
   # product, gene name, ORF id and aa len must be parsed from column 9 ()
   if (is.na(bovis_df$descr.note[i])){
@@ -90,8 +102,8 @@ for (i in 1:nrow(prot_table)){
   }
   
   # strand
-  prot_table$STRAND[i]<-bovis_df[i,8]
-  
+  prot_table$STRAND[i]<-as.character(bovis_df$strand[i])
+
   # type
   if (!is.na(bovis_df$descr.type)[i]){
     prot_table$TYPE[i]<-as.character(bovis_df$descr.type[i])
@@ -123,8 +135,7 @@ for (i in 1:nrow(prot_table)){
     prot_table$ORF_ID[i]<-substr(bovis_df$descr.locus_tag[i],8, nchar(bovis_df$descr.locus_tag[i]))
   }
 }
-
 View(prot_table)
 
-write.table(prot_table,"mbovis.prot_table",sep="\t", row.names = F)
+write.table(prot_table,"mbovis.prot_table",sep="\t", row.names = F, quote = F)
 
