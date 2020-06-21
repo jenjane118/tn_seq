@@ -787,7 +787,7 @@ this doesn't seem to work with list of files instead of actual files:
 transit export combined_wig wig_list.txt $my_path/refseqs/Mtb/mtbH37Rv.prot_table mtb_SE_combined.wig
 ```
 
-is this worth it?
+just copy the string from the .txt file and do again. But do I want to combine the Dejesus datasets into combined wig? They are actually different libraries? Can just list all of them and indicate avg or sum read counts when doing hmm analysis. Also can normalise with comma separated list.
 
 
 
@@ -796,6 +796,11 @@ is this worth it?
 **TRANSIT**
 
 [Transit docs](https://transit.readthedocs.io/en/latest/transit_running.html)
+
+**This is good resource for command-line examples:**
+[TRANSIT command-line examples](https://orca1.tamu.edu/essentiality/transit/)
+
+Create a prot_table:
 
 have to generate prot_table from .gff file, or use Mtb prot_table
 
@@ -825,7 +830,7 @@ ORF id (like Rv0001)
 transit.py convert gff_to_prot_table <.gff> <.prot_table>
 ```
 
-normalise datasets:
+normalise individual datasets:
 
 ```{bash}
 transit normalize infile.wig outfile_TTR.wig -n TTR
@@ -854,7 +859,7 @@ do
 done
 ```
 
-or do i want to do all three reads together? seems more the point, but need prot table first? I'm confused at why you can normalise with and without prot table?
+or do i want to do all three reads together? seems more the point, but need prot table first? I'm confused at why you can normalise with and without prot table? (see below for update)
 
 ```{bash}
 python transit.py norm glycerol_H37Rv_rep1.wig,glycerol_H37Rv_rep2.wig H37Rv.prot_table glycerol_TTR.txt -n TTR
@@ -864,12 +869,49 @@ https://transit.readthedocs.io/en/latest/transit_console_cheatsheet.html
 
 can normalise to a 'combined .wig format' which is what I think we want to do with B, C and G 'sub-libraries'?  (but this is for different methods/labs?)
 
--no I think we just want to add -mean to transit hmm tool to avg the read counts of the replicates
+-no I think we just want to add -mean to transit hmm tool to avg the read counts of the replicates (or -Sum to sum them)
 
 TTR=trimmed total reads
 
 >"Trimmed Total Reads (TTR), normalized by the total read-counts (like totreads), but trims top and bottom 5% of read-counts. This is the recommended normalization method for most cases as it has the beneffit of normalizing for difference in saturation in the context of resampling." (transit docs)
 
+21/6/20
+as per conversation with Sharon, B,C and G are sub-libraries (i.e. different cultured samples of SAME library) vs three libraries. Therefore, I'm thinking we need to create combined dataset with transit 'export' tool to make a 'combined wig file' for analysis. Can normalize together, using '-n TTR' (above), or use '-n nonnorm' to use raw reads. Need prot_table for this. Also, can normalise individual datasets, but don't see point in this.
+
+```{bash}
+transit export combined_wig B_R1.wig,D_R1.wig,G_R1.wig $my_path/refseqs/mbovis/mbovis.prot_table bovis_combined_nonorm.wig -n nonorm
+
+transit export combined_wig B_R1.wig,D_R1.wig,G_R1.wig $my_path/refseqs/mbovis/mbovis.prot_table bovis_combined_TTR.wig -n TTR
+
+```
+
+```file "/s/software/anaconda/python3/lib/python3.7/site-packages/pytransit/tnseq_tools.py", line 1218, in get_pos_hash_pt
+    start = int(tmp[1])
+ValueError: invalid literal for int() with base 10: 'START'```
+
+I think this is because I have column names in prot_table. edited parse.gff script--worked! 
+
+(The one converted from Dong's .gff using transit gff_to_prot_table tool doesn't work)
+```ValueError: invalid literal for int() with base 10: '+'```
+
+
+**This is good resource for command-line examples:**
+[TRANSIT command-line examples](https://orca1.tamu.edu/essentiality/transit/)
+
+
+Run tnseq_stats on combined wig files to compare:
+
+```{bash}
+transit tnseq_stats bovis_combined_nonorm.wig -o bovis_combined_nonorm_stats.dat
+transit tnseq_stats bovis_combined_TTR.wig -o bovis_combined_TTR_stats.dat
+```
+
+| dataset | density | mean_ct | NZmean  | NZmedian | max_ct  | total_cts | skewness | kurtosis | pickands_tail_index |
+|---------|---------|---------|---------|----------|---------|-----------|----------|----------|---------------------|
+| bovis_combined_nonorm.wig | 0.210 | 8.3 | 39.7 | 13 | 2548.0 | 613959 | 8.4 | 127.3 | 0.150 |
+| bovis_combined_TTR.wig | 0.210 | 150.3 | 714.1 | 234 | 45869.3 | 11052449 | 8.4 | 127.3 | 0.150 |
+
+why are mean_ct, NZmean, max_ct, and total_cts so different with no normalisation?
 
 
 ```{bash}
@@ -1173,7 +1215,7 @@ for (i in 1:nrow(prot_table)){
 
 View(prot_table)
 
-write.table(prot_table,"mbovis.prot_table",sep="\t", row.names = F, quote=F)
+write.table(prot_table,"mbovis.prot_table",sep="\t", col.names = F, row.names = F, quote=F)
 ```
 
 transferred script and prot_table file to server. not sure if this will work better than the one they assemble with their function--look pretty much the same, but maybe more complete? the one they make (and one for mtb appear to only have cds entries where product listed).

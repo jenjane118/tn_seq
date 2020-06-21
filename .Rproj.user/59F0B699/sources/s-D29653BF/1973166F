@@ -5,16 +5,16 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "3742268821",
+    "hash" : "138908931",
     "id" : "1973166F",
-    "lastKnownWriteTime" : 1592745716,
-    "last_content_update" : 1592745716705,
+    "lastKnownWriteTime" : 1592753301,
+    "last_content_update" : 1592753301073,
     "path" : "~/git/tn_seq/tn_seq_notebook.Rmd",
     "project_path" : "tn_seq_notebook.Rmd",
     "properties" : {
         "chunk_output_type" : "inline",
-        "cursorPosition" : "1140,51",
-        "scrollLine" : "1129"
+        "cursorPosition" : "789,290",
+        "scrollLine" : "775"
     },
     "relative_order" : 1,
     "source_on_save" : false,

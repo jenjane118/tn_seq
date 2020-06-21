@@ -10,7 +10,7 @@ browseVignettes("rtracklayer")
 library("rtracklayer")
 library(GenomicRanges)
 
-bovisTrack <- import("short_bovis.gff")
+bovisTrack <- import("LT708304_updated_aug19.gff")
 
 genome(bovisTrack)
 #LT708304.1 
@@ -137,5 +137,5 @@ for (i in 1:nrow(bovis_df)){
 }
 View(prot_table)
 
-write.table(prot_table,"mbovis.prot_table",sep="\t", row.names = F, quote = F)
+write.table(prot_table,"mbovis.prot_table",sep="\t", col.names = F, row.names = F, quote = F)
 

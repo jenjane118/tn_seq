@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1592745862951.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "452CECDB",
+    "lastKnownWriteTime" : 2314885530279477254,
+    "last_content_update" : 1592745862951,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "id" : "234882f81ccf41ce9cb2738e67495a99",
+        "name" : "first20",
+        "title" : "first20"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "object_explorer"
+}
