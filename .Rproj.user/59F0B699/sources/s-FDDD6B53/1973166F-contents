@@ -34,6 +34,7 @@ output: html_notebook
 9. BioTraDIS docs
 [BioTraDIS git hub](https://github.com/sanger-pathogens/Bio-Tradis)
 
+10. Tn-seq methods and protocols:  Long, J. E. et al. Global Phenotypic Profiling. in Gene Essentiality: Methods and Protocols 1279, 79–95 (2015).
 
 **********
 # Project Directory Organisation
@@ -913,6 +914,14 @@ transit tnseq_stats bovis_combined_TTR.wig -o bovis_combined_TTR_stats.dat
 
 why are mean_ct, NZmean, max_ct, and total_cts so different with no normalisation?
 
+NZmean is avg read count for non-zero TA sites
+
+max count is max number of counts for any one TA site?
+
+Is total count number of ta sites hit? I think this should be closer to 50-60,000 as B had 15,478, G:26,350, and D: 13,298. How does it go to 11 M with normalisation? Are they inflating lowest to meet highest?
+
+so by trimming and normalising by total counts, NZ mean goes up? non-norm NZmean is closer to what it was for individual datasets. See what code is actually doing to data.
+
 
 ```{bash}
 # transit with HMM:
@@ -1072,6 +1081,8 @@ MultiQc report for bwa mem (default params):
 
 [MultiQC report mem](images/multiqc_mem_report.html)
 
+
+**Create prot_table from .gff for Transit**
 
 to run R script in command line:
 ```{bash}

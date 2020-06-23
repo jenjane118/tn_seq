@@ -72,10 +72,26 @@ colnames(prot_table)<-c("PRODUCT","START", "END", "STRAND", "AA_LEN", "TYPE", "G
 
 
 for (i in 1:nrow(bovis_df)){
-
+#for (i in 1949:1950){
   # product, gene name, ORF id and aa len must be parsed from column 9 ()
+  orf<-''
+  gene_name<-''
+  aa_len<-''
   if (is.na(bovis_df$descr.note[i])){
     note<-''
+  }
+  # if tRNA
+  else if (bovis_df$descr.type[i]=="tRNA"){
+    note<-unlist(strsplit(bovis_df[i,3],split = ","))
+    orf<-note[1]
+    gene_name <- note[1]
+    #aa_len <- substr(note[3], 6, nchar(note[3]))
+  }
+  # if repeat region
+  else if (bovis_df$descr.type[i]=="repeat_region"){
+    note<-unlist(strsplit(bovis_df[i,3],split = ","))
+    orf<-note[1]
+    gene_name <- note[4]
   }
   else {
     note<-unlist(strsplit(bovis_df[i,3],split = ","))
@@ -86,7 +102,7 @@ for (i in 1:nrow(bovis_df)){
     x<- gregexpr("[0-9]+", len)
     aa_len <- as.numeric(unlist(regmatches(len, x)))
     #aa_len<- data[grep("[0-9]+", len),]
-  }
+    }
   # product 
   if (!is.na(bovis_df$descr.product)[i]){
     prot_table$PRODUCT[i]<-bovis_df[i,4]
@@ -113,6 +129,7 @@ for (i in 1:nrow(bovis_df)){
   
   # enter cells in dataframe if note is present:
   if (length(note)>0){
+    # if type = Repeat, no aa len (nt length), in these is inputing '37' for aa_len (from H37Rv?)
     # aa_length
     if (length(aa_len)>0){
       prot_table$AA_LEN[i]<-aa_len

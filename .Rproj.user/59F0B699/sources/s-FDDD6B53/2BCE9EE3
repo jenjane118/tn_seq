@@ -12,9 +12,9 @@
     "path" : null,
     "project_path" : null,
     "properties" : {
-        "cacheKey" : "49E9BB8A",
+        "cacheKey" : "3351D92E",
         "caption" : "prot_table",
-        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=prot_table&cache_key=49E9BB8A",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=prot_table&cache_key=3351D92E",
         "displayedObservations" : "8292",
         "environment" : "",
         "object" : "prot_table",
