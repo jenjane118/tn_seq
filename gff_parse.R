@@ -16,7 +16,6 @@ genome(bovisTrack)
 #LT708304.1 
 #       NA 
 
-
 head(seqnames(bovisTrack))
 head(start(bovisTrack))
 head(strand(bovisTrack))
@@ -24,7 +23,6 @@ head(width(bovisTrack))
 
 # look at first 20 targets
 first20 <- bovisTrack[1:20]
-
 # this give org of data and if you click on far right in viewer, gives commands
 # for retrieving this column
 View(first20)
@@ -37,7 +35,6 @@ first20@strand
 first20[6]@elementMetadata@listData[["note"]]
 first20@elementMetadata@listData[["product"]]
 first20@elementMetadata@listData[["gene"]]
-
 
 bovisTrack@elementMetadata@listData[["product"]]
 
@@ -57,19 +54,7 @@ View(cds)
 
 prot_table<-data.frame(matrix(NA,ncol=9,nrow=nrow(bovis_df)), stringsAsFactors = FALSE)
 
-# #prot_table<-data.frame(PRODUCT=character(),
-#                        START=integer(),
-#                        END=integer(),
-#                        STRAND=factor(),
-#                        AA_LEN=character(),
-#                        TYPE=character(),
-#                        GAP=character(),
-#                        NAME=character(),
-#                        ORF_ID=character(),
-#                                   stringsAsFactors=FALSE)
-
 colnames(prot_table)<-c("PRODUCT","START", "END", "STRAND", "AA_LEN", "TYPE", "GAP", "NAME", "ORF_ID")
-
 
 for (i in 1:nrow(bovis_df)){
 #for (i in 1949:1950){
