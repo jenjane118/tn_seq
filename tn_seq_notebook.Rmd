@@ -1105,12 +1105,11 @@ transit hmm $my_path/dejesus_mtb/tpp_results/dejesus-Mtb-SRR4113427.wig $my_path
 
 [Biotradis github page](https://github.com/sanger-pathogens/Bio-Tradis#usage)
 
+[biotradis tutorial](BioTraDISTutorial.pdf)
 
 https://www.biostars.org/p/15847/
 
->Bam files can also have a companion file, called an index file. This file has the same name, suffixed with .bai. This file acts like an external table of contents, and allows programs to jump directly to specific parts of the bam file without reading through all of the sequences. Without the corresponding bam file, your bai file is useless, since it doesn't actually contain any sequence data.
-
->If you have a bam file without a corresponding index, you can generate one using "samtools index bamfile.bam"
+>Bam files can also have a companion file, called an index file. This file has the same name, suffixed with .bai. This file acts like an external table of contents, and allows programs to jump directly to specific parts of the bam file without reading through all of the sequences. Without the corresponding bam file, your bai file is useless, since it doesn't actually contain any sequence data. If you have a bam file without a corresponding index, you can generate one using "samtools index bamfile.bam"
 
 
 [BWA docs](http://bio-bwa.sourceforge.net/bwa.shtml)
@@ -1269,13 +1268,30 @@ probably should have done 'nohup' because taking a long time!
 nohup R CMD BATCH $my_path/scripts/TraDIS_summary_Mbovis-LT708304.1.R >& TraDIS_summary_Mbovis-LT708304.1.Rout &
 ```
 
+also importing .bam and .bam.bai files to my local computer to run the script on Rstudio so I can see what is going on
+
+
 -creates summary.csv file for each sample with name and location of site and number of insertion reads
+
+>creates file: .tradis_gene_insert_sites.csv, containing locus tags, gene names, read counts and unique insertion sites per gene, among other useful bits of data
+
 'no. insertion sites' is unique reads per feature
 'insertion index' = number of insertion sites/gene length
 
-'avg coverage' = median of no insertion sites per gene?
-```for (k in 1:ncol(insertionsite)){
-        insertionsite[1,k]<-length(which(is.element(reads$pos,a[k])))}
-summary_stats$`Av. Coverage`[i]<-median(as.numeric(insertionsite[1,]))```
+'insertion site' :  contain insertion counts on each strand for every nucleotide position in the replicon. They can be opened as “user plots” in the Artemis genome browser, and will be used for further analysis.
+used to calculate: avg coverage, no. reads per insertion site, total no. insertion sites
 
--uses mean of samples to create insertion plot
+```{R}
+for (k in 1:ncol(insertionsite)){
+  insertionsite[1,k]<-length(which(is.element(reads$pos,a[k])))
+  }
+summary_stats$`Av. Coverage`[i]<-median(as.numeric(insertionsite[1,]))```
+```
+
+'avg coverage' = median of insertion sites (per feature?) of all samples
+'no. reads per IS' = list of reads?
+'total no. insertion sites' = sum of insertion sites from all samples in each feature
+
+same columns, but 'DP>5' are same but only if more than 5 'insertion sites'?
+
+-uses mean of samples to create insertion plot?

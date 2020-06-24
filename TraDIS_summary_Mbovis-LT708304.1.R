@@ -54,7 +54,6 @@ which<-IRangesList(LT708304.1=range2)
   write.csv(summary_stats,file=paste(sample_names[j,1],"_TraDIS_summary.csv",sep = ""),row.names = F)
 }
 
-
 numbersamples<-nrow(sample_names)
 index_results<-data.frame(matrix(0,ncol=(numbersamples*2)+3,nrow=nrow(features_table)))
 index_results[,1:3]<-features_table[,3:5]

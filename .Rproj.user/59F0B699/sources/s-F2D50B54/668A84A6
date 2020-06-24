@@ -5,15 +5,16 @@
     "dirty" : true,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "2906220698",
+    "hash" : "0",
     "id" : "668A84A6",
-    "lastKnownWriteTime" : 1592939019,
-    "last_content_update" : 1592939336445,
+    "lastKnownWriteTime" : 1592949285,
+    "last_content_update" : 1592998159030,
     "path" : "~/git/tn_seq/TraDIS_summary_Mbovis-LT708304.1.R",
     "project_path" : "TraDIS_summary_Mbovis-LT708304.1.R",
     "properties" : {
-        "cursorPosition" : "55,0",
-        "scrollLine" : "45"
+        "cursorPosition" : "29,37",
+        "scrollLine" : "8",
+        "source_window_id" : "woin59x9fqbl9"
     },
     "relative_order" : 6,
     "source_on_save" : false,

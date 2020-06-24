@@ -11,6 +11,7 @@ options(scipen=999,stringsAsFactors = F)
 library(Rsamtools)
 features_table<-read.csv("M_bovis_features-locusAsName-aug19.csv",header=T)
 sample_names<-read.table("names.txt",stringsAsFactors = F)
+
 what<-c("pos")
 for (j in 1:nrow(sample_names)){
   summary_stats<-as.data.frame(matrix(0, nrow = nrow(features_table), ncol = 15))
@@ -51,8 +52,9 @@ which<-IRangesList(LT708304.1=range2)
       }
     }
   }
-  write.csv(summary_stats,file=paste(sample_names[j,1],"_TraDIS_summary.csv",sep = ""),row.names = F)
 }
+  write.csv(summary_stats,file=paste(sample_names[j,1],"_TraDIS_summary.csv",sep = ""),row.names = F)
+#}
 
 numbersamples<-nrow(sample_names)
 index_results<-data.frame(matrix(0,ncol=(numbersamples*2)+3,nrow=nrow(features_table)))
