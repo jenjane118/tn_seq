@@ -1094,7 +1094,6 @@ so by trimming and normalising by total counts, NZ mean goes up? non-norm NZmean
 
 ** Look at correlation of insertion sites between samples for bovis on r (locally)
 
-import .wig files from server
 
 
 
