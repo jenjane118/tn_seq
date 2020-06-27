@@ -1295,12 +1295,16 @@ contain read counts on each strand for every nucleotide position in the replicon
 for (k in 1:ncol(insertionsite)){
   insertionsite[1,k]<-length(which(is.element(reads$pos,a[k])))
   }
-summary_stats$`Av. Coverage`[i]<-median(as.numeric(insertionsite[1,]))```
+summary_stats$`Av.Coverage`[i]<-median(as.numeric(insertionsite[1,]))
 ```
 
 'avg coverage' = median of the number of reads at each insertion site per feature
 
 'total no. insertion sites' = sum of number of reads per insertion sites per feature
+
+[insertion plot B](B_S1_L001_R1_001_insertion.jpg)
+
+
 
 same columns, but 'DP>5' are same but only if 5 or more reads per insertion site. Why 5?
 Is this to eliminate small genes/features with few insertion sites, as not fully saturated library?
@@ -1308,6 +1312,36 @@ Is this to eliminate small genes/features with few insertion sites, as not fully
 -uses mean of samples to create insertion plot, taking mean of av index and av dp5 index
 
 
+essentially, only 'normalisation' occurring is to look at 'DP>5' counts only, where there are 5 or more reads per insertion site. Similar idea to TTR which is trimming top and bottom 5% of read counts?
+
 ** Look at correlation of insertion sites between samples
 
-import .wig files from server
+import .wig files from server and calculate correlation between datasets
+
+see script: corralation_bovis.R
+
+non_normal datasets:
+
+```{R}
+res <- cor(non_norm)
+round(res, 2)
+#     B    D    G
+#B 1.00 0.10 0.06
+#D 0.10 1.00 0.07
+#G 0.06 0.07 1.00
+```
+
+
+ttr normalised datasets:
+
+```{R}
+res_ttr <- cor(ttr_norm)
+round(res_ttr, 2)
+#     B    D    G
+#B 1.00 0.10 0.06
+#D 0.10 1.00 0.07
+#G 0.06 0.07 1.00
+```
+
+so looks like ttr doesn't affect correlation between datasets?
+
