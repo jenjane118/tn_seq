@@ -1092,6 +1092,13 @@ Is total count number of ta sites hit? I think this should be closer to 50-60,00
 
 so by trimming and normalising by total counts, NZ mean goes up? non-norm NZmean is closer to what it was for individual datasets. See what code is actually doing to data.
 
+** Look at correlation of insertion sites between samples for bovis on r (locally)
+
+import .wig files from server
+
+
+
+
 
 ```{bash}
 # transit with HMM:
@@ -1275,11 +1282,15 @@ also importing .bam and .bam.bai files to my local computer to run the script on
 
 >creates file: .tradis_gene_insert_sites.csv, containing locus tags, gene names, read counts and unique insertion sites per gene, among other useful bits of data
 
-'no. insertion sites' is unique reads per feature
+'no. insertion sites' is number of insertion sites per gene/feature (length of 'insertion site' vector  or length of 'pos IS')
+
 'insertion index' = number of insertion sites/gene length
 
-'insertion site' :  contain insertion counts on each strand for every nucleotide position in the replicon. They can be opened as “user plots” in the Artemis genome browser, and will be used for further analysis.
-used to calculate: avg coverage, no. reads per insertion site, total no. insertion sites
+'insertion site' : unique reads per insertion site per gene (list of number of reads per IS)
+
+contain read counts on each strand for every nucleotide position in the replicon. They can be opened as “user plots” in the Artemis genome browser, and will be used for further analysis. used to calculate: avg coverage, no. reads per insertion site, total no. insertion sites
+
+'No. reads per IS' is number of unique reads per insertion site per feature (long, pasted list of numbers of reads)
 
 ```{R}
 for (k in 1:ncol(insertionsite)){
@@ -1288,10 +1299,16 @@ for (k in 1:ncol(insertionsite)){
 summary_stats$`Av. Coverage`[i]<-median(as.numeric(insertionsite[1,]))```
 ```
 
-'avg coverage' = median of insertion sites (per feature?) of all samples
-'no. reads per IS' = list of reads?
-'total no. insertion sites' = sum of insertion sites from all samples in each feature
+'avg coverage' = median of the number of reads at each insertion site per feature
 
-same columns, but 'DP>5' are same but only if more than 5 'insertion sites'?
+'total no. insertion sites' = sum of number of reads per insertion sites per feature
 
--uses mean of samples to create insertion plot?
+same columns, but 'DP>5' are same but only if 5 or more reads per insertion site. Why 5?
+Is this to eliminate small genes/features with few insertion sites, as not fully saturated library?
+
+-uses mean of samples to create insertion plot, taking mean of av index and av dp5 index
+
+
+** Look at correlation of insertion sites between samples
+
+import .wig files from server

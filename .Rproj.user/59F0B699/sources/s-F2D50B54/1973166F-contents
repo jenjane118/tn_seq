@@ -1092,6 +1092,12 @@ Is total count number of ta sites hit? I think this should be closer to 50-60,00
 
 so by trimming and normalising by total counts, NZ mean goes up? non-norm NZmean is closer to what it was for individual datasets. See what code is actually doing to data.
 
+** Look at correlation of insertion sites between samples for bovis on r (locally)
+
+
+
+
+
 
 ```{bash}
 # transit with HMM:
@@ -1275,7 +1281,7 @@ also importing .bam and .bam.bai files to my local computer to run the script on
 
 >creates file: .tradis_gene_insert_sites.csv, containing locus tags, gene names, read counts and unique insertion sites per gene, among other useful bits of data
 
-'no. insertion sites' is number of insertion sites per gene/feature (length of insertion site vector)
+'no. insertion sites' is number of insertion sites per gene/feature (length of 'insertion site' vector  or length of 'pos IS')
 
 'insertion index' = number of insertion sites/gene length
 
@@ -1294,9 +1300,14 @@ summary_stats$`Av. Coverage`[i]<-median(as.numeric(insertionsite[1,]))```
 
 'avg coverage' = median of the number of reads at each insertion site per feature
 
-'total no. insertion sites' = total number of insertion sites covered per feature? insertion site?
+'total no. insertion sites' = sum of number of reads per insertion sites per feature
 
-same columns, but 'DP>5' are same but only if more than 5 'insertion sites' per feature? Why 5?
+same columns, but 'DP>5' are same but only if 5 or more reads per insertion site. Why 5?
 Is this to eliminate small genes/features with few insertion sites, as not fully saturated library?
 
--uses mean of samples to create insertion plot? for each feature, taking mean of av index and av dp5 index
+-uses mean of samples to create insertion plot, taking mean of av index and av dp5 index
+
+
+** Look at correlation of insertion sites between samples
+
+import .wig files from server

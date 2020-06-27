@@ -11,6 +11,7 @@ options(scipen=999,stringsAsFactors = F)
 library(Rsamtools)
 features_table<-read.csv("M_bovis_features-locusAsName-aug19.csv",header=T)
 sample_names<-read.table("names.txt",stringsAsFactors = F)
+
 what<-c("pos")
 for (j in 1:nrow(sample_names)){
   summary_stats<-as.data.frame(matrix(0, nrow = nrow(features_table), ncol = 15))
@@ -51,8 +52,9 @@ which<-IRangesList(LT708304.1=range2)
       }
     }
   }
-  write.csv(summary_stats,file=paste(sample_names[j,1],"_TraDIS_summary.csv",sep = ""),row.names = F)
 }
+  write.csv(summary_stats,file=paste(sample_names[j,1],"_TraDIS_summary.csv",sep = ""),row.names = F)
+#}
 
 numbersamples<-nrow(sample_names)
 index_results<-data.frame(matrix(0,ncol=(numbersamples*2)+3,nrow=nrow(features_table)))
@@ -63,11 +65,12 @@ for (i in 1:numbersamples){
   index_results[,i+3]<-tradis_res$Insertion.Index
   index_results[,i+(numbersamples+3)]<-tradis_res$Insertion.Index.DP.5
 }
-
+# make graph for av index and av index dp5 for each sample for each feature
 index_results_average<-data.frame(matrix(0,ncol=3,nrow=nrow(features_table)))
 index_results_average[,1]<-features_table[,3]
 colnames(index_results_average)<-c("NAME","Av.Index","Av.Index.DP5")
 
+# average is mean of av index for all 3 samples
 for (i in 1:nrow(index_results)){
   index_results_average[i,2]<-mean(as.numeric(as.character(index_results[i,4:(numbersamples+3)])))
   index_results_average[i,3]<-mean(as.numeric(as.character(index_results[i,(numbersamples+4):ncol(index_results)])))
@@ -77,6 +80,7 @@ jpeg('Insertion.index.jpg')
 insertion_graph<-hist(index_results_average[,2],xlim = c(0,0.05),ylim = c(0,400),nclass = 700,xlab = "Insertion Index",ylab = "Density",main = NA)
 dev.off()
 
+# make graph for average coverage and av coverage dp5
 index_results<-data.frame(matrix(0,ncol=(numbersamples*2)+3,nrow=nrow(features_table)))
 index_results[,1:3]<-features_table[,3:5]
 colnames(index_results)<-c("NAME","TYPE","PRODUCT",rep(sample_names[,1],2))
@@ -99,6 +103,7 @@ jpeg('Insertion.index.jpg')
 coverage_graph<-hist(index_results_average[,2],xlim = c(0,60),nclass = 300,xlab = "Av.coverage.per.gene",ylab = "Density",main = NA)
 dev.off()
 
+# make insertion graphs for each sample
 what<-c("pos")
 which<-IRangesList(LT708304.1=IRanges(1,4349904))
 for (j in 1:nrow(sample_names)){
