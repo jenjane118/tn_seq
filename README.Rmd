@@ -1,15 +1,14 @@
----
-title: "READ.ME"
-author: "Jennifer J Stiens"
-date: "27/06/2020"
-output: html_document
----
+# tn_seq
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+Jennifer J. Stiens
+j.j.stiens@gmail.com
+
+
+
+Tn_seq analysis project
+
 
 This repository is for work relating to evaluating TraDIS data for M.bovis.
 
 work is by Jennifer J. Stiens in the lab of Irilenia Nobeli
-Birkbeck, University of London
+Birkbeck, University of London and Sharon Kendall, Royal Veterinary College
