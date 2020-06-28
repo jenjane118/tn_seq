@@ -77,7 +77,7 @@ for (i in 1:nrow(index_results)){
 }
 
 jpeg('Insertion.index.jpg')
-insertion_graph<-hist(index_results_average[,2],xlim = c(0,0.05),ylim = c(0,400),nclass = 700,xlab = "Insertion Index",ylab = "Density",main = NA)
+insertion_graph<-hist(index_results_average[,2],xlim = c(0,0.05),ylim = c(0,50),nclass = 700,xlab = "Insertion Index",ylab = "Density",main = NA)
 dev.off()
 
 # make graph for average coverage and av coverage dp5
@@ -99,7 +99,8 @@ for (i in 1:nrow(index_results)){
   index_results_average[i,3]<-mean(as.numeric(as.character(index_results[i,(numbersamples+4):ncol(index_results)])))
 }
 
-jpeg('Insertion.index.jpg')
+# graph of average coverage per gene, all reads
+jpeg('av_coverage.jpg')
 coverage_graph<-hist(index_results_average[,2],xlim = c(0,60),nclass = 300,xlab = "Av.coverage.per.gene",ylab = "Density",main = NA)
 dev.off()
 

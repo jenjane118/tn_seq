@@ -34,7 +34,7 @@ output: html_notebook
 9. BioTraDIS docs
 [BioTraDIS git hub](https://github.com/sanger-pathogens/Bio-Tradis)
 
-10. Tn-seq methods and protocols:  Long, J. E. et al. Global Phenotypic Profiling. in Gene Essentiality: Methods and Protocols 1279, 79–95 (2015).
+10. Tn-seq methods and protocols:  [Long, J. E. et al. Global Phenotypic Profiling. in Gene Essentiality: Methods and Protocols 1279, 79–95 (2015).](https://pubmed.ncbi.nlm.nih.gov/25636614/)
 
 **********
 # Project Directory Organisation
@@ -1285,6 +1285,8 @@ also importing .bam and .bam.bai files to my local computer to run the script on
 
 'insertion index' = number of insertion sites/gene length
 
+(this normalises number of unique insertions for length of gene)
+
 'insertion site' : unique reads per insertion site per gene (list of number of reads per IS)
 
 contain read counts on each strand for every nucleotide position in the replicon. They can be opened as “user plots” in the Artemis genome browser, and will be used for further analysis. used to calculate: avg coverage, no. reads per insertion site, total no. insertion sites
@@ -1304,12 +1306,19 @@ summary_stats$`Av.Coverage`[i]<-median(as.numeric(insertionsite[1,]))
 
 [insertion plot B](B_S1_L001_R1_001_insertion.jpg)
 
+[insertion plot D](D_S2_L001_R1_001_insertion.jpg)
+
+[insertion plot G](G_S3_L001_R1_insertion.jpg)
 
 
 same columns, but 'DP>5' are same but only if 5 or more reads per insertion site. Why 5?
 Is this to eliminate small genes/features with few insertion sites, as not fully saturated library?
 
 -uses mean of samples to create insertion plot, taking mean of av index and av dp5 index
+
+[insertion index per gene](insertion.index.jpg)
+
+[average coverage per gene](av_coverage.jpg)
 
 
 essentially, only 'normalisation' occurring is to look at 'DP>5' counts only, where there are 5 or more reads per insertion site. Similar idea to TTR which is trimming top and bottom 5% of read counts?
@@ -1318,7 +1327,7 @@ essentially, only 'normalisation' occurring is to look at 'DP>5' counts only, wh
 
 import .wig files from server and calculate correlation between datasets
 
-see script: corralation_bovis.R
+see script: correlation_bovis.R
 
 non_normal datasets:
 
@@ -1345,3 +1354,8 @@ round(res_ttr, 2)
 
 so looks like ttr doesn't affect correlation between datasets?
 
+Would we expect correlation between these sub-pools?
+
+It seems to me we shouldn't expect correlation among the three 'sub-libraries' given that, for example, B, has only 5,000 colonies plated, vs. D, which has 35,000. I don't know the number of individual mutants in the libraries, but I would imagine it is bigger than 5,000 if you had 300,000 colonies. So B really isn't representative of the entire library--we will have stochastic effects, as only a partial pool of mutants is selected. Is this right? So I am not sure there is any point in evaluating separately (or even including B and C at all?) It seems to me that if you have 35,000 colonies in sub-library D, that should be enough to represent all the independent mutants in the library, according to Long, et al. I'm not sure that B or C are even helpful, as they may not be sampling a good proportion of essential and non-essential genes, so the signal is distorted. I know this doesn't help with the lack of correlation between the technical replicates. Have we done correlation between this library and Mtb?
+ 
+Sharon says the number of unique TA sites hit (insertions) doesn't correlate to library size. but would you necessarily expect this? Stochastic effect--could just be a sampling effect.
