@@ -1308,7 +1308,7 @@ summary_stats$`Av.Coverage`[i]<-median(as.numeric(insertionsite[1,]))
 
 [insertion plot D](D_S2_L001_R1_001_insertion.jpg)
 
-[insertion plot G](G_S3_L001_R1_insertion.jpg)
+[insertion plot G](G_S3_L001_R1_001_insertion.jpg)
 
 
 same columns, but 'DP>5' are same but only if 5 or more reads per insertion site. Why 5?
