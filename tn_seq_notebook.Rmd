@@ -1,6 +1,10 @@
 ---
 title: "Mycobacterium Tn-Seq"
-output: html_notebook
+output:
+  html_notebook: default
+  html_document:
+    df_print: paged
+  pdf_document: default
 ---
 
 *****
@@ -557,8 +561,6 @@ done <"$input"
 ### Run tpp on mbovis libraries (3)
 
 
-```$my_path/scripts/mbovis_iterate_tpp.sh```
-
 ```{bash}
 #!/bin/bash
 
@@ -1088,15 +1090,33 @@ NZmean is avg read count for non-zero TA sites
 
 max count is max number of counts for any one TA site?
 
-Is total count number of ta sites hit? I think this should be closer to 50-60,000 as B had 15,478, G:26,350, and D: 13,298. How does it go to 11 M with normalisation? Are they inflating lowest to meet highest?
+Is total count number of ta sites hit? I think this should be closer to 50-60,000 as B had 15,478, G:26,350, and D: 13,298. How does it go to 11 M with normalisation? 
+
+I think total counts are lower than raw total because of trimming at top end.
 
 so by trimming and normalising by total counts, NZ mean goes up? non-norm NZmean is closer to what it was for individual datasets. See what code is actually doing to data.
 
-** Look at correlation of insertion sites between samples for bovis on r (locally)
+normalisation factors for combined wig:
+```
+#Converted to CombinedWig with TRANSIT.
+#normalization method: TTR
+#Normalization Factors: 18.002081075528906 14.800682819029374 16.93937590283477
+```
+from Irilenia:
+I think this is because the original data is multiplied by some factor (the normalisation factor) which is not necessarily less than 1. Hence the numbers can come out bigger than before. I'm not sure exactly how these factors are calculated but it's done here:
 
+factors[j] = float(target)/(thetaEst(data[j]) * muEst(data[j]))
 
+(thetaEst is observed insertion density/ muEst is estimated trimmed mean)
 
+It looks like the tnseq_stats for the non-normalised combined wig is using just the data from the first sample (first file entered in command) to calculate the NZ mean, total reads, max_ct, etc. In TTR normalised, summing samples, etc?
 
+Made a parser script in python to parse the stats from .dat and tnseq_stats files, generates, 'combi_stats.csv'.
+
+```{R}
+tn_stats_df<-read.csv("combi_stats.csv")
+tn_stats_df
+```
 
 
 ```{bash}
@@ -1356,6 +1376,11 @@ so looks like ttr doesn't affect correlation between datasets?
 
 Would we expect correlation between these sub-pools?
 
-It seems to me we shouldn't expect correlation among the three 'sub-libraries' given that, for example, B, has only 5,000 colonies plated, vs. D, which has 35,000. I don't know the number of individual mutants in the libraries, but I would imagine it is bigger than 5,000 if you had 300,000 colonies. So B really isn't representative of the entire library--we will have stochastic effects, as only a partial pool of mutants is selected. Is this right? So I am not sure there is any point in evaluating separately (or even including B and C at all?) It seems to me that if you have 35,000 colonies in sub-library D, that should be enough to represent all the independent mutants in the library, according to Long, et al. I'm not sure that B or C are even helpful, as they may not be sampling a good proportion of essential and non-essential genes, so the signal is distorted. I know this doesn't help with the lack of correlation between the technical replicates. Have we done correlation between this library and Mtb?
+It seems to me we shouldn't expect correlation of the positions of the reads among the three 'sub-libraries' given that, for example, B, has only 5,000 colonies plated, vs. D, which has 35,000. I don't know the number of individual mutants in the libraries, but I would imagine it is bigger than 5,000 if you had 300,000 colonies. So B really isn't representative of the entire library--we will have stochastic effects, as only a partial pool of mutants is selected. So I am not sure there is any point in evaluating separately. It seems to me that if you have 35,000 colonies in sub-library D, that should be enough to represent all the independent mutants in the library, according to Long, et al. But adding together should add to genes covered, or at least, to the coverage of certain genes. 
+
+I know this doesn't help with the lack of correlation between the technical replicates. Have we done correlation between this library and Mtb?
  
-Sharon says the number of unique TA sites hit (insertions) doesn't correlate to library size. but would you necessarily expect this? Stochastic effect--could just be a sampling effect.
+Sharon says the number of unique TA sites hit (insertions) doesn't correlate to library size. It would seem that you should have fewer genes covered with a smaller library, but that isn't what we are seeing (library 'G' has best coverage, only 2 plates). This is more important than correlation at each position. 
+
+
+

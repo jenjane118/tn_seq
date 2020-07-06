@@ -1,0 +1,32 @@
+# title: Tn-Seq Pre-Processor
+# date: 06/17/2020 18:28:59
+# command: python /s/software/anaconda/python3/bin/tpp -bwa /s/software/bwa/bwa/bwa -ref /d/in16/u/sj003/refseqs/Mtb/Mtb_H37Rv.fasta -reads1 SRR4113430_1.fastq -output /d/in16/u/sj003/dejesus_mtb/tpp_results/SRR4113430_1
+# transposon type: Himar1
+# protocol type: Sassetti
+# bwa flags: 
+# read1: SRR4113430_1.fastq
+# read2: 
+# ref_genome: /d/in16/u/sj003/refseqs/Mtb/Mtb_H37Rv.fasta
+# replicon_ids: 
+# total_reads (or read pairs): 15902338
+# trimmed_reads (reads with valid Tn prefix, and insert size>20bp): 15554558
+# reads1_mapped: 15318371
+# reads2_mapped: 0
+# mapped_reads (both R1 and R2 map into genome, and R2 has a proper barcode): 15318371 
+# read_count (TA sites only, for Himar1): 14607073
+# template_count: 14607073
+# template_ratio (reads per template): 1.00
+# TA_sites: 74604
+# TAs_hit: 48316
+# density: 0.648
+# max_count (among templates): 1475430
+# max_site (coordinate): 1587077
+# NZ_mean (among templates): 302.3
+# FR_corr (Fwd templates vs. Rev templates): 1.000
+# BC_corr (reads vs. templates, summed over both strands): 1.000
+# primer_matches: 87322 reads (0.5%) contain CTAGAGGGCCCAATTCGCCCTATAGTGAGT (Himar1)
+# vector_matches: 66194 reads (0.4%) contain CTAGACCGTCCAGTCTGGCAGGCCGGAAAC (phiMycoMarT7)
+# adapter_matches: 0 reads (0.0%) contain GATCGGAAGAGCACACGTCTGAACTCCAGTCAC (Illumina/TruSeq index)
+# misprimed_reads: 111094 reads (0.7%) contain Himar1 prefix but don't end in TGTTA
+# read_length: 125 bp
+# mean_R1_genomic_length: 89.1 bp

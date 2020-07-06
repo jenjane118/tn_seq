@@ -50,3 +50,8 @@ head(ttr_norm, 20)
 
 res_ttr <- cor(ttr_norm)
 round(res_ttr, 2)
+
+
+tn_stats_df<-read.csv("combi_stats.csv")
+View(tn_stats_df)
+
