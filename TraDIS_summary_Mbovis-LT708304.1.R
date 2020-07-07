@@ -52,10 +52,12 @@ which<-IRangesList(LT708304.1=range2)
       }
     }
   }
-}
+  # write csv of results for each of 3 samples
   write.csv(summary_stats,file=paste(sample_names[j,1],"_TraDIS_summary.csv",sep = ""),row.names = F)
-#}
+}
 
+  
+  
 numbersamples<-nrow(sample_names)
 index_results<-data.frame(matrix(0,ncol=(numbersamples*2)+3,nrow=nrow(features_table)))
 index_results[,1:3]<-features_table[,3:5]
@@ -65,7 +67,7 @@ for (i in 1:numbersamples){
   index_results[,i+3]<-tradis_res$Insertion.Index
   index_results[,i+(numbersamples+3)]<-tradis_res$Insertion.Index.DP.5
 }
-# make graph for av index and av index dp5 for each sample for each feature
+
 index_results_average<-data.frame(matrix(0,ncol=3,nrow=nrow(features_table)))
 index_results_average[,1]<-features_table[,3]
 colnames(index_results_average)<-c("NAME","Av.Index","Av.Index.DP5")
