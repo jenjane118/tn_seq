@@ -196,10 +196,8 @@ for (i in 1:numbersamples){
   insertion_results[,i+4]<-tradis_res[,7]
 }
 
-
-
 tradis_res$No.Insertion.sites[3:20]
-View(insertion_results[3:100,])
+View(insertion_results[1:10,])
 
 
 # remove duplicate positions
@@ -209,9 +207,44 @@ for (i in 3:nrow(features_table)){
     total_is <- total_is + sum(insertion_results[i,5:7])
   }
 }
+
+for (i in 3:nrow(features_table)){
+  total_is <- total_is + sum(insertion_results[i, 5:7])
+}
+
+insertion_results[1,5:7]
+
 total_is
 nrow(insertion_results)
 nrow(features_table)
 sum(insertion_results[3,5:7])
 insertion_results[3,4]
 View(insertion_results[3:20,])
+max(insertion_results[3:nrow(insertion_results),7])
+
+which.max(insertion_results[3:8292,7])
+insertion_results[743,]          
+insertion_results[979,]
+View(insertion_results[,7])
+max(insertion_results[3:8292,7])
+
+
+# make vectors for each sample insertion positions and then combine
+# maybe do this in python?
+
+B_sample<-read.csv("B_S1_TraDIS_summary.csv", header=T)
+B_ins_pos<-unlist(B_sample[1,13])  
+
+G_sample<-read.csv("G_S3_TraDIS_summary.csv", header=T)
+G_ins_pos<-unlist(G_sample[1,13])
+
+D_sample<-read.csv("D_S2_TraDIS_summary.csv", header=T)
+D_ins_pos<-unlist(D_sample[1,13])
+
+
+total_positions<-append(G_sample, B_sample)
+
+length(total_positions)
+total_positions<-append(total_positions, D_sample)
+total_positons<-unique(total_positions)
+

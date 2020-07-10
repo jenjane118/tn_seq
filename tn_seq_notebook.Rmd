@@ -1633,5 +1633,14 @@ D:  26038 = no. insertions
     0.00259522968782759 = insertion index DP>5
     30 av. covg DP >5
     
-G:  
+G:  146517 = no. insertions
+    0.0336828123103406 = insertion index
+    2 = avg covg
+    32914 = no insertions with DP>5
+    0.00756660376872685 = insertion index DP >5
+    10 av covg DP > 5
     
+G has a lot of insertions but at very low density (this was library of only two plates). D has best coverage, but low number of insertions.
+    
+    
+I am concerned that my feature file has duplicate positions, like the same genomic positions for ‘gene’ and ‘CDS’ for each feature. So I’ve just counted the number of insertion sites for ‘gene’ only and totalled those, and I get 216,600 insertions. That still seems way too high? I guess this is adding total number of insertions for each sample for each gene feature, so many of those insertions are duplicated by each dataset. I think I need to add up the number of unique positions after I combine the columns of actual insertion positions. Or maybe take from first line only?
