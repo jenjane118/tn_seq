@@ -9,7 +9,7 @@
 
 options(scipen=999,stringsAsFactors = F)
 library(Rsamtools)
-features_table<-read.csv("M_bovis_features-locusAsName-aug19.csv",header=T)
+features_table<-read.csv("M_bovis_features.csv",header=T)
 sample_names<-read.table("names.txt",stringsAsFactors = F)
 
 what<-c("pos")
@@ -28,10 +28,25 @@ which<-IRangesList(LT708304.1=range1)
       summary_stats$`Gene Length`[i]<-(as.numeric(summary_stats$Start[i])-as.numeric(summary_stats$End[i]))+1
 range2<- IRanges(features_table$END[i],features_table$START[i])
 which<-IRangesList(LT708304.1=range2)
-    }
+	}
+    
+    # Use ScanBamParam() to create a parameter object influencing what fields and which 
+    # records are imported from a (binary) BAM file. Use of which requires that a BAM index 
+    # file (<filename>.bai) exists
+    #
+    # what Object of class character indicating what fields are to be returned.
+    # which Object of class IntegerRangesList indicating which reference sequence 
+    # and coordinate reads must overlap.
     param<-ScanBamParam(what=what,which = which)
+    
+    # scanBam:Import binary ‘BAM’ files into a list structure, with facilities for selecting 
+    # what fields and which records are imported, and other operations to manipulate 
+    # BAM files.
     reads<-scanBam(paste(sample_names[j,1],".sort.bam",sep = ""),param = param)[[1]]
+    # unique returns a vector with duplicate elements removed, so this is removing duplicate
+    # positions
     a<-unique(reads$pos)
+    # doesn't include positions with no reads (a>1)
     if (length(a>=1)){
       summary_stats$`No.Insertion sites`[i]<-length(a)
       summary_stats$`Pos. IS`[i]<-paste(a,collapse = ",")
@@ -57,7 +72,7 @@ which<-IRangesList(LT708304.1=range2)
 }
 
   
-  
+# create data frame with samples and insertion index for each gene
 numbersamples<-nrow(sample_names)
 index_results<-data.frame(matrix(0,ncol=(numbersamples*2)+3,nrow=nrow(features_table)))
 index_results[,1:3]<-features_table[,3:5]
@@ -68,6 +83,10 @@ for (i in 1:numbersamples){
   index_results[,i+(numbersamples+3)]<-tradis_res$Insertion.Index.DP.5
 }
 
+nrow(index_results)
+
+
+
 index_results_average<-data.frame(matrix(0,ncol=3,nrow=nrow(features_table)))
 index_results_average[,1]<-features_table[,3]
 colnames(index_results_average)<-c("NAME","Av.Index","Av.Index.DP5")
@@ -77,6 +96,7 @@ for (i in 1:nrow(index_results)){
   index_results_average[i,2]<-mean(as.numeric(as.character(index_results[i,4:(numbersamples+3)])))
   index_results_average[i,3]<-mean(as.numeric(as.character(index_results[i,(numbersamples+4):ncol(index_results)])))
 }
+index_results_average[0:100,]
 
 jpeg('Insertion.index.jpg')
 insertion_graph<-hist(index_results_average[,2],xlim = c(0,0.05),ylim = c(0,50),nclass = 700,xlab = "Insertion Index",ylab = "Density",main = NA)
@@ -117,5 +137,4 @@ for (j in 1:nrow(sample_names)){
   hist(positions,breaks = 4349904/100)
   dev.off()
 }
-
 

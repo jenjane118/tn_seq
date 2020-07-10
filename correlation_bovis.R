@@ -182,3 +182,36 @@ mean(tot_40, na.rm=TRUE)
 # summary_stats just for last sample. need to read from csv?
 tot_bovis_sites<-sum(summary_stats$`No.Insertion sites`)
 tot_bovis_sites
+
+
+#find total number of insertions straight from csv's
+features_table<-read.csv("M_bovis_features.csv",header=T)
+nrow(features_table)
+
+insertion_results<-data.frame(matrix(0,ncol=(numbersamples+4),nrow=nrow(features_table)))
+insertion_results[,1:4]<-features_table[,1:4]
+colnames(insertion_results)<-c("START","END","NAME","TYPE", sample_names[,1])
+for (i in 1:numbersamples){
+  tradis_res<-read.csv(file=paste(sample_names[i,1],"_TraDIS_summary.csv",sep = ""),header=T)
+  insertion_results[,i+4]<-tradis_res[,7]
+}
+
+
+
+tradis_res$No.Insertion.sites[3:20]
+View(insertion_results[3:100,])
+
+
+# remove duplicate positions
+total_is <- 0
+for (i in 3:nrow(features_table)){
+  if (insertion_results[i,4] == 'gene'){
+    total_is <- total_is + sum(insertion_results[i,5:7])
+  }
+}
+total_is
+nrow(insertion_results)
+nrow(features_table)
+sum(insertion_results[3,5:7])
+insertion_results[3,4]
+View(insertion_results[3:20,])

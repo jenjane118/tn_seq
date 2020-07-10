@@ -1461,6 +1461,9 @@ for (i in 1:length(tot_non_count)){
 
 length(tot_non_count)
 # 73535   (why is this one less than ttr?)
+# 72450 is what Sharon gets
+# 73536 is what I get counting naively
+
 ins_non_count
 # 34178  (exactly same as normalised with TTR?)
 # same number of sites inserted but number of counts different
@@ -1523,3 +1526,112 @@ Generate insertion site plot for only reads with a mapping score >= 50
 Bio::Tradis::TradisPlot(mappedfile => 'mapped.bam', mapping_score => 50)->plot;
 
 where is mapping score?
+
+
+** attempt to create own coverage files from .bam files using bedtools
+
+Create Bed file for sorted bam files:
+```{bash}
+ bamToBed -i B_S1_L001_R1_001.sort.bam > $my_path/mbovis/bed_files/B_S1.bed
+ bamToBed -i D_S2_L001_R1_001.sort.bam > $my_path/mbovis/bed_files/D_S2.bed
+ bamToBed -i G_S3_L001_R1_001.sort.bam > $my_path/mbovis/bed_files/G_S3.bed
+```
+
+this may not be necessary, as Bedtools coverage has option -ibam which uses sorted bam files?
+
+```{bash}
+bedtools genomecov [OPTIONS] -i <bed/gff/vcf> -g <genome>
+```
+
+```{bash}
+genomeCoverageBed –i file.bed -bg –g my.genome > sample.cov
+```
+
+```{bash}
+bedtools genomecov -bga -ibam /d/in16/u/sj003/mbovis/bwa_mapped/2020_06_03_mem_BAMs/B_S1_L001_R1_001.sort.bam > /d/in16/u/sj003/mbovis/coverage/B1_S1.cov
+```
+
+Genome (-g) files are ignored when BAM input is provided.
+
+-d Report the depth at each genome position (with one-based coordinates).
+this gives read depth at literally every single nucleotide. I want every ta site.
+
+-bg		Report depth in BedGraph format. For details, see:
+			genome.ucsc.edu/goldenPath/help/bedgraph.html
+			
+-bga		Report depth in BedGraph format, as above (-bg).
+			However with this option, regions with zero 
+			coverage are also reported. This allows one to
+			quickly extract all regions of a genome with 0 
+			coverage by applying: "grep -w 0$" to the output.
+
+This only gives reads at genome feature coordinates, not every ta site
+
+[bedtools genome coverage](https://bedtools.readthedocs.io/en/latest/content/tools/genomecov.html)
+
+what about if i use a custom bedfile instead based on TA positions rather than gene coordinates? bedtools coverage compares query bed file a with file b. (can use multiple .bam files). 
+
+-d	Report the depth at each position in each A feature. Positions reported are one based. Each position and depth follow the complete A feature.
+One should use the “-d” option to create, for each interval in A, a detailed list of coverage at each of the positions across each A interval.
+The output will consist of a line for each one-based position in each A feature, followed by the coverage detected at that position.
+
+-s Calculating coverage by strand
+Use the “-s” option if one wants to only count coverage if features in A are on the same strand as the feature / window in A. This is especially useful for RNA-seq experiments.
+
+[bedtools coverage tool](https://bedtools.readthedocs.io/en/latest/content/tools/coverage.html)
+
+```{bash}
+
+bedtools coverage [OPTIONS] -a <FILE> \
+                             -b <FILE1, FILE2, ..., FILEN>
+
+```
+
+have to make query .bed file. 3 required columns: chromosome, start and end. for forward strand, if start is 2, end is 3. for reverse strand, if start is 2, end is 1. But for examples, start is lower number? so do I need to convert reverse to other way around where start is A? This looks better. Can I use this in Dong's script with bamparam to map coverage, or better to do myself with bedtools coverage? I think I need to make strand specific?
+
+ex seq: GTAATTATATACG
+forward TA's: 2-3,6-7,8-9,10-11
+reverse TA's: 5-4, 8-7, 10-9
+reverse AT's: 4-5, 7-8, 9-10
+
+LT708304  2 3 +
+LT708304  4 5 -
+LT708304  6 7 +
+LT708304  7 8 -
+LT708304  8 9 +
+LT708304  9 10 -
+LT708304  10  11  +
+
+
+
+can i make 'insert_site_plot' with biotradis?
+
+made a python script to count TA sites in fasta sequence. 
+This came up with same number of TA sites as TPP: 73536.
+Sharon reports 73450.
+'insertion_site_finder.py' 
+
+Can I use this instead of feature table to count reads? Do I need to have positions of both forward and reverse strands for mapping purposes? Generate (bedfile?) file with positions of the 5’ end of each TA site for each strand. Is this necessary? The wig files seemed to only have the forward positions listed--every TA is an AT on the other side, so it is the same site.
+
+GRRR! I discovered that I was using truncated features file when running dong's scripts. Re-ran annotation script (Annotate_GFF.R) and used new file (M_bovis_features.csv) with summary script.
+
+I want total insertions in genome--add up insertion sites per gene
+
+Just realised first item in summary.csv files is entire genome! Lists all insertions in genome, and other statistics. 
+
+B:  48040 = no. insertions
+    0.0110... = insertion index
+    3 = av. coverage
+    20597 = no. insertions with read # >5
+    0.004735 = insertion index DP>5
+    20 = av. covg DP > 5
+    
+D:  26038 = no. insertions
+    0.00598587922859907 = insertion index
+    3 = av. covg
+    11289 = no insertions with DP >5
+    0.00259522968782759 = insertion index DP>5
+    30 av. covg DP >5
+    
+G:  
+    
