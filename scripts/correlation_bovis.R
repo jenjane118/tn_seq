@@ -252,4 +252,4 @@ library(dplyr)
 data<-read.csv("results/bovis_fastqs.stats", header=T)
 bovis_stats <- select(data, 1, 7, 8)
 bovis_stats
-
+View(bovis_stats)

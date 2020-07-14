@@ -1758,5 +1758,12 @@ bovis_stats <- select(data, 1, 7, 8)
 bovis_stats
 ```
 
+tried this with one of the dejesus samples, the transposon tag had more mismatches in it so it was more complicated.
+
+```{bash}
+filter_tradis_tags -f SRR4113440_1.fastq -t TCGGGGACTTATCAGCCAACCTGTTA -m 2 -o SRR4113440_1.tag.fastq
+```
+
+Statistics were comparable--way more 'unique insertion sites' than TA 'hits' in transit analysis
 
 
