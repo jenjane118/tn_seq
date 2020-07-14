@@ -1259,6 +1259,7 @@ directories for mem results:
 
 
 for multiqc, must generate samtools stats on .bam files (or .sam files in tpp) before running multiqc
+```
 
 ```{bash}
 $my_path/my_scripts/iterate_samstats.sh
@@ -1358,6 +1359,9 @@ round(res, 2)
 #B 1.00 0.10 0.06
 #D 0.10 1.00 0.07
 #G 0.06 0.07 1.00
+```
+```{r}
+
 ```
 
 
@@ -1644,3 +1648,115 @@ G has a lot of insertions but at very low density (this was library of only two 
     
     
 I am concerned that my feature file has duplicate positions, like the same genomic positions for ‘gene’ and ‘CDS’ for each feature. So I’ve just counted the number of insertion sites for ‘gene’ only and totalled those, and I get 216,600 insertions. That still seems way too high? I guess this is adding total number of insertions for each sample for each gene feature, so many of those insertions are duplicated by each dataset. I think I need to add up the number of unique positions after I combine the columns of actual insertion positions. Or maybe take from first line only?
+
+13 July
+
+Irilenia has discovered (using gene viewer) that the reverse reads are being recorded with position of 3' end rather than the 5' end position. Therefore, insertions in the same insertion site are recorded with unique positions corresponding to their sheared end. This may inflate number of unique insertions on reverse strand.
+
+there also seem to be a lot of duplicates (with same ta position and same genomic suffix). Even without paired end reads, should be able to use tool (Picard) to remove duplicates? I'm not sure this would work, however, as it uses 5' read position and so many map to same exact position but may be unique reads with different read length.
+
+Attempted to run biotradis from thoth.
+
+```
+ bacteria_tradis -f file.list -t GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTA -r /d/in16/u/sj003/refseqs/mbovis/Mbovis_AF2122_97.fasta -mm 1
+There was a problem filtering '/d/in16/u/sj003/mbovis/biotradis/G_S3_L001_R1_001.fastq' by 'GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTA'; it looks like the tag was not found in any read
+None of the input files contained the specified tag.  Please check that your inputs are valid fastq files and that at least one read in one of them starts with the specified tag
+```
+
+so i tried with tag on 5' end (3' is default):
+```
+thoth.cryst.bbk.ac.uk> bacteria_tradis -f file.list -t GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTA -r /d/in16/u/sj003/refseqs/mbovis/Mbovis_AF2122_97.fasta -td 5 -mm 1
+There was a problem filtering '/d/in16/u/sj003/mbovis/biotradis/G_S3_L001_R1_001.fastq' by 'GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTA'; it looks like the tag was not found in any read
+None of the input files contained the specified tag.  Please check that your inputs are valid fastq files and that at least one read in one of them starts with the specified tag
+thoth.cryst.bbk.ac.uk> head -50 G_S3_L001_R1_001.fastq
+@M01637:39:000000000-CDG9B:1:1101:14529:1617 1:N:0:AGTGGT
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTACTAGATCGGAAGAGCACACGTCTGAACTCCAGTCACAGTGGTCAATCTCGTATGCCGTCTTCTGCTTGTAATAAATTATTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+```
+
+This is so weird because tag exists on each read. Tried it with shorter tag and got same error. Tried command from tutorial:
+
+```{bash}
+bacteria_tradis -v -m 0 -f fastqs.txt -t GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTA -r /d/in16/u/sj003/refseqs/mbovis/Mbovis_AF2122_97.fasta
+```
+
+still same error. 
+```{bash}
+grep 'GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTA' G_S3_L001_R1_001.fastq | wc -l
+1336702
+```
+
+so clearly there. sequence in fastq format. not sure what problem is?
+
+Tried with mtb data:
+
+```{bash}
+bacteria_tradis -v -f fastqs.txt -t GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTA -r /d/in16/u/sj003/refseqs/Mtb/Mtb_H37Rv.fasta
+```
+
+same error
+
+made tag much shorter:
+
+```{bash}
+bacteria_tradis -v -f fastqs.txt -t AGCCAACCTGTTA -r /d/in16/u/sj003/refseqs/Mtb/Mtb_H37Rv.fasta
+```
+
+success!(?)
+
+fastqs.stats file:
+
+```
+File,Total Reads,Reads Matched,% Matched,Reads Mapped,% Mapped,Unique Insertion Sites : NC_000962.3,Seq Len/UIS : NC_000962.3,Total Unique Insertion Sites,Total Seq Len/Total UIS
+SRR4113440_1.fastq,3832963,5,0.000130447384960408,3,60,3,1470510.66666667,3,1470510.66666667
+```
+
+lol, that didn't exactly work!
+
+tried filter_tradis_tags command:
+
+```{bash}
+filter_tradis_tags -f  G_S3_L001_R1_001.fastq -t GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTA -o G_S3.tag.fastq
+```
+
+this seemed to work--so if all reads have tag, what is the problem?
+Continuing to try to bypass, use remove tags command:
+
+```{bash}
+remove_tradis_tags -f G_S3.tag.fastq -t GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTA -o G_S3.rmtag.fastq
+```
+
+do same for B and D samples
+
+then run biotradis without tag indicated:
+
+```{bash}
+bacteria_tradis -v -m 0 -f bovis_fastqs.txt -r /d/in16/u/sj003/refseqs/mbovis/Mbovis_AF2122_97.fasta
+```
+
+(files must be in same directory as running biotradis)
+
+(-m 0 means no minimum mapping score, not sure if this is what I want, but don't remember seeing a minimum in LHSTM script, relates to multi-mappers?)
+
+```
+File,Total Reads,Reads Matched,% Matched,Reads Mapped,% Mapped,Unique Insertion Sites : LT708304.1,Seq Len/UIS : LT708304.1,Total Unique Insertion Sites,Total Seq Len/Total UIS
+G_S3.rmtag.fastq,1336530,1336530,100,1104853,82.6657837833793,146043,29.7850906924673,146043,29.7850906924673
+D_S2.rmtag.fastq,867830,867830,100,774437,89.23833008769,26584,163.628648811315,26584,163.628648811315
+B_S1.rmtag.fastq,912988,912988,100,746319,81.7446669616687,48361,89.9465271603151,48361,89.9465271603151
+
+```
+
+unique ins sites (UIS): 146043, 26584, 48,361
+seq len/ UIS: 29.785, 163.6286, 89.946527
+
+not sure if these stats make sense? Ran from raw fastq instead of trimmed (.rmtag.fastq). Ran again.
+
+
+```{R}
+library(dplyr)
+data<-read.csv("results/bovis_fastqs.stats", header=T)
+bovis_stats <- select(data, 1, 7, 8)
+bovis_stats
+```
+
+
+

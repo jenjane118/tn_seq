@@ -1,2 +1,0 @@
-dataset	density	mean_ct	NZmean	NZmedian	max_ct	total_cts	skewness	kurtosis	pickands_tail_index
-bovis_combined_nonorm.wig	0.210	8.3	39.7	13	2548.0	613959	8.4	127.3	0.150
