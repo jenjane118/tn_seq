@@ -1169,17 +1169,57 @@ I chose betageom with G because so skewed (similar to combined file)
 Ran transit 3 different ways:
 
 ```{bash}
-nohup transit gumbel B_R1.wig,D_R1.wig,G_R1.wig $my_path/refseqs/mbovis/mbovis.prot_table $my_path/mbovis/transit/bovis_nonorm.txt -r Sum >& run_tradis_out &
-
 nohup transit gumbel B_R1.wig,D_R1.wig,G_R1.wig $my_path/refseqs/mbovis/mbovis.prot_table $my_path/mbovis/transit/bovis_nonorm.txt -r Sum &>run_tradis_out &
 
 nohup transit gumbel B_R1_TTR.wig,D_R1_TTR.wig,G_R1_TTR.wig $my_path/refseqs/mbovis/mbovis.prot_table $my_path/mbovis/transit/bovis_TTR.txt -r Sum >& run_tradis_TTR_out &
 ```
 
-some weird results--shows 9 insertions in a region (dnaN,  2052 to 3260) that has no reads acc to .wig files.
+some weird results--shows 9 insertions in a region (dnaN,  2052 to 3260) that has no reads acc to .wig files (with 35 TA sites in region) (Mb0002, dnaN).
+
+columns in .txt file: "ORF","Name", "Descr", "no ins in ORF", "total TA in ORF", "len max run non-ins", "nt span for max run non-ins", "zbar", "call"
+
 
 Maybe because prot_table has a mistake in first entry for whole genome? Need to edit prot_table and try again with transit. No real effect, just on first line. Made no difference really, to combined files, either--don't use these for processing, so not going to worry about it.
 
+
+*Check results with hmm*
+
+bovis_hmm_genes.txt shows call for each gene:
+
+```
+#ORF	gene	annotation	TAs	ES sites	GD sites	NE site GA sites	saturation	mean	call
+
+Mb0002	 dnaN	NA	35	0	0	35	0	0.2571	674.11	NE
+Mb0002	 dnaN	NA	35	0	0	35	0	0.2571	674.11	NE
+```
+Also records 35 TA sites, but considers NE: 0 ES sites, 0 GD sites, 35 NE sites
+
+key: ES=essential, GD=insertions cause growth-defect, NE=non-essential, GA=insertions confer growth-advantage, N/A=not analyzed (genes with 0 TA sites)
+
+bovis_hmm.txt shows for each TA site:
+
+```
+# Mean:	1053.77
+# Median:	288.00
+# Normalization:	TTR
+# LOESS Correction:	False
+# pins (obs):	0.464779
+# pins (est):	0.559946
+# Run length (r):	6
+# State means:
+#    ES:   1.0101   GD:   8.5764   NE: 657.6422   GA: 3288.2112
+# Self-Transition Prob:
+#    ES: -1.2361e-17   GD: -1.2361e-17   NE: -1.2361e-17   GA: -1.2361e-17
+# State Emission Parameters (theta):
+#    ES: 0.9900   GD: 0.1166   NE: 0.0015   GA: 0.0003
+# State Distributions:#    ES: 13.64%   GD: 4.52%   NE: 79.88%   GA: 1.96%
+60	0	1.00e+00 	7.86e-20 	9.05e-22 	1.81e-22 	ES	-_( LT708304.1),-_( LT708304.1),Mb0059_( dnaB),Mb0001_( dnaA)
+72	0	1.00e+00 	9.26e-21 	1.39e-24 	5.56e-26 	ES	-_( LT708304.1),-_( LT708304.1),Mb0059_( dnaB),Mb0001_( dnaA)
+102	0	1.00e+00 	1.09e-21 	2.14e-27 	1.71e-29 	ES	-_( LT708304.1),-_( LT708304.1),Mb0059_( dnaB),Mb0001_( dnaA)
+188	0	1.00e+00 	1.28e-22 	3.28e-30 	5.24e-33 	ES	-_( LT708304.1),-_( LT708304.1),Mb0059_( dnaB),Mb0001_( dnaA)
+246	0	1.00e+00 	1.51e-23 	5.04e-33 	1.62e-36 	ES	-_( LT708304.1),-_( LT708304.1),Mb0059_( dnaB),Mb0001_( dnaA)
+333	0	1.00e+00 	1.78e-24 	7.77e-36 	5.71e-39 	ES	-_( LT708304.1),-_( LT708304.1),Mb0059_( dnaB),Mb0001_( dnaA)
+```
 
 
 
