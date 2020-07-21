@@ -1058,6 +1058,17 @@ transit export combined_wig B_R1.wig,D_R1.wig,G_R1.wig $my_path/refseqs/mbovis/m
 
 ```
 
+this can be used to export .wig to format for igv reader
+
+```{bash}
+transit export igv <file> <prot_table> <output file>
+
+transit export igv B_R1.wig $my_path/refseqs/mbovis/mbovis.prot_table B_R1_igv.wig
+```
+
+these still aren't readable on igv, disappointingly. 
+
+
 ```file "/s/software/anaconda/python3/lib/python3.7/site-packages/pytransit/tnseq_tools.py", line 1218, in get_pos_hash_pt
     start = int(tmp[1])
 ValueError: invalid literal for int() with base 10: 'START'```
@@ -1123,6 +1134,51 @@ tn_stats_df
 # transit with HMM:
 transit hmm $my_path/dejesus_mtb/tpp_results/dejesus-Mtb-SRR4113427.wig $my_path/refseqs/mtbH37Rv.prot_table dejesus-Mtb-SRR4113427.txt 
 ```
+
+15 July 
+
+Used quality control on transit GUI to look at data. Actually, D may be sparsest, but has best behaved data. G is quite skewed.
+
+tried applying betageom to datasets, but of limited help. 
+
+From Transit docs:
+
+>Beta-Geometric Correction
+If you have a “bad” or poorly-behaving or “skewed” dataset (e.g. with mostly low counts, dominated by a few high counts), right now the only remedy you can try is applying the Beta-Geometric correction (BGC), which is a non-linear adjustment to the insertion counts in a wig file to make them more like an ideal Geometric distribution (DeJesus & Ioerger, 2016). (Note, all the other normalizations, like TTR, are linear adjustments, and so they can’t correct for skewing.)
+
+combined QC plots:
+
+![no normalisation](images/combined_QC_none.png)
+
+![TTR normalisation](images/combined_QC_TTR.png)
+
+![betageom normalisation](images/combined_QC_betageom.png)
+
+
+Individual QC plots:
+
+![Sample B with TTR](images/B_QC_TTR.png)
+
+![Sample D with TTR](images/D_QC_TTR.png)
+
+
+![Sample G with betageom](images/G_QC_betageom.png)
+
+I chose betageom with G because so skewed (similar to combined file)
+
+Ran transit 3 different ways:
+
+```{bash}
+nohup transit gumbel B_R1.wig,D_R1.wig,G_R1.wig $my_path/refseqs/mbovis/mbovis.prot_table $my_path/mbovis/transit/bovis_nonorm.txt -r Sum >& run_tradis_out &
+
+nohup transit gumbel B_R1.wig,D_R1.wig,G_R1.wig $my_path/refseqs/mbovis/mbovis.prot_table $my_path/mbovis/transit/bovis_nonorm.txt -r Sum &>run_tradis_out &
+
+nohup transit gumbel B_R1_TTR.wig,D_R1_TTR.wig,G_R1_TTR.wig $my_path/refseqs/mbovis/mbovis.prot_table $my_path/mbovis/transit/bovis_TTR.txt -r Sum >& run_tradis_TTR_out &
+```
+
+some weird results--shows 9 insertions in a region (dnaN,  2052 to 3260) that has no reads acc to .wig files.
+
+Maybe because prot_table has a mistake in first entry for whole genome? Need to edit prot_table and try again with transit. No real effect, just on first line. Made no difference really, to combined files, either--don't use these for processing, so not going to worry about it.
 
 
 
@@ -1657,8 +1713,13 @@ there also seem to be a lot of duplicates (with same ta position and same genomi
 
 Attempted to run biotradis from thoth.
 
+```{bash}
+module load python/v3
+module load perl
 ```
- bacteria_tradis -f file.list -t GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTA -r /d/in16/u/sj003/refseqs/mbovis/Mbovis_AF2122_97.fasta -mm 1
+
+```
+bacteria_tradis -f file.list -t GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTA -r /d/in16/u/sj003/refseqs/mbovis/Mbovis_AF2122_97.fasta -mm 1
 There was a problem filtering '/d/in16/u/sj003/mbovis/biotradis/G_S3_L001_R1_001.fastq' by 'GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTA'; it looks like the tag was not found in any read
 None of the input files contained the specified tag.  Please check that your inputs are valid fastq files and that at least one read in one of them starts with the specified tag
 ```
@@ -1764,6 +1825,17 @@ tried this with one of the dejesus samples, the transposon tag had more mismatch
 filter_tradis_tags -f SRR4113440_1.fastq -t TCGGGGACTTATCAGCCAACCTGTTA -m 2 -o SRR4113440_1.tag.fastq
 ```
 
-Statistics were comparable--way more 'unique insertion sites' than TA 'hits' in transit analysis
+```{bash}
+bacteria_tradis -v -m 0 -f fastqs.txt -r /d/in16/u/sj003/refseqs/Mtb/Mtb_H37Rv.fasta
+```
 
+Statistics were comparable to mbovis samples--more 'unique insertion sites' than TA 'hits' in transit analysis
+
+```
+File,Total Reads,Reads Matched,% Matched,Reads Mapped,% Mapped,Unique Insertion Sites : NC_000962.3,Seq Len/UIS : NC_000962.3,Total Unique Insertion Sites,Total Seq Len/Total UIS
+SRR4113440_1.rmtag.fastq,805785,805785,100,542913,67.3769057502932,130631,33.7709425787141,130631,33.7709425787141
+```
+
+Unique insertion sites:  130631
+Seq Len/UIS: 33.771
 
