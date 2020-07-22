@@ -1186,6 +1186,8 @@ Maybe because prot_table has a mistake in first entry for whole genome? Need to 
 
 bovis_hmm_genes.txt shows call for each gene:
 
+![bovis_hmm_genes.txt](results/bovis_hmm_genes.txt)
+
 ```
 #ORF	gene	annotation	TAs	ES sites	GD sites	NE site GA sites	saturation	mean	call
 
@@ -1197,6 +1199,8 @@ Also records 35 TA sites, but considers NE: 0 ES sites, 0 GD sites, 35 NE sites
 key: ES=essential, GD=insertions cause growth-defect, NE=non-essential, GA=insertions confer growth-advantage, N/A=not analyzed (genes with 0 TA sites)
 
 bovis_hmm.txt shows for each TA site:
+
+![bovis_hmm.txt](results/bovis_hmm.txt)
 
 ```
 # Mean:	1053.77
@@ -1220,8 +1224,10 @@ bovis_hmm.txt shows for each TA site:
 246	0	1.00e+00 	1.51e-23 	5.04e-33 	1.62e-36 	ES	-_( LT708304.1),-_( LT708304.1),Mb0059_( dnaB),Mb0001_( dnaA)
 333	0	1.00e+00 	1.78e-24 	7.77e-36 	5.71e-39 	ES	-_( LT708304.1),-_( LT708304.1),Mb0059_( dnaB),Mb0001_( dnaA)
 ```
+From the paper (Dejesus, 2013):
+"The resulting state transition model affords a ‘smoothing’ of the read- count data, where, for example, TA sites with no insertions in non-essential regions (e.g. because they are absent from the library) are tolerated because neighboring sites have insertions. However, if a consecutive sequence of TA sites with no insertions is long enough, the most probable state sequence, as determined by the Viterbi algorithm switches locally to essential, providing a different labeling of that region."
 
-
+[Dejesus, 2013](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-14-303)
 
 **Using BioTradis**
 
@@ -1838,6 +1844,8 @@ bacteria_tradis -v -m 0 -f bovis_fastqs.txt -r /d/in16/u/sj003/refseqs/mbovis/Mb
 
 (-m 0 means no minimum mapping score, not sure if this is what I want, but don't remember seeing a minimum in LHSTM script, relates to multi-mappers?)
 
+(also, bwa mem is default mapper)
+
 ```
 File,Total Reads,Reads Matched,% Matched,Reads Mapped,% Mapped,Unique Insertion Sites : LT708304.1,Seq Len/UIS : LT708304.1,Total Unique Insertion Sites,Total Seq Len/Total UIS
 G_S3.rmtag.fastq,1336530,1336530,100,1104853,82.6657837833793,146043,29.7850906924673,146043,29.7850906924673
@@ -1886,3 +1894,6 @@ MB1985c	CDS	CONSERVED HYPOTHETICAL PROTEIN	2196042	2196233	192	18	0.09375	12.5	1
 This has 18 insertions in gene length of 192. Every 10 nt? Hard to believe. Look at list of insertion sites:
 2195926;2195927;2195933;2195953;2196003;2196013;2196033;2196045;2196051;2196053;2196056;2196096;2196119;2196121;2196131;2196171;2196174;2196182
 
+I can't find TA sites at/near some of these insertion sites.
+
+The 47,881 unique mutants Sharon quotes from Dong (in slack message) relates to number of mutants in excel file which is missing chunk of genome? In 'BCD_bothBatch_TraDIS_summary', number is 55,818. 
