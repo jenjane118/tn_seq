@@ -1884,8 +1884,56 @@ File,Total Reads,Reads Matched,% Matched,Reads Mapped,% Mapped,Unique Insertion 
 SRR4113440_1.rmtag.fastq,805785,805785,100,542913,67.3769057502932,130631,33.7709425787141,130631,33.7709425787141
 ```
 
-Unique insertion sites:  130631
-Seq Len/UIS: 33.771
+After Irilenia contacted and they fixed bug:
+
+```
+File,Total Reads,Reads Matched,% Matched,Reads Mapped,% Mapped,Unique Insertion Sites : LT708304.1,Seq Len/UIS : LT708304.1,Total Unique Insertion Sites,Total Seq Len/Total UIS
+G_S3.rmtag.fastq,1336530,1336530,100,1104853,82.6657837833793,49029,88.7210426482286,49029,88.7210426482286
+D_S2.rmtag.fastq,867830,867830,100,774437,89.23833008769,19949,218.051230638127,19949,218.051230638127
+B_S1.rmtag.fastq,912988,912988,100,746319,81.7446669616687,26934,161.502339051014,26934,161.502339051014
+```
+
+Same exact mapping coordinates, but number of unique insertions is much less!
+
+```{R}
+library(dplyr)
+data<-read.csv("results/new_bovis_fastqs.stats", header=T)
+bovis_stats <- select(data, 1, 7, 8)
+bovis_stats
+```
+
+
+
+Can use biotradis commands to convert insertion plot to .csv summary file:
+
+```{bash}
+nohup tradis_gene_insert_sites -o m_bovis_BDG.csv -trim3 0.1 -j $my_path/refseqs/mbovis/LT708304_updated_aug19.gff D_S2.rmtag.out.LT708304.1.insert_site_plot.gz G_S3.rmtag.out.LT708304.1.insert_site_plot.gz B_S1.rmtag.out.LT708304.1.insert_site_plot.gz &>run_tradisinsert_out &
+
+```
+
+(-trim3 trims reads from 3' end where reads are more likely tolerated/-trim5 from start, fraction of gene length trimmed, -j for joined plots in one output file)
+
+```
+MSG: EMBL stream with no ID. Not embl in my book
+```
+
+need to use different annotation file. This could be weird?
+downloaded from ena:
+```{bash}
+curl "https://www.ebi.ac.uk/ena/data/view/LT708304&display=txt&expanded=true" > LT708304.embl
+```
+
+ran again with LT708304.embl annotation file (this appears to have complete genome), and this worked.
+
+Next step is to run essentiality R script, but will wait until software is updated to do with improved data.
+
+```{bash}
+tradis_essentiality.R joined_output.m_bovis_BDG.csv
+```
+
+
+
+
 
 Looking at .csv from Sharon (BCD_bothBatch_TraDIS_summary)
 
