@@ -1757,6 +1757,22 @@ Irilenia has discovered (using gene viewer) that the reverse reads are being rec
 
 there also seem to be a lot of duplicates (with same ta position and same genomic suffix). Even without paired end reads, should be able to use tool (Picard) to remove duplicates? I'm not sure this would work, however, as it uses 5' read position and so many map to same exact position but may be unique reads with different read length.
 
+To further confirm over-estimation in unique insertion counts in Dong's script:
+
+Looking at .csv from Sharon (BCD_bothBatch_TraDIS_summary)
+
+MB1985c	CDS	CONSERVED HYPOTHETICAL PROTEIN	2196042	2196233	192	18	0.09375	12.5	12	0.0625	18.5	2195926;2195927;2195933;2195953;2196003;2196013;2196033;2196045;2196051;2196053;2196056;2196096;2196119;2196121;2196131;2196171;2196174;2196182	1,84,2,18,14,32,1,203,1,8,4,11,14,9,19,19,48,4	492
+
+This has 18 insertions in gene length of 192. Every 10 nt? Hard to believe. Look at list of insertion sites:
+2195926;2195927;2195933;2195953;2196003;2196013;2196033;2196045;2196051;2196053;2196056;2196096;2196119;2196121;2196131;2196171;2196174;2196182
+
+I can't find TA sites at/near some of these insertion sites.
+
+The 47,881 unique mutants Sharon quotes from Dong (in slack message) relates to sum of unique insertion sites column in excel file which is missing chunk of genome? In 'BCD_bothBatch_TraDIS_summary' (a file emailed to Irilenia for visualisation help), number is 55,818. I'm not sure whether these represent all insertions, as do not show insertions in intergenic regions?
+
+
+
+
 Attempted to run biotradis from thoth.
 
 ```{bash}
@@ -1884,7 +1900,10 @@ File,Total Reads,Reads Matched,% Matched,Reads Mapped,% Mapped,Unique Insertion 
 SRR4113440_1.rmtag.fastq,805785,805785,100,542913,67.3769057502932,130631,33.7709425787141,130631,33.7709425787141
 ```
 
-After Irilenia contacted and they fixed bug:
+Total unique insertion sites for biotradis on this Mtb library is 130631. Transit finds 39247. Way too many.
+
+
+After Irilenia contacted and they tried to fix bug:
 
 ```
 File,Total Reads,Reads Matched,% Matched,Reads Mapped,% Mapped,Unique Insertion Sites : LT708304.1,Seq Len/UIS : LT708304.1,Total Unique Insertion Sites,Total Seq Len/Total UIS
@@ -1902,7 +1921,25 @@ bovis_stats <- select(data, 1, 7, 8)
 bovis_stats
 ```
 
+These values are 54-67% higher than transit counts. Does biotradis count insertions on each strand as unique insertions? It would appear so. For Mtb sample SRR4113440, found 62241 unique insertions after bug fixed. Transit found 39,247 (63% of biotradis).
 
+Trying to count number of unique insertions on each strand from insertion plot file:
+
+```{bash}
+grep -c '^[^ ] [^0]' <SRR4113440_1.rmtag.out.NC_000962.3.insert_site_plot
+```
+
+number of non-zero rows in 2nd column (reverse?): 22763
+
+```{bash}
+grep -c '^[^ ] [^0]' <SRR4113440_1.rmtag.out.NC_000962.3.insert_site_plot
+```
+
+number of non-zero rows in 1st column (fwd?): 32569
+
+total: 55,332 (53,219 is total of gene-level insertions in csv summary file below, does this include intergenic regions?)
+
+If 73536 forward TAs total, and each can be either fwd or reverse insertion, then double this, 147,072 possible sites. Then using max number of insertions above, 55,332/147072 = 0.376 insertion density?
 
 Can use biotradis commands to convert insertion plot to .csv summary file:
 
@@ -1925,7 +1962,7 @@ curl "https://www.ebi.ac.uk/ena/data/view/LT708304&display=txt&expanded=true" > 
 
 ran again with LT708304.embl annotation file (this appears to have complete genome), and this worked.
 
-Next step is to run essentiality R script, but will wait until software is updated to do with improved data.
+Next step is to run essentiality R script.
 
 ```{bash}
 tradis_essentiality.R joined_output.m_bovis_BDG.csv
@@ -1933,15 +1970,3 @@ tradis_essentiality.R joined_output.m_bovis_BDG.csv
 
 
 
-
-
-Looking at .csv from Sharon (BCD_bothBatch_TraDIS_summary)
-
-MB1985c	CDS	CONSERVED HYPOTHETICAL PROTEIN	2196042	2196233	192	18	0.09375	12.5	12	0.0625	18.5	2195926;2195927;2195933;2195953;2196003;2196013;2196033;2196045;2196051;2196053;2196056;2196096;2196119;2196121;2196131;2196171;2196174;2196182	1,84,2,18,14,32,1,203,1,8,4,11,14,9,19,19,48,4	492
-
-This has 18 insertions in gene length of 192. Every 10 nt? Hard to believe. Look at list of insertion sites:
-2195926;2195927;2195933;2195953;2196003;2196013;2196033;2196045;2196051;2196053;2196056;2196096;2196119;2196121;2196131;2196171;2196174;2196182
-
-I can't find TA sites at/near some of these insertion sites.
-
-The 47,881 unique mutants Sharon quotes from Dong (in slack message) relates to number of mutants in excel file which is missing chunk of genome? In 'BCD_bothBatch_TraDIS_summary', number is 55,818. 

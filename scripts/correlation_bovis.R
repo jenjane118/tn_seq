@@ -249,7 +249,7 @@ total_positions<-append(total_positions, D_sample)
 total_positons<-unique(total_positions)
 
 library(dplyr)
-data<-read.csv("results/bovis_fastqs.stats", header=T)
+data<-read.csv("results/new_bovis_fastqs.stats", header=T)
 bovis_stats <- select(data, 1, 7, 8)
 bovis_stats
 View(bovis_stats)
