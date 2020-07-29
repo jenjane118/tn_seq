@@ -14,12 +14,12 @@ options(scipen=999,stringsAsFactors = F)
 library("MASS")
 
 
-STM_baseline <- read.table("BCD_bothBatch_TraDIS_summary.csv", sep=",",header=TRUE,stringsAsFactors=F, quote="\"")
+STM_baseline <- read.table("results/BCD_bothBatch_TraDIS_summary.csv", sep=",",header=TRUE,stringsAsFactors=F, quote="\"")
 
 
 
-ii <- STM_baseline$Insertion.Index
-
+#ii <- STM_baseline$Insertion.Index
+ii <- STM_baseline$Insertion.Index.DP.5
 #identify second maxima
 h <- hist(ii, breaks=200,plot=FALSE)
 maxindex <- which.max(h$density[10:length(h$density)])
@@ -50,7 +50,8 @@ d2 = fitdistr(ii[I2], "gamma") #fit curves
 
 
 #plots - GammaFit
-hist(ii,breaks="FD", xlim=c(0,max(ii)), freq=FALSE,xlab="Insertion index", main="Gamma fits")
+#hist(ii,breaks="FD", xlim=c(0,max(ii)), freq=FALSE,xlab="Insertion index", main="Gamma fits")
+hist(ii,breaks="FD", xlim=c(0,max(ii)), freq=FALSE,xlab="Insertion index DP>5", main="Gamma fits")
 lines(0:200/500, f1*dgamma(0:200/500, 1, d1$estimate[1]), col="green") # was [2]
 lines(0:200/500, f2*dgamma(0:200/500, d2$estimate[1], d2$estimate[2]), col="red")
 

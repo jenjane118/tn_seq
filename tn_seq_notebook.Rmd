@@ -1968,5 +1968,71 @@ Next step is to run essentiality R script.
 tradis_essentiality.R joined_output.m_bovis_BDG.csv
 ```
 
+Compare HMM gene output to Sharon's group's calls:
+
+tnseq_compare.R
+
+```{r}
+essential_genes_custom <- bovis_custom[bovis_custom$Call == 'ES',]
+
+essential_genes_custom$Name
+
+```
+
+
+664 'essential' genes using Sharon's scripts (essential changepoint = 0.0045)
+
+286 'ambiguous' (ambiguous changepoint = 0.0072)
+
+3050 'non-essential'
+
+4000 total genes
+
+
+Using HMM:
+
+499 'essential' genes ()
+
+173 'growth disadvantage' genes (disadvantage to disruption)
+
+58  'growth advantage' genes (advantage to disruption)
+
+3376 'non-essential' genes 
+
+4122 total
+
+More genes in HMM--includes some non-coding elements such as tRNA
+
+133 essential genes in common between two approaches
+```
+> common_ess
+  [1] "MB0001" "MB0004" "MB0005" "MB0013" "MB0123" "MB0230" "MB0290"
+  [8] "MB0291" "MB0292" "MB0293" "MB0294" "MB0295" "MB0296" "MB0297"
+ [15] "MB0298" "MB0299" "MB0355" "MB0358" "MB0423" "MB0424" "MB0523"
+ [22] "MB0524" "MB0537" "MB0538" "MB0539" "MB0540" "MB0541" "MB0570"
+ [29] "MB0572" "MB0654" "MB0658" "MB0669" "MB0686" "MB0701" "MB0703"
+ [36] "MB0720" "MB0721" "MB0722" "MB0723" "MB0724" "MB0725" "MB0726"
+ [43] "MB0727" "MB0735" "MB0736" "MB0737" "MB0738" "MB0739" "MB0740"
+ [50] "MB0741" "MB0742" "MB0753" "MB0811" "MB0970" "MB0976" "MB1051"
+ [57] "MB1052" "MB1316" "MB1324" "MB1325" "MB1326" "MB1327" "MB1328"
+ [64] "MB1336" "MB1337" "MB1338" "MB1339" "MB1340" "MB1341" "MB1342"
+ [71] "MB1348" "MB1415" "MB1416" "MB1417" "MB1418" "MB1419" "MB1424"
+ [78] "MB1426" "MB1450" "MB1471" "MB1472" "MB1495" "MB1496" "MB1497"
+ [85] "MB1498" "MB1519" "MB1520" "MB1620" "MB1625" "MB1626" "MB1627"
+ [92] "MB1628" "MB1631" "MB1636" "MB1637" "MB1638" "MB1639" "MB1655"
+ [99] "MB1676" "MB1680" "MB1681" "MB1686" "MB1719" "MB1725" "MB1738"
+[106] "MB1739" "MB1811" "MB1822" "MB2162" "MB2216" "MB2217" "MB2218"
+[113] "MB2266" "MB2267" "MB2268" "MB2269" "MB2412" "MB2435" "MB3007"
+[120] "MB3056" "MB3057" "MB3308" "MB3493" "MB3580" "MB3659" "MB3669"
+[127] "MB3739" "MB3810" "MB3811" "MB3819" "MB3820" "MB3821" "MB3823"
+> length(common_ess)
+[1] 133
+```
+
+Compared with biotradis, as well. Had 531 genes called 'essential'.
+
+Made Venn diagram using https://bioinfogp.cnb.csic.es/tools/venny/
+
+![Venn Diagram of essential gene call overlap between tools](images/Essential_genes.jpg)
 
 

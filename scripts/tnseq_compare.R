@@ -1,0 +1,142 @@
+## compare essential/non-essential calls between tradis and Sharon's lab
+
+library(dplyr)
+# results file for Sharon's group
+custom_results<-read.table("results/BCD_bothBatch_TraDIS_summary.csv", sep=",",header=TRUE,stringsAsFactors=F, quote="\"")
+head(custom_results)
+
+# values for gamma fits of insertion index column in results file (custom_results)
+ess_change<-0.0045
+amb_change<-0.0072
+
+bovis_custom <- select(custom_results, 1,3,8)
+colnames(bovis_custom)<-c("Name", "Product", "Ins index")
+bovis_custom$Name<-toupper(bovis_custom$Name)
+head(bovis_custom)
+
+for (i in 1:nrow(bovis_custom)){
+  if (bovis_custom[i,3] <= ess_change){
+      bovis_custom$Call[i] <- 'ES'
+  }
+  else if (bovis_custom[i,3] < amb_change & bovis_custom[i,3] > ess_change){
+      bovis_custom$Call[i] <- 'AMB'
+  }
+  else{bovis_custom$Call[i] <-'NE'
+  }
+}
+
+View(bovis_custom)
+length(bovis_custom$Name)
+essential_genes_custom <- bovis_custom[bovis_custom$Call == 'ES',1]
+
+length(essential_genes_custom)
+sort(essential_genes_custom)
+
+# results file for Transit hmm
+
+hmm_results<-read.delim("results/bovis_hmm_genes.txt", sep="\t", header=FALSE, stringsAsFactors=F, skip=6)
+head(hmm_results)
+
+bovis_hmm <- select(hmm_results, 1, 2, 11)
+colnames(bovis_hmm) <- c("ORF","gene","call")
+bovis_hmm$ORF<-toupper(bovis_hmm$ORF)
+View(bovis_hmm)
+length(bovis_hmm$call)
+
+#this calls two for each gene, have to ask for 'unique'
+length(unique(bovis_hmm$ORF))
+
+essential_genes_hmm <- unique(bovis_hmm[bovis_hmm$'call' == 'ES',1])
+sort(essential_genes_hmm)
+length(essential_genes_hmm)
+
+gd_genes <- unique(bovis_hmm[bovis_hmm$'call' == 'GD',1])
+length(gd_genes)
+ga_genes <- unique(bovis_hmm[bovis_hmm$'call' == 'GA',1])
+length(ga_genes)
+non_ess_genes <- unique(bovis_hmm[bovis_hmm$'call' == 'NE',1])
+length(non_ess_genes)
+
+# biotradis results
+
+biotradis_ess_change <- 0.0018
+biotradis_amb_change <- 0.0028
+
+
+biotradis_res<-read.delim("results/joined_output.m_bovis_BDG.csv", sep="\t",header=TRUE,stringsAsFactors=F,quote = "")
+head(biotradis_res)
+
+biotradis <- select(biotradis_res, 1, 2, 8)
+colnames(biotradis)<-c("Name", "Product", "Ins index")
+for (i in 1:nrow(biotradis)){
+  biotradis$Name[i] <- substr(biotradis[i,1], 8, nchar(biotradis[i,1]))
+}
+biotradis$Name<-toupper(biotradis$Name)
+head(biotradis)
+View(biotradis)
+
+for (i in 1:nrow(biotradis)){
+  if (biotradis[i,3] <= biotradis_ess_change){
+    biotradis$Call[i] <- 'ES'
+  }
+  else if (biotradis[i,3] < biotradis_amb_change & biotradis[i,3] > biotradis_ess_change){
+    biotradis$Call[i] <- 'AMB'
+  }
+  else{biotradis$Call[i] <-'NE'
+  }
+}
+
+essential_biotradis <-biotradis[biotradis$Call == 'ES',1]
+length(essential_biotradis)
+
+
+common_ess<-NULL
+for (i in 1:length(essential_genes_custom)){
+  if (essential_genes_custom[i] %in% essential_genes_hmm){
+    common_ess<-c(common_ess,essential_genes_custom[i])
+  }
+}
+common_ess
+length(common_ess)
+
+bio_hmm_common <- NULL
+for (i in 1:length(essential_biotradis)){
+  if (essential_biotradis[i] %in% essential_genes_hmm){
+    bio_hmm_common<-c(bio_hmm_common, essential_biotradis[i])
+  }
+}
+length(bio_hmm_common)
+
+# need to use annotation file and make chart, then fill in what each call is
+
+pos_vector<-bovis_custom[,1]
+pos_vector
+
+compare_df<-as.data.frame(matrix(0, nrow = nrow(bovis_custom), ncol = 5))#, row.names <-pos_vector)
+colnames(compare_df)<-c('ORF', 'gene', 'hmm_call', 'custom_call', 'biotradis_call')
+compare_df$ORF<-bovis_custom$Name
+
+head(compare_df)
+
+compare_df$custom_call<-with(bovis_custom, Call[match(compare_df$ORF, Name)])
+head(compare_df)
+
+compare_df$hmm_call<-with(bovis_hmm, call[match(compare_df$ORF, ORF)])
+head(compare_df)
+
+compare_df$biotradis_call<-with(biotradis, Call[match(compare_df$ORF, Name)])
+head(compare_df)
+
+compare_df$gene<-with(bovis_hmm, gene[match(compare_df$ORF, ORF)])
+
+View(compare_df)
+
+write.table(essential_biotradis, file='results/biotradis_ess_list', quote=FALSE, sep = '', row.names=FALSE)
+write.table(essential_genes_custom, file='results/custom_ess_list', quote=FALSE, sep = '', row.names=FALSE)
+write.table(essential_genes_hmm, file='results/hmm_ess_list', quote=FALSE, sep = '\t', row.names=FALSE)
+
+write.table(compare_df, file = 'results/tnseq_compare.txt', quote = FALSE, sep = '\t', row.names=FALSE)
+
+# install.packages('VennDiagram')
+library(VennDiagram)
+
