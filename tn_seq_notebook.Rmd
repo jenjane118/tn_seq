@@ -1166,13 +1166,17 @@ Individual QC plots:
 
 I chose betageom with G because so skewed (similar to combined file)
 
-Ran transit 3 different ways:
+Ran transit gumbel:
 
 ```{bash}
 nohup transit gumbel B_R1.wig,D_R1.wig,G_R1.wig $my_path/refseqs/mbovis/mbovis.prot_table $my_path/mbovis/transit/bovis_nonorm.txt -r Sum &>run_tradis_out &
 
 nohup transit gumbel B_R1_TTR.wig,D_R1_TTR.wig,G_R1_TTR.wig $my_path/refseqs/mbovis/mbovis.prot_table $my_path/mbovis/transit/bovis_TTR.txt -r Sum >& run_tradis_TTR_out &
 ```
+
+-m can use default of read counts of 1, but can make higher to filter out low coverage
+
+Legend for calls: E=Essential U=Uncertain, NE=Non-Essential, S=too short
 
 some weird results--shows 9 insertions in a region (dnaN,  2052 to 3260) that has no reads acc to .wig files (with 35 TA sites in region) (Mb0002, dnaN).
 
@@ -2035,4 +2039,8 @@ Made Venn diagram using https://bioinfogp.cnb.csic.es/tools/venny/
 
 ![Venn Diagram of essential gene call overlap between tools](images/Essential_genes.jpg)
 
+Added in Gumbel method. Gumbel has only 362 genes labelled essential. Has other calls for 'short' and 'uncertain'. This is using ALL insertions, even those with only one read. The essential genes caled are mostly a subset of those called by HMM method.
 
+![Venn Diagram of essential gene call overlap between transit and biotradis](images/tnseq_comparison.jpg)
+
+Spreadsheet of all tools: results/tnseq_compare.txt

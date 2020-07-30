@@ -86,14 +86,61 @@ for (i in 1:nrow(biotradis)){
   }
 }
 
+## compare with transit gumbel algorithm
+gumbel_results<-read.delim("results/bovis_nonorm_edit.txt", sep="\t", header=FALSE, stringsAsFactors=F, skip=12)
+head(gumbel_results)
+
+bovis_gumbel <- select(gumbel_results, 1, 2, 9)
+colnames(bovis_gumbel) <- c("ORF","gene","call")
+bovis_gumbel$ORF<-toupper(bovis_gumbel$ORF)
+View(bovis_gumbel)
+length(bovis_gumbel$call)
+
+#this calls two for each gene, have to ask for 'unique'
+length(unique(bovis_gumbel$ORF))
+#4101
+
+essential_genes_gumbel <- unique(bovis_gumbel[bovis_gumbel$'call' == 'E',1])
+sort(essential_genes_gumbel)
+length(essential_genes_gumbel)
+#change 'E' to 'ES'
+#bovis_gumbel$call <- lapply(bovis_gumbel$call, gsub, pattern = "E", replacement = "ES", fixed = TRUE)
+#this changes NE to NES
+
+for (i in 1:nrow(bovis_gumbel)){
+  if (bovis_gumbel$call[i] == 'E'){
+    bovis_gumbel$call[i] = 'ES'
+  }
+}
+View(bovis_gumbel)
+
+
+uncertain_genes <- unique(bovis_gumbel[bovis_gumbel$'call' == 'U',1])
+length(uncertain_genes)
+short_genes <- unique(bovis_gumbel[bovis_gumbel$'call' == 'S',1])
+length(short_genes)
+non_ess_gumbel <- unique(bovis_gumbel[bovis_gumbel$'call' == 'NE',1])
+length(non_ess_gumbel)
+
+
+#####
+
+
+
 essential_biotradis <-biotradis[biotradis$Call == 'ES',1]
 length(essential_biotradis)
-
+#531
+length(essential_genes_hmm)
+#499
+length(essential_genes_custom)
+#664
+length(essential_genes_gumbel)
+#362
 
 common_ess<-NULL
 for (i in 1:length(essential_genes_custom)){
-  if (essential_genes_custom[i] %in% essential_genes_hmm){
-    common_ess<-c(common_ess,essential_genes_custom[i])
+  if (essential_genes_gumbel[i] %in% essential_genes_hmm){
+    common_ess<-c(common_ess,essential_genes_gumbel[i])
   }
 }
 common_ess
@@ -112,8 +159,8 @@ length(bio_hmm_common)
 pos_vector<-bovis_custom[,1]
 pos_vector
 
-compare_df<-as.data.frame(matrix(0, nrow = nrow(bovis_custom), ncol = 5))#, row.names <-pos_vector)
-colnames(compare_df)<-c('ORF', 'gene', 'hmm_call', 'custom_call', 'biotradis_call')
+compare_df<-as.data.frame(matrix(0, nrow = nrow(bovis_custom), ncol = 6))#, row.names <-pos_vector)
+colnames(compare_df)<-c('ORF', 'gene', 'hmm_call', 'custom_call', 'biotradis_call', 'gumbel_call')
 compare_df$ORF<-bovis_custom$Name
 
 head(compare_df)
@@ -127,6 +174,9 @@ head(compare_df)
 compare_df$biotradis_call<-with(biotradis, Call[match(compare_df$ORF, Name)])
 head(compare_df)
 
+compare_df$gumbel_call<-with(bovis_gumbel, call[match(compare_df$ORF, ORF)])
+head(compare_df)
+
 compare_df$gene<-with(bovis_hmm, gene[match(compare_df$ORF, ORF)])
 
 View(compare_df)
@@ -134,7 +184,7 @@ View(compare_df)
 write.table(essential_biotradis, file='results/biotradis_ess_list', quote=FALSE, sep = '', row.names=FALSE)
 write.table(essential_genes_custom, file='results/custom_ess_list', quote=FALSE, sep = '', row.names=FALSE)
 write.table(essential_genes_hmm, file='results/hmm_ess_list', quote=FALSE, sep = '\t', row.names=FALSE)
-
+write.table(essential_genes_gumbel, file='results/gumbel_ess_list', quote=FALSE, sep='\t', row.names=FALSE)
 write.table(compare_df, file = 'results/tnseq_compare.txt', quote = FALSE, sep = '\t', row.names=FALSE)
 
 # install.packages('VennDiagram')
