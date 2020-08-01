@@ -52,7 +52,7 @@ res_ttr <- cor(ttr_norm)
 round(res_ttr, 2)
 
 
-tn_stats_df<-read.csv("bovis_combined_TTR.wig", header=TRUE, sep = "\t", skip=6, row.names=NULL, col.names = c('position', 'B', 'D', 'G', 'gene'))
+tn_stats_df<-read.csv("data/bovis_combined_TTR.wig", header=TRUE, sep = "\t", skip=6, row.names=NULL, col.names = c('position', 'B', 'D', 'G', 'gene'))
 View(tn_stats_df[1:50,])
 
 # df for sum of reads for each ta site
@@ -88,6 +88,7 @@ max(tot_count)
 
 # mean of no insertions per gene
 mean(tot_count)
+# with zeros, not useful
 # 489.7486
 
 
@@ -101,7 +102,7 @@ mean(tot_count, na.rm=TRUE)
 
 # do this again with non_normal
 
-tn_non_stats_df<-read.csv("bovis_combined_nonorm.wig", header=TRUE, sep = "\t", skip=6, row.names=NULL, col.names = c('position', 'B', 'D', 'G', 'gene'))
+tn_non_stats_df<-read.csv("data/bovis_combined_nonorm.wig", header=TRUE, sep = "\t", skip=6, row.names=NULL, col.names = c('position', 'B', 'D', 'G', 'gene'))
 View(tn_non_stats_df[1:20,])
 
 # df for sum of reads for each ta site
@@ -133,6 +134,7 @@ max(tot_non_count)
 # 5913
 
 mean(tot_non_count)
+# this is with zeros
 # 29.54797
 
 #non zero mean 
