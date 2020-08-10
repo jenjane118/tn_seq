@@ -40,6 +40,10 @@ output:
 
 10. Tn-seq methods and protocols:  [Long, J. E. et al. Global Phenotypic Profiling. in Gene Essentiality: Methods and Protocols 1279, 79–95 (2015).](https://pubmed.ncbi.nlm.nih.gov/25636614/)
 
+11. Overview of structure and practice of Tn-Seq experiments: [1. Chao, M. C., Abel, S., Davis, B. M. & Waldor, M. K. The Design and Analysis of Transposon-Insertion Sequencing Experiments. Nat Rev Microbiol 14, 119–128 (2016).](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5099075/)
+
+
+
 **********
 # Project Directory Organisation
 
@@ -335,6 +339,20 @@ bash sra_to_fastq.sh
 ```--split-files``` puts seq in one file and quality line in next file. if i use fasterq_dump without split files, get two fastq files for each accession number, _1 and _2
 
 remove all .sra files
+
+
+## Download second set of bovis samples from DROPBOX
+
+[dropbox link from Sharon](https://www.dropbox.com/home/Iri%20Tn%20data/BaseSpace)
+
+
+(copy link from website and change dl=0 to dl=1):
+
+```{bash}
+wget -O Mbovis2_B_S1_R2.fastq.gz "https://www.dropbox.com/s/hoxmd0u9uyshbqp/MbovisB_S1_L001_R2_001.fastq.gz?dl=1"
+```
+
+
 
 # Quality control of TraDIS and TnSeq data
 
@@ -2044,3 +2062,141 @@ Added in Gumbel method. Gumbel has only 362 genes labelled essential. Has other 
 ![Venn Diagram of essential gene call overlap between transit and biotradis](images/tnseq_comparison.jpg)
 
 Spreadsheet of all tools: results/tnseq_compare.txt
+
+
+# Check out new bovis libraries bcg
+
+downloaded from dropbox on 5 August
+
+Checked that R1 and R2 all the same length for each sample
+
+Number of reads seems really low? (divide by 4 = 140-150,000+). I think you need round about 1M reads.
+
+610016 Mbovis2_B_S1_R1.fastq
+610016 Mbovis2_B_S1_R2.fastq
+588224 Mbovis2_C_S2_R1.fastq
+588224 Mbovis2_C_S2_R2.fastq
+574884 Mbovis2_D_S3_R1.fastq
+574884 Mbovis2_D_S3_R2.fastq
+
+Run FastQC
+
+I'm a little concerned about the duplication. How much is normal for tn seq? Without paired end sequencing, it is hard to separate jackpot events from legitimate overrepresented mutants (with growth advantage from insertion? Is this really common? See Chao 2016)
+
+compare B sample overrepresented in mbovis1 and 2:
+
+![mbovis1 sample B](images/mbovis1_B_R1_fastqc.png)
+
+![Mbovis 2 sample B](images/Mbovis2_B_R1_fastqc.png)
+
+![mbovis1 sample C 'G'](images/mbovis1_G_R1_fastqc.png)
+
+![mbovis2 sample C](images/mbovis2_C_R1_fastqc.png)
+
+
+![mbovis2 D shows similar pattern](images/mbovis2_D_R1_fastqc.png)
+
+![sample overrepresented seqs from D](images/mbovis2_d_seqs_fastqc.png)
+
+
+
+
+Other considerations including similar distribution of read counts in Solaimanpour et al, 2015:
+
+>Additional challenges were posed by strong biases observed in the distribution of mapped sequence reads. If every unique transposon insertion (or unique mutant) had an equal chance to yield a sequence read the distribution ofnumber ofreads per unique insertion should be similar to a normal distribution, although it could be skewed to some extent by selection against insertions in essential genes and presence of insertion “hot spots” [14]. In reality, the distribution resembles a power law distribution, which is indicative of strong biases in how likely different mutants are to be detected by the high-throughput sequencing. For example, one ofour mutant libraries was represented by 2,593,856 sequence reads which could be reliably mapped to the genome but all these reads were mapped to only 23,962 unique insertions (defined by a position in the genome and the orientation ofthe transposon)—an average of 108 reads per unique insertion. In one extreme, this library included nine insertions represented by >5000 reads and 256 insertions represented by >1000 reads, whereas 5679 (24%) unique insertions were represented by a single read and 7843 (33%) by 3 or fewer reads. We considered a scenario where positive selection could lead to proliferation of some specific mutants that outcompete other mutants and the wild-type strain in the culture but the genes that contained the insertions represented by high numbers of reads also contained other insertions that were represented by normal or low numbers of reads, arguing that this scenario cannot fully explain the observed data. We believe that this bias in distribution ofreads per unique insertion could be an artifact of the experimental procedures in the preparation of the samples for sequencing, which involves amplification and enrichment for transposon-chromosome junctions, or it could arise from other processes that we do not fully understand
+
+
+This is disregarded, as read counts don't matter, but count unique insertions, instead (like biotradis and transit). Does this really solve problem entirely? 
+
+[MultiQC Report mbovis 2](data/mbovis2_multiqc_report.html)
+
+Shows duplication levels consistently at over 91%! 
+
+original mbovis samples show between 87-88.3%
+[MultiQC Report mbovis 1](data/mbovis1_multiqc_report.html)
+
+
+How does this compare with DeJesus? Sequence duplicates range from 4.6% to 77.7%. This is before their de-duplication with paired end. 
+
+
+Run TPP on new bovis samples to see statistics:
+
+Really poor insertion statistics. It looks like insertions just didn't work. Very few templates (around 10^5) and very few insertion sites. Sample C is typical:
+
+*mbovis2_C*
+total_reads (or read pairs): 147056
+trimmed_reads (reads with valid Tn prefix, and insert size>20bp): 111275
+reads1_mapped: 104104
+reads2_mapped: 0
+mapped_reads (both R1 and R2 map into genome, and R2 has a proper barcode): 104104 
+read_count (TA sites only, for Himar1): 89974
+template_count: 89974
+TA_sites: 73536
+TAs_hit: 524
+density: 0.007
+max_count (among templates): 3668
+max_site (coordinate): 2898642
+NZ_mean (among templates): 171.7
+
+Mtb had much larger read counts (for Mtb1 anyway, Mtb2 a little light):
+6936952 Mtb1_S4_R1.fastq  (1.7M)
+6936952 Mtb1_S4_R2.fastq
+2721576 Mtb2_S5_R1.fastq (680K)
+2721576 Mtb2_S5_R2.fastq
+
+![multiqc report for Mtb](images/Mtb_kendall_multiqc_report_stats.png)
+
+[MultiQC report Mtb](data/mtb_kendall_multiqc_report.html)
+
+High duplication levels (over 90% in both). In Mtb1, one sequence had 7% of reads! GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTACTAGACCGTCCAGTC	121557
+
+Same sequence had highest number of reads in Mtb2?
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTACTAGACCGTCCAGTC	50972	7.491541665564363
+
+What is this sequence? beginning is the transposon sequence, but last (CTAGACCGTCCAGTC)? is this an adaptor from other end?
+
+What about mbovis?
+Same sequence is number 2 in B,C and 4th in D
+
+Seems to be product of phage contamination.
+
+mbovis2 B:
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTACTAGAGGGCCCAATT	8836	5.793946388291454	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTACTAGACCGTCCAGTC	3951	2.590751717987725	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTACCCGTCGGCGCCGTT	3579	2.3468236898704293	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTAGTAGAGGTCCCGGTA	3377	2.2143681477207156	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTAACGTGCTCGGGTTGC	3239	2.123878717935267	No Hit
+
+mbovis2 C:
+GTCTAGAGACCGGGGACTTATCAGCACAAAACAGCGGAGAGAACAACATG	3855	2.6214503318463716	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTACTAGACCGTCCAGTC	3699	2.5153682950712652	No Hit
+GTCTAGAGACCGGGGACTTATCAGCTGGCATGAGCTGGGCAAGTACTACA	3396	2.3093243390273095	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTATATCCGGCGTGACCG	3380	2.298444130127298	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTATGGCAAGACGGTGCA	3308	2.2494831900772496	No Hit
+GTCTAGAGACCGGGGACTTATCAGCGTAGACGTAGCCATACAGGGTGCCG	3181	2.163121531933413	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTACAGTCGCGGGGACCG	3142	2.1366010227396366	No Hit
+
+mbovis2 D
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTACTAGAGGGCCCAATT	6625	4.609625594032883	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTACTGGGCACGCTGCGG	5889	4.097522282756174	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTAGTACAGCACGTGTGC	4813	3.3488495070309834	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTACTAGACCGTCCAGTC	4782	3.3272799382136222	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTAAGGTCGTCGCGATCA	3189	2.218882418018244	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTAGACCCTTGAGGTTGT	3188	2.218186625475748	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTATAACTTCGTGTCCCA	3139	2.1840927908934673	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTATTTGGCATAGGCCTC	3025	2.1047724410489765	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTATGAAGGTCGCCCAGC	2929	2.037976356969406	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTATAGCGACCCGAACCC	2914	2.027539468831973	No Hit
+
+
+I've done a blast search with some of the overrepresented sequences (first grep to get entire read, as 15nt bit after transposon tag really isn't long enough)
+
+```{bash}
+grep -m 10 -e GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTAAGATCGGAAGAGCAC $my_path/mtb/Mtb1_S4_R1.fastq
+```
+
+then copy whole read after gtta and do blastn search. First hit was 'Himar1-delivery and mutagenesis vector pHBurk5'. but checked loads of other ones, and they are from various other phages/vectors. esp human gamma herpesvirus. But such a short sequence, probably lots of hits.
+
+Sharon says this is what happened when they had lots of phage contamination. She will send me sequenced phiX phage and we can compare, but probably a problem with library construction (shearing DNA)?
+
+10 August: Spoke to Irilenia. Might be interesting to see how Transit results compare for m bovis and mtb.
