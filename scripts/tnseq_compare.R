@@ -37,9 +37,12 @@ sort(essential_genes_custom)
 hmm_results<-read.delim("results/bovis_hmm_genes.txt", sep="\t", header=FALSE, stringsAsFactors=F, skip=6)
 head(hmm_results)
 
-bovis_hmm <- select(hmm_results, 1, 2, 11)
-colnames(bovis_hmm) <- c("ORF","gene","call")
-bovis_hmm$ORF<-toupper(bovis_hmm$ORF)
+
+# change to just gene and call--will affect downstream plots
+bovis_hmm <- select(hmm_results, 2, 1, 11)
+colnames(bovis_hmm) <- c("gene","ORF", "call")
+# have to trim whitespace before gene to compare with mtb
+bovis_hmm$gene<-trimws(bovis_hmm$gene)
 View(bovis_hmm)
 length(bovis_hmm$call)
 
@@ -189,4 +192,107 @@ write.table(compare_df, file = 'results/tnseq_compare.txt', quote = FALSE, sep =
 
 # install.packages('VennDiagram')
 library(VennDiagram)
+
+# compare essential genes with hmm results from mtb
+
+mtb_genes<-read.delim("results/dejesus-Mtb_genes.txt", sep="\t", header=FALSE, stringsAsFactors=F, skip=4)
+head(mtb_genes)
+
+mtb_hmm <- select(mtb_genes, 2, 1, 11)
+colnames(mtb_hmm) <- c("gene","ORF","call")
+mtb_hmm$ORF<-toupper(mtb_hmm$ORF)
+View(mtb_hmm)
+length(mtb_hmm$call)
+
+# change to just gene and call--will affect downstream plots
+bovis_hmm <- select(hmm_results, 2, 1, 11)
+colnames(bovis_hmm) <- c("gene","ORF", "call")
+# have to trim whitespace before gene to compare with mtb
+bovis_hmm$gene<-trimws(bovis_hmm$gene)
+View(bovis_hmm)
+length(bovis_hmm$call)
+
+
+#this calls two for each gene, have to ask for 'unique'
+# get rid of extra lines 
+newbovis_hmm<-unique(bovis_hmm)
+View(newbovis_hmm)
+length(newbovis_hmm$gene)
+
+# how many genes in common between mtb and mbovis using hmm analysis
+
+# prints list of genes in both lists
+newbovis_hmm$gene[newbovis_hmm$gene %in% mtb_hmm$gene]
+common_genes <- newbovis_hmm$gene[newbovis_hmm$gene %in% mtb_hmm$gene]
+common_genes <- sort(common_genes)
+length(common_genes)
+
+bovis_mtb <- as.data.frame(matrix(0, nrow = length(common_genes), ncol = 3))
+colnames(bovis_mtb)<-c('gene', 'bovis_call', 'mtb_call')
+
+for (i in 1:length(common_genes)){
+  bovis_mtb$gene[i] <- common_genes[i]
+  bovis_mtb$bovis_call[i] <- newbovis_hmm[which(newbovis_hmm$gene == common_genes[i]),3]
+  bovis_mtb$mtb_call[i]   <- mtb_hmm[which(mtb_hmm$gene == common_genes[i]),3]
+}
+
+View(bovis_mtb)
+
+write.table(bovis_mtb, file = 'results/comp_mtb_bovis.txt', quote = FALSE, sep = '\t', row.names=FALSE)
+
+#number of genes same call
+same_call <- NULL
+for (i in 1:nrow(bovis_mtb)){
+  if (bovis_mtb$bovis_call[i]==bovis_mtb$mtb_call[i]){
+    same_call <- c(same_call, bovis_mtb$gene[i])
+  }
+}
+length(bovis_mtb$gene)
+#[1] 1484
+length(same_call)
+#[1] 980
+
+#essential/ga in mtb but non-essential in mbovis
+essentials<-c("ES", "GA")
+non_ess<-c("NE", "GD")
+ess_mtb <- NULL
+for (i in 1:nrow(bovis_mtb)){
+  if (bovis_mtb$mtb_call[i] %in% essentials & bovis_mtb$bovis_call[i] %in% non_ess){
+    ess_mtb <- c(ess_mtb, bovis_mtb$gene[i])
+  }
+}
+ess_mtb
+length(ess_mtb)
+
+#essential/ga in mtb called es/ga in mbovis
+ess_both<-NULL
+for (i in 1:nrow(bovis_mtb)){
+  if (bovis_mtb$mtb_call[i] %in% essentials & bovis_mtb$bovis_call[i] %in% essentials){
+    ess_both <- c(ess_both, bovis_mtb$gene[i])
+  }
+}
+length(ess_both)
+ess_both
+
+# non-essential/gd in both
+non_ess_both<-NULL
+for (i in 1:nrow(bovis_mtb)){
+  if (bovis_mtb$mtb_call[i] %in% non_ess & bovis_mtb$bovis_call[i] %in% non_ess){
+    non_ess_both <- c(non_ess_both, bovis_mtb$gene[i])
+  }
+}
+non_ess_both
+length(non_ess_both)
+
+
+essential_genes_hmm <- unique(bovis_hmm[bovis_hmm$'call' == 'ES',1])
+sort(essential_genes_hmm)
+length(essential_genes_hmm)
+
+gd_genes <- unique(bovis_hmm[bovis_hmm$'call' == 'GD',1])
+length(gd_genes)
+ga_genes <- unique(bovis_hmm[bovis_hmm$'call' == 'GA',1])
+length(ga_genes)
+non_ess_genes <- unique(bovis_hmm[bovis_hmm$'call' == 'NE',1])
+length(non_ess_genes)
 

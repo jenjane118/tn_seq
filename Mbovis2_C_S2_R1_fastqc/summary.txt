@@ -1,0 +1,11 @@
+PASS	Basic Statistics	Mbovis2_C_S2_R1.fastq
+PASS	Per base sequence quality	Mbovis2_C_S2_R1.fastq
+PASS	Per tile sequence quality	Mbovis2_C_S2_R1.fastq
+PASS	Per sequence quality scores	Mbovis2_C_S2_R1.fastq
+FAIL	Per base sequence content	Mbovis2_C_S2_R1.fastq
+FAIL	Per sequence GC content	Mbovis2_C_S2_R1.fastq
+PASS	Per base N content	Mbovis2_C_S2_R1.fastq
+PASS	Sequence Length Distribution	Mbovis2_C_S2_R1.fastq
+FAIL	Sequence Duplication Levels	Mbovis2_C_S2_R1.fastq
+FAIL	Overrepresented sequences	Mbovis2_C_S2_R1.fastq
+FAIL	Adapter Content	Mbovis2_C_S2_R1.fastq

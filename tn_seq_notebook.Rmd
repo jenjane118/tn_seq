@@ -2199,4 +2199,247 @@ then copy whole read after gtta and do blastn search. First hit was 'Himar1-deli
 
 Sharon says this is what happened when they had lots of phage contamination. She will send me sequenced phiX phage and we can compare, but probably a problem with library construction (shearing DNA)?
 
+Got PhiX sequence from ncbi. Not exact but nearly:
+
+Illumina uses NC_001422
+
+http://www.ncbi.nlm.nih.gov/nucleotide/NC_001422
+
+
+>Feb 2, 2011
+>There are 5 single-nucleotide differences between the PhiX sequence from NCBI and the PhiX sequence from Illumina. Both sequences have length of 5386 bp. The difference are (in 1-based coordinates):
+
+| Position | NCBI | Illumina |
+| -------- | ---- | -------- |
+| 587 | G | A |
+| 833 | G | A |
+| 2731 | A | G |
+| 2793 | C | T |
+| 2811 | C | T |
+
+>The Illumina Phix sequence is used by RTA to report initial error rates. Note that in practice some sites in PhiX are heterozygous.
+
+from: https://www.biostars.org/p/50124/
+
+#B bovis 2 sample B duplicated sequences
+
+Sequence	Count	Percentage	Possible Source
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTACTAGAGGGCCCAATT	8836	5.793946388291454	No Hit
+
+-seems to be phage from Sharon's list
+
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTACTAGACCGTCCAGTC	3951	2.590751717987725	No Hit
+
+```{bash}
+grep -c -e CTAGACCGTCCAGTC Mbovis2_B_S1_R1.fastq
+grep -m 10 -e CTAGACCGTCCAGTC Mbovis2_B_S1_R1.fastq
+```
+
+sequence repeated 4275 when grep sample. Check full read seqs to see if in phage sequencing reads?
+
+```{bash}
+grep -c -e ATATACATATGGAAAAAAAGGAATTTCGTGTTTTGATAAAATACTGTTTT Mbovis2_B_S1_R1.fastq
+```
+
+3710
+
+This sequence appeared in phage sequence reads (795)
+```{bash}
+grep -c -e ATATACATATGGAAAAAAAGGAATTTCGTGTTTTGATAAAATACTGTTTT $my_path/mbovis/21768_MycomarT7phagemid_1_trimmed.fastq
+```
+
+
+other overrepresented seqs from B:
+
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTACCCGTCGGCGCCGTT	3579	2.3468236898704293	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTAGTAGAGGTCCCGGTA	3377	2.2143681477207156	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTAACGTGCTCGGGTTGC	3239	2.123878717935267	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTATCGCCATGTAAGCCC	2614	1.7140534018779834	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTATGTCAGGAGCTGGCC	2592	1.6996275507527672	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTAGCCCGCGTCGAAGTA	2481	1.6268425746209938	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTACAACGAGCCGCGGGG	2215	1.4524209201070135	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTACGACCGGACCGCTGA	1809	1.186198394796202	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTATTCCTCGTAGAACGC	1749	1.146855164454703	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTATATGGCTGGATCTTT	1731	1.135052195352253	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTACATCACCGAGGGCCA	1713	1.1232492262498033	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTATCGTCGCGGCCCTGG	1677	1.0996432880449036	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTACGGTTGTGCGAGTCG	1651	1.0825945548969207	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTAGGGCACGTTCGCGAA	1567	1.0275140324188219	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTAGTCGCCGTGGCTGAA	1514	0.9927608456171642	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTATGACCTACGACCGGT	1416	0.9285002360593821	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTACATGAACGCCACCGT	1391	0.9121072234170907	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTACGCCGTGCGCGCGTT	1391	0.9121072234170907	No Hit
+
+
+#check some from C as those seemed to be from mycobacteria
+
+Overrepresented sequences	fail
+Sequence	Count	Percentage	Possible Source
+GTCTAGAGACCGGGGACTTATCAGCACAAAACAGCGGAGAGAACAACATG	3855	2.6214503318463716	No Hit
+
+```{bash}
+grep -c -e ACAAAACAGCGGAGAGAACAACATG $my_path/mbovis/21768_MycomarT7phagemid_1_trimmed.fastq
+```
+
+0 hits. This sequence was positive for mycobacteria when I blasted.
+
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTACTAGACCGTCCAGTC	3699	2.5153682950712652	No Hit
+
+```{bash}
+grep -c -e CTAGACCGTCCAGTC $my_path/mbovis/21768_MycomarT7phagemid_1_trimmed.fastq
+```
+796 hits in phage seqs, also positive for bovis
+
+GTCTAGAGACCGGGGACTTATCAGCTGGCATGAGCTGGGCAAGTACTACA	3396	2.3093243390273095	No Hit
+
+```{bash}
+grep -c -e TGGCATGAGCTGGGCAAGTACTACA $my_path/mbovis/21768_MycomarT7phagemid_1_trimmed.fastq
+```
+no hits in phage seqs
+
+(had mycobacterium hits when I blasted)
+
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTATATCCGGCGTGACCG	3380	2.298444130127298	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTATGGCAAGACGGTGCA	3308	2.2494831900772496	No Hit
+GTCTAGAGACCGGGGACTTATCAGCGTAGACGTAGCCATACAGGGTGCCG	3181	2.163121531933413	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTACAGTCGCGGGGACCG	3142	2.1366010227396366	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTACGTGGCCGCGTTCAA	2902	1.9733978892394735	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTACAGCGTGCCAACCGC	2721	1.8503155260581001	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTATGCGCCACCGTGACA	2395	1.6286312697203784	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTATATGCACGGTACTTC	2139	1.4545479273202047	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTAGAGTCGAGGACATGC	2128	1.4470677837014472	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTACAACTATCCGGCGAT	2096	1.4253073659014253	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTACAACTTCGGTAGCGG	2040	1.3872266347513873	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTAAGCTGAGCACCACGC	2039	1.3865466216951365	No Hit
+
+
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTATGTATCGAATGGCCA	1837	1.2491839843324992	No Hit
+
+also none in phage seq reads. Mycobacteria hits with blast
+
+
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTACGTGCGCGACGTGCC	1763	1.198863018169949	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTATTCGGTCTTGACCCG	1725	1.173022522032423	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTACGCCAGCAAGTCGCT	1655	1.1254216080948753	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTACATATGCCAGGACTT	1639	1.1145413991948645	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTAGCCCGCGATCTCGGA	1611	1.0955010336198456	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTATCACCTACTCGACCA	1605	1.0914209552823415	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTACCTGCTGTCGATGGA	1387	0.9431781090196931	No Hit
+GTCTAGAGACCGGGGACTTATCAGCCAACCTGTTATGATGACAGGCTTCG	1364	0.9275378087259275	N
+
+so two different phages--one sequenced by Sharon, 'mycomar phage T7' and also PhiX phage for control. No PhiX contamination in samples of mbovis, but lots of T7 phage in B and D. c had lots of mycobacterial overrep sequences, so maybe PCR event? But sequencing/read count is so low, who knows what it is doing to proportions.
+
+
+
+#comparing mbovis and mtb (dejesus) transit gene calls
+
 10 August: Spoke to Irilenia. Might be interesting to see how Transit results compare for m bovis and mtb.
+
+First run Transit hmm on all libraries in DeJesus paper (14). Use comma separated list and take 'mean' of reads with 'TTR' normalisation (these are default settings for transit hmm). Use results in /tpp_results/paired_end.
+
+```{bash}
+nohup transit hmm $my_path/dejesus_mtb/tpp_results/paired_end/pe_SRR4113427.wig,$my_path/dejesus_mtb/tpp_results/paired_end/pe_SRR4113428.wig,$my_path/dejesus_mtb/tpp_results/paired_end/pe_SRR4113429.wig,$my_path/dejesus_mtb/tpp_results/paired_end/pe_SRR4113430.wig,$my_path/dejesus_mtb/tpp_results/paired_end/pe_SRR4113431.wig,$my_path/dejesus_mtb/tpp_results/paired_end/pe_SRR4113432.wig,$my_path/dejesus_mtb/tpp_results/paired_end/pe_SRR4113433.wig,$my_path/dejesus_mtb/tpp_results/paired_end/pe_SRR4113434.wig,$my_path/dejesus_mtb/tpp_results/paired_end/pe_SRR4113435.wig,$my_path/dejesus_mtb/tpp_results/paired_end/pe_SRR4113436.wig,$my_path/dejesus_mtb/tpp_results/paired_end/pe_SRR4113437.wig,$my_path/dejesus_mtb/tpp_results/paired_end/pe_SRR4113438.wig,$my_path/dejesus_mtb/tpp_results/paired_end/pe_SRR4113439.wig,$my_path/dejesus_mtb/tpp_results/paired_end/pe_SRR4113440.wig $my_path/refseqs/Mtb/mtbH37Rv.prot_table dejesus-Mtb.txt &>run_transit_out &
+```
+
+
+need to compare genes.txt files to see what genes present in both lists.
+
+tnseq_compare.R
+
+```{R tnseq_compare.R}
+# compare essential genes with hmm results from mtb
+
+mtb_genes<-read.delim("results/dejesus-Mtb_genes.txt", sep="\t", header=FALSE, stringsAsFactors=F, skip=4)
+head(mtb_genes)
+
+mtb_hmm <- select(mtb_genes, 2, 1, 11)
+colnames(mtb_hmm) <- c("gene","ORF","call")
+mtb_hmm$ORF<-toupper(mtb_hmm$ORF)
+View(mtb_hmm)
+length(mtb_hmm$call)
+
+# change to just gene and call--will affect downstream plots
+bovis_hmm <- select(hmm_results, 2, 1, 11)
+colnames(bovis_hmm) <- c("gene","ORF", "call")
+# have to trim whitespace before gene to compare with mtb
+bovis_hmm$gene<-trimws(bovis_hmm$gene)
+View(bovis_hmm)
+length(bovis_hmm$call)
+
+
+#this calls two for each gene, have to ask for 'unique'
+# get rid of extra lines 
+newbovis_hmm<-unique(bovis_hmm)
+View(newbovis_hmm)
+length(newbovis_hmm$gene)
+
+# how many genes in common between mtb and mbovis using hmm analysis
+
+# prints list of genes in both lists
+newbovis_hmm$gene[newbovis_hmm$gene %in% mtb_hmm$gene]
+common_genes <- newbovis_hmm$gene[newbovis_hmm$gene %in% mtb_hmm$gene]
+
+bovis_mtb <- as.data.frame(matrix(0, nrow = length(common_genes), ncol = 3))
+colnames(bovis_mtb)<-c('gene', 'bovis_call', 'mtb_call')
+
+for (i in 1:length(common_genes)){
+  bovis_mtb$gene[i] <- common_genes[i]
+  bovis_mtb$bovis_call[i] <- newbovis_hmm[which(newbovis_hmm$gene == common_genes[i]),3]
+  bovis_mtb$mtb_call[i]   <- mtb_hmm[which(mtb_hmm$gene == common_genes[i]),3]
+}
+
+View(bovis_mtb)
+
+write.table(bovis_mtb, file = 'results/comp_mtb_bovis.txt', quote = FALSE, sep = '\t', row.names=FALSE)
+
+#number of genes same call
+same_call <- NULL
+for (i in 1:nrow(bovis_mtb)){
+  if (bovis_mtb$bovis_call[i]==bovis_mtb$mtb_call[i]){
+    same_call <- c(same_call, bovis_mtb$gene[i])
+  }
+}
+length(bovis_mtb$gene)
+#[1] 1484
+length(same_call)
+#[1] 980
+
+#essential/ga in mtb but non-essential in mbovis
+essentials<-c("ES", "GA")
+non_ess<-c("NE", "GD")
+ess_mtb <- NULL
+for (i in 1:nrow(bovis_mtb)){
+  if (bovis_mtb$mtb_call[i] %in% essentials & bovis_mtb$bovis_call[i] %in% non_ess){
+    ess_mtb <- c(ess_mtb, bovis_mtb$gene[i])
+  }
+}
+ess_mtb
+length(ess_mtb)
+
+#essential/ga in mtb called es/ga in mbovis
+ess_both<-NULL
+for (i in 1:nrow(bovis_mtb)){
+  if (bovis_mtb$mtb_call[i] %in% essentials & bovis_mtb$bovis_call[i] %in% essentials){
+    ess_both <- c(ess_both, bovis_mtb$gene[i])
+  }
+}
+length(ess_both)
+#[1] 152
+ess_both
+
+# non-essential/gd in both
+non_ess_both<-NULL
+for (i in 1:nrow(bovis_mtb)){
+  if (bovis_mtb$mtb_call[i] %in% non_ess & bovis_mtb$bovis_call[i] %in% non_ess){
+    non_ess_both <- c(non_ess_both, bovis_mtb$gene[i])
+  }
+}
+non_ess_both
+length(non_ess_both)
+#[1] 918
+
+```
+
+results/comp_mtb_bovis.txt
+
+
