@@ -2346,100 +2346,76 @@ need to compare genes.txt files to see what genes present in both lists.
 
 tnseq_compare.R
 
+results/comp_mtb_bovis.txt
+
+13 September
+
+Redo this using list of orthologous ORFS in bovis and mtb (supplied by Sharon)
+
 ```{R tnseq_compare.R}
-# compare essential genes with hmm results from mtb
+library(dplyr)
 
 mtb_genes<-read.delim("results/dejesus-Mtb_genes.txt", sep="\t", header=FALSE, stringsAsFactors=F, skip=4)
 head(mtb_genes)
 
-mtb_hmm <- select(mtb_genes, 2, 1, 11)
-colnames(mtb_hmm) <- c("gene","ORF","call")
-mtb_hmm$ORF<-toupper(mtb_hmm$ORF)
+mtb_hmm <- select(mtb_genes, 1, 2, 11)
+colnames(mtb_hmm) <- c("ORF","gene","call")
 View(mtb_hmm)
 length(mtb_hmm$call)
 
-# change to just gene and call--will affect downstream plots
-bovis_hmm <- select(hmm_results, 2, 1, 11)
-colnames(bovis_hmm) <- c("gene","ORF", "call")
+bovis_hmm <- select(hmm_results, 1, 2, 11)
+colnames(bovis_hmm) <- c("ORF","gene", "call")
 # have to trim whitespace before gene to compare with mtb
 bovis_hmm$gene<-trimws(bovis_hmm$gene)
 View(bovis_hmm)
 length(bovis_hmm$call)
 
-
 #this calls two for each gene, have to ask for 'unique'
 # get rid of extra lines 
-newbovis_hmm<-unique(bovis_hmm)
-View(newbovis_hmm)
-length(newbovis_hmm$gene)
-
-# how many genes in common between mtb and mbovis using hmm analysis
-
-# prints list of genes in both lists
-newbovis_hmm$gene[newbovis_hmm$gene %in% mtb_hmm$gene]
-common_genes <- newbovis_hmm$gene[newbovis_hmm$gene %in% mtb_hmm$gene]
-
-bovis_mtb <- as.data.frame(matrix(0, nrow = length(common_genes), ncol = 3))
-colnames(bovis_mtb)<-c('gene', 'bovis_call', 'mtb_call')
-
-for (i in 1:length(common_genes)){
-  bovis_mtb$gene[i] <- common_genes[i]
-  bovis_mtb$bovis_call[i] <- newbovis_hmm[which(newbovis_hmm$gene == common_genes[i]),3]
-  bovis_mtb$mtb_call[i]   <- mtb_hmm[which(mtb_hmm$gene == common_genes[i]),3]
+bovis_hmm<-unique(bovis_hmm)
+# order
+bovis_hmm<-bovis_hmm[order(bovis_hmm$ORF),]
+# remove all but MB orf names
+# put into df1 all rows where pedigree_dhl starts with CCB133$
+p1 <- 'Mb'
+bovis_hmm <- subset(bovis_hmm, grepl(p1, bovis_hmm$ORF) )
+# remove any hyphens after the orf name
+for (i in 1:nrow(bovis_hmm)){
+  bovis_hmm$ORF[i]<-sub("\\s-$", "", bovis_hmm$ORF[i], ignore.case=TRUE)
 }
+View(bovis_hmm)
+length(bovis_hmm$gene)
 
-View(bovis_mtb)
+# read in ortholog file
+orthologs<-read.delim("data/mb_mtb_orthologs_1.txt", sep=",", header=FALSE, stringsAsFactors=F, skip=1)
+colnames(orthologs)<-c("bovis", "mtb", "v/i")
+View(orthologs)
+nrow(orthologs)
 
-write.table(bovis_mtb, file = 'results/comp_mtb_bovis.txt', quote = FALSE, sep = '\t', row.names=FALSE)
+# make table with orf names, calls in bovis and mtb
+comp_calls<-as.data.frame(matrix(0, nrow = length(orthologs$bovis), ncol = 5))
+colnames(comp_calls)<-c("bovis", "mt", "v/i", "mb_call", "mt_call")
+head(comp_calls)
 
-#number of genes same call
-same_call <- NULL
-for (i in 1:nrow(bovis_mtb)){
-  if (bovis_mtb$bovis_call[i]==bovis_mtb$mtb_call[i]){
-    same_call <- c(same_call, bovis_mtb$gene[i])
-  }
+for (i in 1:nrow(orthologs)){
+  #if (orthologs$bovis[i] %in% bovis_hmm$ORF){
+  comp_calls$bovis[i]   <- orthologs$bovis[i]
+  comp_calls$mt[i]      <- orthologs$mtb[i]
+  comp_calls$`v/i`[i]   <- orthologs$`v/i`[i]
+  if (orthologs$bovis[i] %in% bovis_hmm$ORF){
+    comp_calls$mb_call[i] <- bovis_hmm[which(bovis_hmm$ORF == orthologs$bovis[i]),3]
+  }else{
+    comp_calls$mb_call[i] <- "N/A"
+    }
+  if (orthologs$mtb[i] %in% mtb_hmm$ORF){
+    comp_calls$mt_call[i] <- mtb_hmm[which(mtb_hmm$ORF == orthologs$mtb[i]),3]
+  }else{
+    comp_calls$mt_call[i] <- "N/A"
+    }
 }
-length(bovis_mtb$gene)
-#[1] 1484
-length(same_call)
-#[1] 980
+View(comp_calls)
 
-#essential/ga in mtb but non-essential in mbovis
-essentials<-c("ES", "GA")
-non_ess<-c("NE", "GD")
-ess_mtb <- NULL
-for (i in 1:nrow(bovis_mtb)){
-  if (bovis_mtb$mtb_call[i] %in% essentials & bovis_mtb$bovis_call[i] %in% non_ess){
-    ess_mtb <- c(ess_mtb, bovis_mtb$gene[i])
-  }
-}
-ess_mtb
-length(ess_mtb)
-
-#essential/ga in mtb called es/ga in mbovis
-ess_both<-NULL
-for (i in 1:nrow(bovis_mtb)){
-  if (bovis_mtb$mtb_call[i] %in% essentials & bovis_mtb$bovis_call[i] %in% essentials){
-    ess_both <- c(ess_both, bovis_mtb$gene[i])
-  }
-}
-length(ess_both)
-#[1] 152
-ess_both
-
-# non-essential/gd in both
-non_ess_both<-NULL
-for (i in 1:nrow(bovis_mtb)){
-  if (bovis_mtb$mtb_call[i] %in% non_ess & bovis_mtb$bovis_call[i] %in% non_ess){
-    non_ess_both <- c(non_ess_both, bovis_mtb$gene[i])
-  }
-}
-non_ess_both
-length(non_ess_both)
-#[1] 918
-
+# write table
+write.table(comp_calls, file = 'results/comp_orfs.txt', quote = FALSE, sep = '\t', row.names=FALSE)
 ```
-
-results/comp_mtb_bovis.txt
-
 
