@@ -1,0 +1,1218 @@
+Rv tag,Mb tag,Gene,Mb length,Rv length,Rv-2 tag,Rv-2 length,% ID,AA overlap,% ID-2,AA overlap-2,Note,Alteration,Annotation,Fxnal Cat
+Rv0007,Mb0007,, 304 aa, 304 aa , ,,99.70%,304 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible conserved membrane protein,cell wall and cell processes
+Rv0010c,Mb0010c,, 111 aa, 141 aa ,,,100.00%,110 aa overlap,,," In Mycobacterium bovis, a single base deletion (g-*) leads to a shorter product compared to its homolog in Mycobacterium tuberculosis strain H37Rv (111 aa versus 141 aa).",Truncated protein in M. bovis AF2122/97,probable conserved membrane protein,cell wall and cell processes
+Rv0012,Mb0012,, 262 aa, 262 aa ,,,99.20%,262 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved membrane protein,cell wall and cell processes
+Rv0039c,Mb0040c,, 115 aa, 115 aa ,,,99.10%,115 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible conserved transmembrane protein,cell wall and cell processes
+Rv0048c,Mb0049c,, 289 aa, 289 aa ,,,99.30%,289 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible membrane protein,cell wall and cell processes
+Rv0050,Mb0051,ponA1, 680 aa, 678 aa ,,,99.60%,680 aa overlap,,," In Mycobacterium bovis, two insertions of 3 bp each (*-tcc, *-cgt) leads to a slightly longer product compared to its homolog in Mycobacterium tuberculosis strain H37Rv (680 aa versus 678 aa).",Base insertion(s) leading to gene fusion event in M. bovis AF2122/97,probable bifunctional penicillin-binding protein 1a/1b pona1 murein polymerase pbp1: penicillin-insensitive transglycosylase peptidoglycan tgase b penicillin-sensitive transpeptidase dd-transpeptidase,cell wall and cell processes
+Rv0064,Mb0065,, 979 aa, 979 aa ,,,99.50%,979 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved transmembrane protein,cell wall and cell processes
+5' end of Rv0073,Mb0074,, 280 aa, 330 aa ,,,94.90%,275 aa overlap,,," In Mycobacterium tuberculosis strain H37Rv, Rv0073 exists as a single gene. In Mycobacterium bovis, a frameshift due to a single base deletion (a-*) splits Rv0073 into 2 parts, Mb0074 and Mb0075.",Frameshift in M. bovis AF2122/97,probable glutamine-transport atp-binding protein abc transporter glnq,cell wall and cell processes
+3' end of Rv0073,Mb0075,, 70 aa, 330 aa ,,,100.00%,70 aa overlap,,," In Mycobacterium tuberculosis strain H37Rv, Rv0073 exists as a single gene. In Mycobacterium bovis, a frameshift due to a single base deletion (a-*) splits Rv0073 into 2 parts, Mb0074 and Mb0075.",Frameshift in M. bovis AF2122/97,probable glutamine-transport protein abc transporter glnq,cell wall and cell processes
+Rv0092,Mb0095,ctpA, 761 aa, 761 aa ,,,99.90%,761 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),cation transporter p-type atpase a ctpa,cell wall and cell processes
+Rv0093c,Mb0096c,, 282 aa, 282 aa ,,,99.60%,282 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved membrane protein,cell wall and cell processes
+Rv0103c,Mb0106c,ctpB, 752 aa, 752 aa ,,,99.90%,752 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable cation-transporter p-type atpase b ctpb,cell wall and cell processes
+5' end of Rv0107c,Mb0111c,ctpI, 1625 aa, 1632 aa ,,,99.70%,1572 aa overlap,,," In Mycobacterium bovis, a single base insertion (*-t) leads to a product with a different COOH part compared to its homolog in Mycobacterium tuberculosis strain H37Rv.",Truncated protein in M. bovis AF2122/97,probable cation-transporter atpase i ctpi,cell wall and cell processes
+Rv0114,Mb0118,gmhb, 190 aa, 190 aa ,,,99.50%,190 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible d-alphacbeta-d-heptose-1c7-biphosphate phosphatase gmhb d-glycero-d-manno-heptose 7-phosphate kinase,cell wall and cell processes
+Rv0115,Mb0119,hdda, 305 aa, 386 aa ,,,98.50%,275 aa overlap,,," In Mycobacterium bovis, a single base insertion (*-c) leads to shorter product with a different COOH part compared to its homolog in Mycobacterium tuberculosis strain H37Rv.",Truncated protein in M. bovis AF2122/97,possible d-alpha-d-heptose-7-phosphate kinase hdda,cell wall and cell processes
+Rv0143c,Mb0148c,, 492 aa, 492 aa ,,,99.80%,492 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved transmembrane protein,cell wall and cell processes
+Rv0176,Mb0182,, 322 aa, 322 aa ,,,99.40%,322 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved mce associated transmembrane protein,cell wall and cell processes
+Rv0179c,Mb0185c,lprO, 369 aa, 369 aa ,,,99.70%,369 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible lipoprotein lpro,cell wall and cell processes
+Rv0194,Mb0200,, 1194 aa, 1194 aa ,,,99.70%,1194 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable transmembrane multidrug efflux pump,cell wall and cell processes
+Rv0204c,Mb0210c,, 427 aa, 412 aa ,,,99.80%,412 aa overlap,,," In Mycobacterium bovis, the presence of a more likely start codon leads to a longer product compared to its homolog in Mycobacterium tuberculosis strain H37Rv (427 a versus 412 aa).",Non-syn SNP(s),probable conserved transmembrane protein,cell wall and cell processes
+Rv0205,Mb0211,, 367 aa, 367 aa ,,,99.50%,367 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved transmembrane protein,cell wall and cell processes
+Rv0206c,Mb0212c,mmpL3, 944 aa, 944 aa ,,,99.80%,944 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible conserved transmembrane transport protein mmpl3,cell wall and cell processes
+Rv0218,Mb0224,, 442 aa, 442 aa ,,,99.50%,442 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved transmembrane protein,cell wall and cell processes
+Rv0227c,Mb0232c,, 421 aa, 421 aa ,,,99.50%,421 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved membrane protein,cell wall and cell processes
+Rv0236c,Mb0241c,aftd, 1400 aa, 1400 aa ,,,99.80%,1400 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible arabinofuranosyltransferase aftd,cell wall and cell processes
+Rv0237,Mb0243,lpqI, 388 aa, 388 aa ,,,99.70%,388 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved lipoprotein lpqi,cell wall and cell processes
+Rv0246,Mb0252,, 436 aa, 436 aa ,,,99.80%,436 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved integral membrane protein,cell wall and cell processes
+Rv0282,Mb0290,ecca3, 631 aa, 631 aa ,,,99.80%,631 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),esx conserved component ecca3. esx-3 type vii secretion system protein.,cell wall and cell processes
+Rv0284,Mb0292,eccc3, 1330 aa, 1330 aa ,,,99.90%,1330 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),esx conserved component eccc3. esx-3 type vii secretion system protein. possible membrane protein.,cell wall and cell processes
+Rv0290,Mb0298,eccd3, 472 aa, 472 aa ,,,99.80%,472 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),esx conserved component eccd3. esx-3 type vii secretion system protein. probable transmembrane protein.,cell wall and cell processes
+Rv0292,Mb0300,ecce3, 331 aa, 331 aa ,,,99.70%,331 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),esx conserved component ecce3. esx-3 type vii secretion system protein. probable transmembrane protein.,cell wall and cell processes
+Rv0314c,Mb0322c,, 220 aa, 220 aa ,,,99.50%,220 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible conserved membrane protein,cell wall and cell processes
+Rv0318c,Mb0326c,, 264 aa, 264 aa ,,,99.60%,264 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved integral membrane protein,cell wall and cell processes
+Rv0342,Mb0349,iniA, 640 aa, 640 aa ,,,99.70%,640 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),isoniazid inductible gene protein inia,cell wall and cell processes
+Rv0359,Mb0366,, 259 aa, 259 aa ,,,99.60%,259 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved integral membrane protein,cell wall and cell processes
+Rv0362,Mb0369,mgtE, 460 aa, 460 aa ,,,99.80%,460 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible mg2b transport transmembrane protein mgte,cell wall and cell processes
+Rv0364,Mb0371,, 227 aa, 227 aa ,,,99.60%,227 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible conserved transmembrane protein,cell wall and cell processes
+3' end of Rv0402c,Mb0408c,mmpL1b, 367 aa, 958 aa ,,,100.00%,367 aa overlap,,," In Mycobacterium tuberculosis strain H37Rv, mmpL1 exists as a single gene. In Mycobacterium bovis, a frameshift due to a single base deletion (c-*) splits mmpL1 into 2 parts, mmpL1a and mmpL1b.",Frameshift in M. bovis AF2122/97,probable conserved transmembrane transport protein mmpl1b [second part],cell wall and cell processes
+5' end of Rv0402c,Mb0409c,mmpL1a, 591 aa, 958 aa ,,,99.80%,568 aa overlap,,," In Mycobacterium tuberculosis strain H37Rv, mmpL1 exists as a single gene. In Mycobacterium bovis, a frameshift due to a single base deletion (c-*) splits mmpL1 into 2 parts, mmpL1a and mmpL1b.",Frameshift in M. bovis AF2122/97,probable conserved transmembrane transport protein mmpl1a [first part],cell wall and cell processes
+Rv0412c,Mb0420c,, 439 aa, 439 aa ,,,99.80%,439 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible conserved membrane protein,cell wall and cell processes
+Rv0419,Mb0427,lpqM, 498 aa, 498 aa ,,,99.80%,498 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible lipoprotein peptidase lpqm,cell wall and cell processes
+Rv0420c,Mb0428c,, 136 aa, 136 aa ,,,99.30%,136 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible transmembrane protein,cell wall and cell processes
+Rv0425c,Mb0433c,ctpH, 1539 aa, 1539 aa ,,,99.90%,1539 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible metal cation transporting p-type atpase ctph,cell wall and cell processes
+Rv0431,Mb0439,, 164 aa, 164 aa ,,,98.80%,164 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),putative tuberculin related peptide,cell wall and cell processes
+Rv0450c,Mb0458c,mmpL4, 967 aa, 967 aa ,,,99.90%,967 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved transmembrane transport protein mmpl4,cell wall and cell processes
+Rv0507,Mb0519,mmpL2, 968 aa, 968 aa ,,,99.60%,968 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved transmembrane transport protein mmpl2,cell wall and cell processes
+Rv0538,Mb0552,, 548 aa, 548 aa ,,,99.80%,548 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible conserved membrane protein,cell wall and cell processes
+Rv0541c,Mb0555c,, 449 aa, 449 aa ,,,99.80%,449 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved integral membrane protein,cell wall and cell processes
+Rv0545c,Mb0559c,pitA, 417 aa, 417 aa ,,,99.80%,417 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable low-affinity inorganic phosphate transporter integral membrane protein pita,cell wall and cell processes
+Rv0556,Mb0571,, 171 aa, 171 aa ,,,99.40%,171 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved transmembrane protein,cell wall and cell processes
+Rv0584,Mb0599,, 877 aa, 877 aa ,,,99.90%,877 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible conserved exported protein,cell wall and cell processes
+Rv0585c,Mb0600c,, 795 aa, 795 aa ,,,99.90%,795 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved integral membrane protein,cell wall and cell processes
+5' end of Rv0593,Mb0609,lprL, 188 aa, 402 aa ,,,100.00%,188 aa overlap,,," In Mycobacterium bovis, a single base transition (c-t) introducing a stop codon, leads to the formation of a truncated product compared to its homolog in Mycobacterium tuberculosis strain H37Rv (188 aa versus 402 aa).",Truncated protein in M. bovis AF2122/97,possible mce-family lipoprotein lprl mce-family lipoprotein mce2e,cell wall and cell processes
+Rv0603,Mb0619,, 103 aa, 103 aa ,,,98.10%,103 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible exported protein,cell wall and cell processes
+Rv0604,Mb0620,lpqO, 316 aa, 316 aa ,,,99.70%,316 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved lipoprotein lpqo,cell wall and cell processes
+Rv0621,Mb0637,, 385 aa, 354 aa ,,,100.00%,354 aa overlap,,," In Mycobacterium bovis, a single base transition (a-g) leads to a longer product compared to its homolog in Mycobacterium tuberculosis strain H37Rv (385 aa versus 354 aa).","Transition, Elongated protein in M. bovis AF2122/97",possible membrane protein,cell wall and cell processes
+Rv0633c,Mb0650c,, 276 aa, 279 aa ,,,98.90%,279 aa overlap,,," In Mycobacterium bovis, a 9 bp deletion (cgggtgcgc-*) leads to shorter product compared to its homolog in Mycobacterium tuberculosis strain H37Rv (276 aa versus 279 aa).",Truncated protein in M. bovis AF2122/97,possible exported protein,cell wall and cell processes
+Rv0658c,Mb0677c,, 238 aa, 238 aa ,,,99.60%,238 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved integral membrane protein,cell wall and cell processes
+Rv0676c,Mb0695c,mmpL5, 964 aa, 964 aa ,,,99.80%,964 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved transmembrane transport protein mmpl5,cell wall and cell processes
+Rv0686,Mb0705,, 265 aa, 265 aa ,,,99.60%,265 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable membrane protein,cell wall and cell processes
+Rv0774c,Mb0797c,, 303 aa, 303 aa ,,,99.30%,303 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved exported protein,cell wall and cell processes
+Rv0820,Mb0843,phoT, 258 aa, 258 aa ,,,99.60%,258 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable phosphate-transport atp-binding protein abc transporter phot,cell wall and cell processes
+Rv0835,Mb0858,lpqQ, 214 aa, 214 aa ,,,99.50%,214 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible lipoprotein lpqq,cell wall and cell processes
+Rv0838,Mb0861,lpqR, 258 aa, 256 aa ,,,99.20%,258 aa overlap,,," In Mycobacterium bovis, a 6bp insertion (*-cggccc) leads to a slightly longer product compared to its homolog in Mycobacterium tuberculosis strain H37Rv (258 aa versus 256 aa).","Insertion, Elongated protein in M. bovis AF2122/97",probable conserved lipoprotein lpqr,cell wall and cell processes
+Rv0841,Mb0864,, 80 aa, 80 aa ,,,98.80%,80 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved transmembrane protein,cell wall and cell processes
+Rv0847,Mb0870,lpqS, 130 aa, 130 aa ,,,99.20%,130 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable lipoprotein lpqs,cell wall and cell processes
+Rv0867c,Mb0891c,rpfA, 327 aa, 407 aa ,,,63.00%,200 aa overlap,,," In Mycobacterium bovis, a 240 bp deletion leads to a shorter product compared to its homolog in Mycobacterium tuberculosis strain H37Rv (327 aa versus 407 aa).",Truncated protein in M. bovis AF2122/97,possible resuscitation-promoting factor rpfa,cell wall and cell processes
+Rv0870c,Mb0894c,, 129 aa, 129 aa ,,,99.20%,129 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible conserved integral membrane protein,cell wall and cell processes
+Rv0876c,Mb0900c,, 548 aa, 548 aa ,,,99.80%,548 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible conserved transmembrane protein,cell wall and cell processes
+Rv0907,Mb0931,, 516 aa, 532 aa ,,,99.40%,511 aa overlap,,," In Mycobacterium bovis, a frameshift due to a single base insertion (*-g) leads to a shorter product with a different NH2 part compared to its homolog in Mycobacterium tuberculosis strain H37Rv.",Truncated protein in M. bovis AF2122/97,conserved protein,cell wall and cell processes
+Rv0924c,Mb0948c,mntH, 685 aa ,428 aa,Rv0925c,245 aa,100%,428 aa overlap,93.20%,237 aa overlap," In Mycobacterium tuberculosis strain H37Rv, Rv0924c and Rv0925c exist as 2 genes. In Mycobacterium bovis, a single base deletion (t-*) leads to a single product.",Base deletion(s) leading to gene fusion event in M. bovis AF2122/97,conserved protein,cell wall and cell processes
+Rv0930,Mb0953,pstA1, 304 aa, 304 aa ,,,99.70%,304 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable phosphate-transport integral membrane abc transporter psta1,cell wall and cell processes
+Rv0932c,Mb0956c,pstS2, 370 aa, 370 aa ,,,99.70%,370 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),periplasmic phosphate-binding lipoprotein psts2 pbp-2 psts2,cell wall and cell processes
+the5' end of Rv0933,Mb0957,pstBa, 71 aa, 276 aa ,,,98.40%,64 aa overlap,,," In Mycobacterium tuberculosis strain H37Rv, pstB exists as a single gene. In Mycobacterium bovis, a frameshift due to a single base insertion (*-t) splits pstB into 2 parts, pstBa and pstBb.",Frameshift in M. bovis AF2122/97,phosphate-transport protein abc transporter pstba [first part],cell wall and cell processes
+the3' end of Rv0933,Mb0958,pstBb, 213 aa, 276 aa ,,,100.00%,213 aa overlap,,," In Mycobacterium tuberculosis strain H37Rv, pstB exists as a single gene. In Mycobacterium bovis, a frameshift due to a single base insertion (*-t) splits pstB into 2 parts, pstBa and pstBb.",Frameshift in M. bovis AF2122/97,phosphate-transport protein abc transporter pstbb [second part],cell wall and cell processes
+Rv0934,Mb0959,pstS1, 374 aa, 374 aa ,,,99.70%,374 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),periplasmic phosphate-binding lipoprotein psts1 pbp-1 psts1,cell wall and cell processes
+Rv0962c,Mb0987c,lprP, 224 aa, 224 aa ,,,99.60%,224 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible lipoprotein lprp,cell wall and cell processes
+Rv0969,Mb0994,ctpV, 770 aa, 770 aa ,,,99.90%,770 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable metal cation transporter p-type atpase ctpv,cell wall and cell processes
+Rv0986,Mb1012,, 248 aa, 248 aa ,,,99.60%,248 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable adhesion component transport atp-binding protein abc transporter,cell wall and cell processes
+5' end of Rv0987,Mb1013,, 423 aa, 855 aa ,,,100%,423 aa overlap,,," In Mycobacterium tuberculosis strain H37Rv, Rv0987 exists as a single gene. In Mycobacterium bovis, a single base transition (g-a) introduces a stop codon that splits Rv0987 in two parts, Mb1013 and Mb1014.",Frameshift in M. bovis AF2122/97,probable adhesion component transport transmembrane protein abc transporter,cell wall and cell processes
+3' end of Rv0987,Mb1014,, 431 aa, 855 aa ,,,99.80%,431 aa overlap,,," In Mycobacterium tuberculosis strain H37Rv, Rv0987 exists as a single gene. In Mycobacterium bovis, a single base transition (g-a) introduces a stop codon that splits Rv0987 into two parts, Mb1013 and Mb1014.",Frameshift in M. bovis AF2122/97,probable adhesion component transport transmembrane protein abc transporter,cell wall and cell processes
+Rv0988,Mb1015,, 386 aa, 386 aa ,,,99.50%,386 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible conserved exported protein,cell wall and cell processes
+Rv0996,Mb1023,, 358 aa, 358 aa ,,,99.40%,358 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved transmembrane protein,cell wall and cell processes
+Rv1002c,Mb1029c,, 503 aa, 503 aa ,,,99.80%,503 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),conserved membrane protein,cell wall and cell processes
+Rv1008,Mb1035,tatD, 264 aa, 264 aa ,,,99.60%,264 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable deoxyribonuclease tatd yjjv protein,cell wall and cell processes
+Rv1009,Mb1036,rpfB, 362 aa, 362 aa ,,,99.40%,362 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable resuscitation-promoting factor rpfb,cell wall and cell processes
+5' end of Rv1016c,Mb1044c,lpqT, 252 aa, 226 aa ,,,98.90%,190 aa overlap,,," In Mycobacterium bovis, a frameshift due to a 5 bp deletion (cacgc-*) leads to a longer product with a different COOH part compared to its homolog in Mycobacterium tuberculosis strain H37Rv.","Deletion, Elongated protein in M. bovis AF2122/97",probable conserved lipoprotein lpqt,cell wall and cell processes
+Rv1018c,Mb1046c,glmU, 495 aa, 495 aa ,,,99.60%,495 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable udp-n-acetylglucosamine pyrophosphorylase glmu,cell wall and cell processes
+Rv1022,Mb1050,lpqU, 243 aa, 243 aa ,,,99.60%,243 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved lipoprotein lpqu,cell wall and cell processes
+Rv1037c,Mb1066c,esxI, 94 aa, 94 aa ,,,98.90%,94 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),putative esat-6 like protein esxi esat-6 like protein 1,cell wall and cell processes
+Rv1086,Mb1115,, 262 aa, 262 aa ,,,99.60%,262 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),short c15 chain z-isoprenyl diphosphate synthase z-fpp synthase z-farnesyl diphosphate synthase z-fpp synthetase z-farnesyl diphosphate synthetase geranyltranstransferase farnesyl pyrophosphate synthetase,cell wall and cell processes
+Rv1097c,Mb1127c,, 293 aa, 293 aa ,,,99.70%,293 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable membrane glycine and proline rich protein,cell wall and cell processes
+3' end of Rv1101c,Mb1131c,, 342 aa, 385 aa ,,,99.70%,342 aa overlap,,," In Mycobacterium bovis, a frameshift due to a single base deletion (t-*) leads to a shorter product with a different amino part compared to its homolog in Mycobacterium tuberculosis strain H37Rv.",Truncated protein in M. bovis AF2122/97,conserved membrane protein,cell wall and cell processes
+Rv1115,Mb1145,, 232 aa, 232 aa ,,,99.60%,232 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible exported protein,cell wall and cell processes
+Rv1132,Mb1163,, 576 aa, 576 aa ,,,99.80%,576 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),conserved membrane protein,cell wall and cell processes
+Rv1145,Mb1177,mmpL13, 781 aa, 303 aa , Rv1146, 470 aa ,97.90%,284 aa overlap ,100%,470 aa overlap," In Mycobacterium tuberculosis strain H37Rv, Rv1145 and Rv1146 exist as 2 genes. In Mycobacterium bovis, a single base insertion (*-a) leads to a single product.",Base insertion(s) leading to gene fusion event in M. bovis AF2122/97,probable conserved transmembrane transport protein mmpl13b,cell wall and cell processes
+Rv1198,Mb1230,esxL, 94 aa, 94 aa ,,,98.90%,94 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),putative esat-6 like protein esxl esat-6 like protein 4,cell wall and cell processes
+Rv1217c,Mb1249c,, 548 aa, 548 aa ,,,99.80%,548 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable tetronasin-transport integral membrane protein abc transporter,cell wall and cell processes
+Rv1218c,Mb1250c,, 311 aa, 311 aa ,,,99.70%,311 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable tetronasin-transport atp-binding protein abc transporter,cell wall and cell processes
+Rv1224,Mb1256,tatB, 131 aa, 131 aa ,,,99.20%,131 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable protein tatb,cell wall and cell processes
+Rv1226c,Mb1258c,, 487 aa, 487 aa ,,,99.80%,487 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable transmembrane protein,cell wall and cell processes
+Rv1230c,Mb1262c,, 411 aa, 411 aa ,,,99.50%,411 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible membrane protein,cell wall and cell processes
+Rv1233c,Mb1265c,, 198 aa, 198 aa ,,,99.00%,198 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),conserved hypothetical membrane protein,cell wall and cell processes
+Rv1239c,Mb1271c,corA, 366 aa, 366 aa ,,,99.50%,366 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible magnesium and cobalt transport transmembrane protein cora,cell wall and cell processes
+Rv1244,Mb1276,lpqZ, 286 aa, 286 aa ,,,99.70%,286 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable lipoprotein lpqz,cell wall and cell processes
+Rv1249c,Mb1281c,, 262 aa, 262 aa ,,,99.60%,262 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible membrane protein,cell wall and cell processes
+Rv1250,Mb1282,, 579 aa, 579 aa ,,,99.80%,579 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable drug-transport integral membrane protein,cell wall and cell processes
+-,Mb1297cA,,798 aa,-,,,-,-,,,RD900,RD region,transmembrane protein,cell wall and cell processes
+Rv1270c,Mb1301c,lprA, 244 aa, 244 aa ,,,99.60%,244 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible lipoprotein lpra,cell wall and cell processes
+Rv1274,Mb1305,lprB, 185 aa, 185 aa ,,,99.50%,185 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible lipoprotein lprb,cell wall and cell processes
+Rv1302,Mb1334,rfe, 404 aa, 404 aa ,,,99.80%,404 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable undecapaprenyl-phosphate alpha-n-acetylglucosaminyltransferase rfe udp-glcnac transferase,cell wall and cell processes
+Rv1312,Mb1344,, 144 aa, 147 aa ,,,99.30%,142 aa overlap,,," In Mycobacterium bovis, a 2 bp deletion (cg-*) at the 3' end leads to a slightly shorter product compared to Mycobacterium tuberculosis strain H37Rv (144 aa versus 147 aa).",Truncated protein in M. bovis AF2122/97,conserved hypothetical secreted protein,cell wall and cell processes
+Rv1343c,Mb1378c,lprD, 126 aa, 126 aa ,,,99.20%,126 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved lipoprotein lprd,cell wall and cell processes
+Rv1362c,Mb1397c,, 220 aa, 220 aa ,,,99.50%,220 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible membrane protein,cell wall and cell processes
+Rv1363c,Mb1398c,, 261 aa, 261 aa ,,,99.60%,261 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible membrane protein,cell wall and cell processes
+5' end of Rv1371,Mb1404,, 317 aa ,489 aa,,,90.90%,166 aa overlap,,," In Mycobacterium tuberculosis strain H37Rv, Rv1371 exists as a single gene. In Mycobacterium bovis, a frameshift due to a single base insertion (*-a) splits Rv1371 into 2 parts, Mb1404 and Mb1405, with the latter being the more likely product.",Frameshift in M. bovis AF2122/97,probable conserved membrane protein,cell wall and cell processes
+3' end of Rv1371,Mb1405,, 331 aa, 489 aa ,,,100%,331 aa overlap,,," In Mycobacterium tuberculosis strain H37Rv, Rv1371 exists as a single gene. In Mycobacterium bovis, a frameshift due to a single base insertion (*-a) splits Rv1371 into 2 parts, Mb1404 and Mb1405, with the latter being the more likely product.",Frameshift in M. bovis AF2122/97,probable conserved membrane protein,cell wall and cell processes
+Rv1431,Mb1466,, 589 aa, 589 aa ,,,99.70%,589 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),conserved membrane protein,cell wall and cell processes
+Rv1435c,Mb1470c,, 209 aa ,202 aa,,,96.20%,209 aa overlap,,," In Mycobacterium bovis, an in-frame insertion of 21 bp leads to a longer product compared to its homolog in Mycobacterium tuberculosis strain H37Rv (209 aa versus 202 aa).","Insertion, Elongated protein in M. bovis AF2122/97",probable conserved prolinec glycinec valine-rich secreted protein,cell wall and cell processes
+Rv1459c,Mb1494c,, 591 aa, 591 aa ,,,99.80%,591 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible conserved integral membrane protein,cell wall and cell processes
+Rv1517,Mb1544,, 254 aa, 254 aa ,,,99.60%,254 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),conserved hypothetical transmembrane protein,cell wall and cell processes
+Rv1522c,Mb1549c,mmpL12, 1107 aa, 1146 aa ,,,99.70%,1107 aa overlap,,," In Mycobacterium bovis, a single base transversion (c-a) omitting a stop codon, leads to a shorter product compared to its homolog in Mycobacterium tuberculosis strain H37Rv (1107 aa versus 1146 aa).",Truncated protein in M. bovis AF2122/97,probable conserved transmembrane transport protein mmpl12,cell wall and cell processes
+3' end of Rv1557,Mb1583,mmpL6, 967 aa, 397 aa ,,,99.50%,384 aa overlap,,," In Mycobacterium bovis, a 2153 bp insertion leads to a longer product compared to its homolog in Mycobacterium tuberculosis strain H37Rv. Belongs to the TbD1 region.","Insertion, Elongated protein in M. bovis AF2122/97",probable conserved transmembrane transport protein mmpl6,cell wall and cell processes
+Rv1624c,Mb1650c,, 195 aa, 195 aa ,,,99.50%,195 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved membrane protein,cell wall and cell processes
+Rv1634,Mb1660,, 471 aa, 471 aa ,,,99.80%,471 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible drug efflux membrane protein,cell wall and cell processes
+Rv1668c,Mb1695c,, 591 aa, 372 aa , Rv1667c, 217 aa ,100%,347 aa overlap ,100%,217 aa overlap," In Mycobacterium tuberculosis strain H37Rv, Rv1668c and Rv1667c exist as 2 genes with a small overlap between them. In Mycobacterium bovis, a 10 bp insertion (*-tcttgccgcg) leads to a single product.",Base insertion(s) leading to gene fusion event in M. bovis AF2122/97,probable second part of macrolide-transport atp-binding protein abc transporter,cell wall and cell processes
+Rv1686c,Mb1712c,, 226 aa, 226 aa ,,,99.60%,226 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved integral membrane protein abc transporter,cell wall and cell processes
+Rv1690,Mb1716,lprJ, 139 aa, 127 aa ,,,100%,124 aa overlap,,," In Mycobacterium bovis, a 2 bp insertion (*-ac) at the 5' end, leads to a longer product compared to its homolog in Mycobacterium tuberculosis strain H37Rv (139 aa versus 127 aa).","Insertion, Elongated protein in M. bovis AF2122/97",probable lipoprotein lprj,cell wall and cell processes
+Rv1704c,Mb1730c,cycA, 556 aa, 556 aa ,,,99.80%,556 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable d-serine/alanine/glycine transporter protein cyca,cell wall and cell processes
+Rv1707,Mb1734,, 486 aa, 486 aa ,,,99.60%,486 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved transmembrane protein,cell wall and cell processes
+Rv1708,Mb1735,, 318 aa, 318 aa ,,,99.70%,318 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),putative initiation inhibitor protein,cell wall and cell processes
+Rv1733c,Mb1762c,, 210 aa, 210 aa ,,,99.50%,210 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved transmembrane protein,cell wall and cell processes
+Rv1739c,Mb1768c,, 560 aa, 560 aa ,,,99.80%,560 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable sulphate-transport transmembrane protein abc transporter,cell wall and cell processes
+Rv1744c,Mb1773c,, 133 aa, 133 aa ,,,99.20%,133 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable membrane protein,cell wall and cell processes
+Rv1758,Mb1788,cut1, 218 aa ,174 aa,,,98.25%,172 aa overlap,,," Belongs to the RvD2 region. In Mycobacterium tuberculosis strain H37Rv, Rv1758 is interrupted by IS6110 insertion element and the 5'-end is deleted.","Truncation, RD region",probable cutinase cut1,cell wall and cell processes
+Rv1782,Mb1811,eccb5, 506 aa, 506 aa ,,,99.80%,506 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),esx conserved component eccb5. esx-5 type vii secretion system protein. probable membrane protein.,cell wall and cell processes
+Rv1783,Mb1812,eccc5, 1391 aa ,435 aa, Rv1784,932 aa,100%,435 aa overlap,99.90%,932 aa overlap," In Mycobacterium tuberculosis strain H37Rv, Rv1783 and Rv1784 exist as 2 genes. In Mycobacterium bovis, a single base transversion (a-t) leads to a single product.",Base transversion(s) leading to gene fusion event in M. bovis AF2122/97,esx conserved component eccc5. esx-5 type vii secretion system protein.,cell wall and cell processes
+Rv1792,Mb1820,esxM, 98 aa, 98 aa ,,,98.00%,98 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),esat-6 like protein esxm,cell wall and cell processes
+Rv1795,Mb1823,eccd5, 503 aa, 503 aa ,,,99.60%,503 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),esx conserved component eccd5. esx-5 type vii secretion system protein. probable membrane protein.,cell wall and cell processes
+Rv1819c,Mb1850c,baca, 639 aa, 639 aa ,,,99.70%,639 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable drug-transport transmembrane atp-binding protein abc transporter baca,cell wall and cell processes
+Rv1841c,Mb1872c,, 349 aa, 345 aa ,,,98.90%,349 aa overlap,,," In Mycobacterium bovis, a 12 bp in-frame insertion leads to a longer product compared to its homolog in Mycobacterium tuberculosis strain H37Rv (349 aa versus 345 aa).","Insertion, Elongated protein in M. bovis AF2122/97",conserved hypothetical membrane protein,cell wall and cell processes
+Rv1842c,Mb1873c,, 455 aa, 455 aa ,,,99.80%,455 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),conserved hypothetical membrane protein,cell wall and cell processes
+Rv1859,Mb1890,modC, 369 aa, 369 aa ,,,99.70%,369 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable molybdenum-transport atp-binding protein abc transporter modc,cell wall and cell processes
+Rv1860,Mb1891,apa, 325 aa, 325 aa ,,,99.70%,325 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),alanine and proline rich secreted protein apa fibronectin attachment protein immunogenic protein mpt32 antigen mpt-32 45-kda glycoprotein 45/47 kda antigen,cell wall and cell processes
+5' end of Rv1877,Mb1908,, 511 aa ,687 aa,,,93.20%,292 aa overlap,,," In Mycobacterium tuberculosis strain H37Rv, Rv1877 exists as a single gene. In Mycobacterium bovis, a frameshift due to a single base insertion (*-c), splits Rv1877 into 2 parts, Mb1908 and Mb1909.",Frameshift in M. bovis AF2122/97,probable conserved integral membrane protein [first part],cell wall and cell processes
+3' end of Rv1877,Mb1909,, 404 aa, 687 aa ,,,100.00%,404 aa overlap,,," In Mycobacterium tuberculosis strain H37Rv, Rv1877 exists as a single gene. In Mycobacterium bovis, a frameshift due to a single base insertion (*-c), splits Rv1877 into 2 parts, Mb1908 and Mb1909.",Frameshift in M. bovis AF2122/97,probable conserved integral membrane protein [second part],cell wall and cell processes
+Rv1888c,Mb1920c,, 239 aa ,186 aa,,,100%,186 aa overlap,,," In Mycobacterium bovis, a 10 bp insertion (*-tccgatcacc) leads to a longer product with a different COOH part compared to its homolog in Mycobacterium tuberculosis H37Rv (239 aa versus 186 aa).","Insertion, Elongated protein in M. bovis AF2122/97",possible transmembrane protein,cell wall and cell processes
+Rv1899c,Mb1934c,lppD, 358 aa ,343 aa,,,95.50%,358 aa overlap,,," In Mycobacterium bovis, a 45 bp in-frame insertion leads to a longer product compared to its homolog in Mycobacterium tuberculosis strain H37Rv (358 aa versus 343 aa).",Elongated protein in M. bovis AF2122/97,possible lipoprotein lppd,cell wall and cell processes
+Rv1920,Mb1955,, 287 aa, 287 aa ,,,99.70%,287 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable membrane protein,cell wall and cell processes
+Rv1946c,Mb1981c,lppG, 150 aa, 150 aa ,,,99.30%,150 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible lipoprotein,cell wall and cell processes
+Rv1979c,Mb2001c,, 481 aa, 481 aa ,,,99.60%,480 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible conserved permease,cell wall and cell processes
+Rv2037c,Mb2063c,, 324 aa, 324 aa ,,,99.70%,324 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),conserved transmembrane protein,cell wall and cell processes
+Rv2039c,Mb2065c,, 280 aa, 280 aa ,,,99.60%,280 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable sugar-transport integral membrane protein abc transporter,cell wall and cell processes
+Rv2041c,Mb2067c,, 439 aa, 439 aa ,,,99.80%,439 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable sugar-binding lipoprotein,cell wall and cell processes
+Rv2046,Mb2072,lppI, 218 aa, 218 aa ,,,99.50%,218 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable lipoprotein lppi,cell wall and cell processes
+5' end of Rv2075c,Mb2100c,, 262 aa, 487 aa ,,,100.00%,259 aa overlap,,," In Mycobacterium bovis, a large 2029 bp deletion (RD9) leads to the loss of the COOH part of Mb2100c, the entire Rv2074 and Rv2073, and the NH2 part of cobL compared to its homolog in Mycobacterium tuberculosis strain H37Rv.","Truncation, RD region",possible hypothetical exported or envelope protein,cell wall and cell processes
+Rv2080,Mb2106,lppJ, 187 aa, 187 aa ,,,99.50%,187 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),lipoprotein lppj,cell wall and cell processes
+Rv2081c,Mb2107c,, 147 aa, 146 aa ,,,99.30%,147 aa overlap,,," In Mycobacterium bovis, a 3 bp insertion (*-ggg) leads to a slightly longer product compared t its homolog in Mycobacterium tuberculosis strain H37Rv (147 aa versus 146 aa).",Elongated protein in M. bovis AF2122/97,conserved transmembrane protein,cell wall and cell processes
+Rv2113,Mb2137,, 397 aa, 397 aa ,,,99.50%,397 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable integral membrane protein,cell wall and cell processes
+Rv2127,Mb2151,ansP1, 489 aa, 489 aa ,,,99.60%,489 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),l-asparagine permease ansp1,cell wall and cell processes
+Rv2136c,Mb2160c,, 276 aa, 276 aa ,,,99.60%,276 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible conserved transmembrane protein,cell wall and cell processes
+Rv2153c,Mb2177c,murG, 410 aa, 410 aa ,,,99.50%,410 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable upd-n-acetylglucosamine-n-acetylmuramyl-pentapeptide pyrophosphoryl-undecaprenol-n-acetylglucosamine transferase murg,cell wall and cell processes
+Rv2155c,Mb2179c,murD, 486 aa, 486 aa ,,,99.80%,486 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable udp-n-acetylmuramoylalanine-d-glutamate ligase murd,cell wall and cell processes
+Rv2164c,Mb2188c,, 384 aa, 384 aa ,,,99.70%,384 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved proline rich membrane protein,cell wall and cell processes
+Rv2174,Mb2196,mpta, 516 aa, 516 aa ,,,99.80%,516 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),alpha1->6mannosyltransferase. possible conserved integral membrane protein.,cell wall and cell processes
+Rv2180c,Mb2202c,, 295 aa, 295 aa ,,,99.70%,295 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved integral membrane protein,cell wall and cell processes
+Rv2197c,Mb2220c,, 214 aa, 214 aa ,,,99.50%,214 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved transmembrane protein,cell wall and cell processes
+Rv2219,Mb2242,, 250 aa, 250 aa ,,,99.60%,250 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved transmembrane protein,cell wall and cell processes
+Rv2254c,Mb2278c,, 151 aa, 151 aa ,,,99.30%,151 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable integral membrane protein,cell wall and cell processes
+Rv2270,Mb2293,lppN, 175 aa, 175 aa ,,,99.40%,175 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable lipoprotein lppn,cell wall and cell processes
+5' end of Rv2290,Mb2312,lppOa, 51 aa, 171 aa ,,,100.00%,39 aa overlap,,," In Mycobacterium tuberculosis strain H37Rv, lppO exists as a single gene. In Mycobacterium bovis, a frameshift due to a single base deletion (c-*), splits lppO into 2 parts, lppOa and lppOb.",Frameshift in M. bovis AF2122/97,probable conserved lipoprotein lppoa,cell wall and cell processes
+3' end of Rv2290,Mb2313,lppOb, 121 aa, 171 aa ,,,99.20%,121 aa overlap,,," In Mycobacterium tuberculosis strain H37Rv, lppO exists as a single gene. In Mycobacterium bovis, a frameshift due to a single base deletion (c-*), splits lppO into 2 parts, lppOa and lppOb.",Frameshift in M. bovis AF2122/97,probable conserved lipoprotein lppob,cell wall and cell processes
+Rv2306A,Mb2328,, 197 aa, 197 aa ,,,99.50%,197 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible conserved membrane protein,cell wall and cell processes
+Rv2316,Mb2343,uspA, 290 aa, 290 aa ,,,99.70%,290 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable sugar-transport integral membrane protein abc transporter uspa,cell wall and cell processes
+Rv2318,Mb2345,uspC, 440 aa, 440 aa ,,,99.80%,440 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable periplasmic sugar-binding lipoprotein uspc,cell wall and cell processes
+Rv2333c,Mb2361c,stp, 523 aa, 537 aa ,,,99.60%,508 aa overlap,,," In Mycobacterium bovis, a single base insertion (*-g) leads to a slightly longer product with a different COOH part compared to its homolog in Mycobacterium tuberculosis strain H37Rv (523 aa versus 537 aa).",Elongated protein in M. bovis AF2122/97,integral membrane drug efflux protein stp,cell wall and cell processes
+5' end of Rv2339,Mb2367,mmpL9a, 826 aa, 962 aa ,,,99.90%,826 aa overlap,,," In Mycobacterium tuberculosis strain H37Rv, mmpL9 exists as a single gene. In Mycobacterium bovis, truncation due to a single base transition (g-a) splits mmpL9 into 2 parts, mmpL9a and mmpL9b, resulting in a shorter mmpL9a product.",Frameshift in M. bovis AF2122/97,probable conserved transmembrane transport protein mmpl9a [first part],cell wall and cell processes
+3' end of Rv2339,Mb2368,mmpL9b, 131 aa, 962 aa ,,,100.00%,131 aa overlap,,," In Mycobacterium tuberculosis strain H37Rv, mmpL9 exists as a single gene. In Mycobacterium bovis, truncation due to a single base transition (g-a) splits mmpL9 into 2 parts, mmpL9a and mmpL9b.",Frameshift in M. bovis AF2122/97,probable conserved transmembrane transport protein mmpl9b [second part],cell wall and cell processes
+3' end of Rv2346c,Mb2375c,esxO, 60 aa, 94 aa ,,,98.30%,60 aa overlap,,," In Mycobacterium bovis, a large 8963 bp deletion (RD5) leads to the loss of the NH2 part of Mb2375c, and the 9 following CDSs up to Rv2356 including the 3 phospolipases C enzymes plcC, plcB and plcA, compared to the homolog in Mycobacterium tuberculosis H37Rv.","Truncation, RD region",putative esat-6 like protein esxo esat-6 like protein 6,cell wall and cell processes
+5' end of Rv2395,Mb2416,, 146 aa, 667 aa ,,,100.00%,44 aa overlap,,," In Mycobacterium tuberculosis strain H37Rv, Rv2395 exists as a single gene. In Mycobacterium bovis, a frameshift due to a single base insertion (*-t) splits Rv2395 into 2 parts, Mb2416 and Mb2417.",Frameshift in M. bovis AF2122/97,probable conserved integral membrane protein [first part],cell wall and cell processes
+3' end of Rv2395,Mb2417,, 516 aa, 667 aa ,,,99.80%,516 aa overlap,,," In Mycobacterium tuberculosis strain H37Rv, Rv2395 exists as a single gene. In Mycobacterium bovis, a frameshift due to a single base insertion (*-t) splits Rv2395 into 2 parts, Mb2416 and Mb2417.",Frameshift in M. bovis AF2122/97,probable conserved integral membrane protein [second part],cell wall and cell processes
+Rv2398c,Mb2420c,cysW, 272 aa, 272 aa ,,,99.30%,272 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable sulfate-transport integral membrane protein abc transporter cysw,cell wall and cell processes
+Rv2403c,Mb2426c,lppR, 251 aa, 251 aa ,,,99.60%,251 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved lipoprotein lppr,cell wall and cell processes
+Rv2450c,Mb2477c,rpfE, 172 aa, 172 aa ,,,99.40%,172 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable resuscitation-promoting factor rpfe,cell wall and cell processes
+Rv2459,Mb2486,, 508 aa, 508 aa ,,,99.80%,508 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved integral membrane transport protein,cell wall and cell processes
+Rv2462c,Mb2489c,tig, 466 aa, 466 aa ,,,99.80%,466 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable trigger factor tf protein tig,cell wall and cell processes
+Rv2560,Mb2590,, 325 aa, 325 aa ,,,99.70%,325 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable proline and glycine rich transmembrane protein,cell wall and cell processes
+Rv2585c,Mb2616c,, 557 aa, 557 aa ,,,99.80%,557 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible conserved lipoprotein,cell wall and cell processes
+Rv2586c,Mb2617c,secF, 442 aa, 442 aa ,,,99.50%,442 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable protein-export membrane protein secf,cell wall and cell processes
+Rv2587c,Mb2618c,secD, 573 aa, 573 aa ,,,99.80%,573 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable protein-export membrane protein secd,cell wall and cell processes
+Rv2599,Mb2630,, 143 aa, 143 aa ,,,99.30%,143 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved membrane protein,cell wall and cell processes
+Rv2643,Mb2676,arsC, 498 aa, 498 aa ,,,99.80%,498 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable arsenic-transport integral membrane protein arsc,cell wall and cell processes
+Rv2668,Mb2687,, 173 aa, 173 aa ,,,98.30%,173 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible exported alanine and valine rich protein,cell wall and cell processes
+Rv2685,Mb2704,arsB1, 428 aa, 428 aa ,,,99.50%,428 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable arsenic-transport integral membrane protein arsb1,cell wall and cell processes
+Rv2688c,Mb2707c,, 301 aa, 301 aa ,,,99.70%,301 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),antibiotic-transport atp-binding protein abc transporter,cell wall and cell processes
+Rv2690c,Mb2709c,, 663 aa, 657 aa ,,,100.00%,657 aa overlap,,," In Mycobacterium bovis, a single base transition (t-c) leads to a slightly longer product compared to its homolog in Mycobacterium tuberculosis strain H37Rv (663 aa versus 657 aa).",Elongated protein in M. bovis AF2122/97,probable conserved integral membrane alanine and valine and leucine rich protein,cell wall and cell processes
+Rv2691,Mb2710,ceoB, 227 aa, 227 aa ,,,99.60%,227 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),trk system potassium uptake protein ceob,cell wall and cell processes
+Rv2692,Mb2711,ceoC, 220 aa, 220 aa ,,,99.50%,220 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),trk system potassium uptake protein ceoc,cell wall and cell processes
+Rv2709,Mb2728,, 148 aa, 148 aa ,,,99.30%,148 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved transmembrane protein,cell wall and cell processes
+Rv2719c,Mb2738c,, 165 aa, 165 aa ,,,99.40%,165 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible conserved membrane protein,cell wall and cell processes
+Rv2729c,Mb2748c,, 301 aa, 301 aa ,,,99.00%,301 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved integral membrane alanine valine and leucine rich protein,cell wall and cell processes
+Rv2796c,Mb2819c,lppV, 187 aa, 187 aa ,,,99.50%,187 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved lipoprotein lppv,cell wall and cell processes
+Rv2799,Mb2822,, 210 aa, 209 aa ,,,99.50%,210 aa overlap,,," In Mycobacterium bovis, a 3 bp insertion (*-ggt) leads to a slightly longer product compared to its homolog in Mycobacterium tuberculosis strain H37Rv (210 aa versus 209 aa).",Elongated protein in M. bovis AF2122/97,probable membrane protein,cell wall and cell processes
+Rv2833c,Mb2857c,ugpB, 436 aa, 436 aa ,,,99.30%,436 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable sn-glycerol-3-phosphate-binding lipoprotein ugpb,cell wall and cell processes
+3' end of Rv2835c,Mb2859c,ugpAb, 180 aa, 303 aa ,,,100.00%,180 aa overlap,,," In Mycobacterium tuberculosis strain H37Rv, ugpA exists as a single gene. In Mycobacterium bovis, a frameshift due to a single base deletion (t-*) splits ugpA into 2 parts, ugpAa and ugpAb.",Frameshift in M. bovis AF2122/97,probable sn-glycerol-3-phosphate transport integral membrane protein abc transporter ugpab [second part],cell wall and cell processes
+5' end of Rv2835c,Mb2860c,ugpAa, 123 aa ,303 aa,,,100%,85 aa overlap,,," In Mycobacterium tuberculosis strain H37Rv, ugpA exists as a single gene. In Mycobacterium bovis, a frameshift due to a single base deletion (t-*) splits ugpA into 2 parts, ugpAa and ugpAb.",Frameshift in M. bovis AF2122/97,probable sn-glycerol-3-phosphate transport integral membrane protein abc transporter ugpaa [first part],cell wall and cell processes
+Rv2846c,Mb2871c,efpA, 530 aa, 530 aa ,,,99.80%,530 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible integral membrane efflux protein efpa,cell wall and cell processes
+Rv2869c,Mb2894c,rip, 404 aa, 404 aa ,,,99.80%,404 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),membrane bound metalloprotease,cell wall and cell processes
+Rv2876,Mb2901,, 104 aa, 104 aa ,,,99.00%,104 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible conserved transmembrane protein,cell wall and cell processes
+Rv2877c,Mb2902c,, 287 aa, 287 aa ,,,99.70%,287 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved integral membrane protein,cell wall and cell processes
+Rv2903c,Mb2927c,lepB, 294 aa, 294 aa ,,,99.70%,294 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable signal peptidase i lepb spase i leader peptidase i.,cell wall and cell processes
+Rv2922c,Mb2946c,smc, 1205 aa, 1205 aa ,,,99.80%,1205 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable chromosome partition protein smc,cell wall and cell processes
+Rv2936,Mb2961,drrA, 331 aa, 331 aa ,,,99.70%,331 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),daunorubicin-dim-transport atp-binding protein abc transporter drra,cell wall and cell processes
+Rv2981c,Mb3005c,ddlA, 370 aa, 373 aa ,,,98.90%,373 aa overlap,,," In Mycobacterium bovis, a 9 bp deletion (acgccggtc-*) leads to a shorter product compared to its homolog in Mycobacterium tuberculosis strain H37Rv (370 aa versus 373 aa).",Truncated protein in M. bovis AF2122/97,probable d-alanine--d-alanine ligase ddla d-alanylalanine synthetase d-ala-d-ala ligase,cell wall and cell processes
+Rv2999,Mb3024,lppY, 321 aa, 321 aa ,,,99.70%,321 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved lipoprotein lppy,cell wall and cell processes
+Rv3006,Mb3031,lppZ, 373 aa, 373 aa ,,,99.70%,373 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved lipoprotein lppz,cell wall and cell processes
+Rv3036c,Mb3062c,TB22.2, 227 aa, 227 aa ,,,99.60%,227 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved secreted protein tb22.2,cell wall and cell processes
+Rv3092c,Mb3119c,, 306 aa, 306 aa ,,,99.70%,306 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved integral membrane protein,cell wall and cell processes
+Rv3101c,Mb3128c,ftsX, 297 aa, 297 aa ,,,99.70%,297 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),putative cell division protein ftsx septation component-transport integral membrane protein abc transporter,cell wall and cell processes
+5' end of Rv3162c,Mb3187c,, 196 aa ,145 aa ,,,86.70%,98 aa overlap,,," In Mycobacterium bovis, a frameshift due to a single base deletion (t-*), leads to a longer product with different COOH part compared to its homolog in Mycobacterium tuberculosis strain H37Rv.",Elongated protein in M. bovis AF2122/97,possible integral membrane protein,cell wall and cell processes
+Rv3163c,Mb3188c,, 423 aa, 423 aa ,,,99.80%,423 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible conserved secreted protein,cell wall and cell processes
+Rv3193c,Mb3215c,, 992 aa, 992 aa ,,,99.90%,992 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved transmembrane protein,cell wall and cell processes
+Rv3200c,Mb3225c,, 355 aa, 355 aa ,,,99.70%,355 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible transmembrane cation transporter,cell wall and cell processes
+Rv3213c,Mb3239c,, 266 aa, 266 aa ,,,99.62%,266 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible soj/para-related protein,cell wall and cell processes
+Rv3239c,Mb3267c,, 1048 aa, 1048 aa ,,,99.90%,1048 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved transmembrane transport protein,cell wall and cell processes
+Rv3244c,Mb3272c,lpqB, 583 aa, 583 aa ,,,99.70%,583 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved lipoprotein lpqb,cell wall and cell processes
+Rv3265c,Mb3293c,wbbL1, 297 aa, 301 aa ,,,98.70%,301 aa overlap,,," In Mycobacterium bovis, an in-frame deletion of 12 bp leads to a shorter product compared to its homolog in Mycobacterium tuberculosis strain H37Rv (297 aa versus 301 aa).",Truncated protein in M. bovis AF2122/97,dtdp-rha:a-d-glcnac-diphosphoryl polyprenolca-3-l-rhamnosyl transferase wbbl1 alpha-l-rhamnose-1->3-alpha-d-glcnac1->p-p- decaprenyl,cell wall and cell processes
+Rv3278c,Mb3306c,, 172 aa, 172 aa ,,,99.40%,172 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved transmembrane protein,cell wall and cell processes
+Rv3310,Mb3338,sapm, 299 aa, 299 aa ,,,99.70%,299 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),acid phosphatase acid phosphomonoesterase phosphomonoesterase glycerophosphatase,cell wall and cell processes
+Rv3331,Mb3364,sugI, 502 aa, 502 aa ,,,99.80%,502 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable sugar-transport integral membrane protein sugi,cell wall and cell processes
+5' end of Rv3402c,Mb3436c,, 350 aa, 412 aa ,,,99.70%,350 aa overlap,,," In Mycobacterium bovis, a single base transversion (c-g) leads to a shorter product.",Truncated protein in M. bovis AF2122/97,conserved hypothetical protein,cell wall and cell processes
+Rv3434c,Mb3464c,, 237 aa, 237 aa ,,,99.60%,237 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible conserved transmembrane protein,cell wall and cell processes
+Rv3437,Mb3467,, 158 aa, 158 aa ,,,99.40%,158 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible conserved transmembrane protein,cell wall and cell processes
+Rv3447c,Mb3477c,eccc4, 1236 aa, 1236 aa ,,,99.80%,1236 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),esx conserved component eccc4. esx-4 type vii secretion system protein. probable membrane protein.,cell wall and cell processes
+Rv3448,Mb3478,eccd4, 467 aa, 467 aa ,,,99.80%,467 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),esx conserved component eccd4. esx-4 type vii secretion system protein. probable integral membrane protein.,cell wall and cell processes
+Rv3453,Mb3483,, 561 aa, 110 aa , Rv3454, 422 aa ,100.00%,107 aa overlap ,99.80%,422 aa overlap," In Mycobacterium tuberculosis H37Rv, Rv3453 and Rv3454 exist as 2 genes. In Mycobacterium bovis, a single base deletion (t-*) results in a single product that is more similar to Rv3454.",Base deletion(s) leading to gene fusion event in M. bovis AF2122/97,probable conserved integral membrane protein,cell wall and cell processes
+Rv3476c,Mb3503c,kgtP, 449 aa, 449 aa ,,,99.60%,449 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable dicarboxylic acid transport integral membrane protein kgtp dicarboxylate transporter,cell wall and cell processes
+5' end of Rv3479,Mb3507,, 433 aa, 1075 aa ,,,99.80%,418 aa overlap,,," In Mycobacterium tuberculosis strain H37Rv, Rv3479 exists as a single gene. In Mycobacterium bovis, a 713 bp deletion splits Rv3479 into 2 parts, Mb3507 and Mb3508.",Frameshift in M. bovis AF2122/97,hypothetical protein [first part],cell wall and cell processes
+3' end of Rv3479,Mb3508,, 348 aa, 1075 aa ,,,99.70%,348 aa overlap,,," In Mycobacterium tuberculosis strain H37Rv, Rv3479 exists as a single gene. In Mycobacterium bovis, a 713 bp deletion splits Rv3479 into 2 parts, Mb3507 and Mb3508.",Frameshift in M. bovis AF2122/97,hypothetical transmembrane protein [second part],cell wall and cell processes
+Rv3576,Mb3607,lppH, 237 aa, 237 aa ,,,99.60%,237 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible conserved lipoprotein lpph,cell wall and cell processes
+Rv3578,Mb3609,arsB2, 413 aa, 413 aa ,,,99.80%,413 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible arsenical pump integral membrane protein arsb2,cell wall and cell processes
+Rv3593,Mb3624,lpqF, 452 aa, 452 aa ,,,99.60%,452 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved lipoprotein lpqf,cell wall and cell processes
+Rv3604c,Mb3634c,, 397 aa, 397 aa ,,,99.70%,397 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved transmembrane protein rich in alanine and arginine and proline,cell wall and cell processes
+Rv3616c,Mb3646c,espa, 392 aa, 392 aa ,,,99.50%,392 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),esx-1 secretion-associated protein ac espa,cell wall and cell processes
+3' end of Rv3623,Mb3647,lpqG, 171 aa, 240 aa ,,,100.00%,171 aa overlap,,," In Mycobacterium bovis, a large 5894 bp deletion (RD8) leads to a shorter product with a different NH2 part compared to its homolog in Mycobacterium tuberculosis strain H37Rv (171 aa versus 240 aa).","Truncation, RD region",probable conserved lipoprotein lpqg,cell wall and cell processes
+Rv3630,Mb3654,, 431 aa, 431 aa ,,,99.80%,431 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved integral membrane protein,cell wall and cell processes
+Rv3666c,Mb3690c,dppA, 541 aa, 541 aa ,,,99.40%,541 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable periplasmic dipeptide-binding lipoprotein dppa,cell wall and cell processes
+Rv3689,Mb3714,, 451 aa, 451 aa ,,,99.80%,451 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved transmembrane protein,cell wall and cell processes
+Rv3724A,Mb3751,cut5, 233 aa, 80 aa  , Rv3724B,187 aa,100.00%, 67 aa overlap  ,100.00%, 166 aa overlap," In Mycobacterium tuberculosis, Rv3724A and Rv3724B exist as 2 genes with an overlap region between them. In Mycobacterium bovis, a single base deletion (t-*) leads to a single product.",Base deletion(s) leading to gene fusion event in M. bovis AF2122/97,probable cutinase [second part] cut5b,cell wall and cell processes
+Rv3728,Mb3755,, 1065 aa, 1065 aa ,,,99.90%,1065 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved two-domain membrane protein,cell wall and cell processes
+Rv3737,Mb3764,, 529 aa, 529 aa ,,,99.80%,529 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved transmembrane protein,cell wall and cell processes
+Rv3793,Mb3822,embC, 1094 aa, 1094 aa ,,,99.90%,1094 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),integral membrane indolylacetylinositol arabinosyltransferase embc arabinosylindolylacetylinositol synthase,cell wall and cell processes
+Rv3795,Mb3824,embB, 1098 aa, 1098 aa ,,,99.80%,1098 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),integral membrane indolylacetylinositol arabinosyltransferase embb arabinosylindolylacetylinositol synthase,cell wall and cell processes
+Rv3805c,Mb3835c,aftb, 627 aa, 627 aa ,,,99.80%,627 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible arabinofuranosyltransferase aftb,cell wall and cell processes
+Rv3806c,Mb3836c,ubia, 302 aa, 302 aa ,,,99.70%,302 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),decaprenylphosphoryl-5-phosphoribose dppr synthase decaprenyl-phosphate 5-phosphoribosyltransferase,cell wall and cell processes
+Rv3821,Mb3851,, 237 aa, 237 aa ,,,99.20%,237 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved integral membrane protein,cell wall and cell processes
+Rv3823c,Mb3853c,mmpL8, 1089 aa, 1089 aa ,,,99.80%,1089 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),conserved integral membrane transport protein mmpl8,cell wall and cell processes
+Rv3843c,Mb3873c,, 342 aa, 342 aa ,,,99.40%,342 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved transmembrane protein,cell wall and cell processes
+Rv3848,Mb3878,, 302 aa, 302 aa ,,,99.70%,302 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved transmembrane protein,cell wall and cell processes
+Rv3864,Mb3894,espe, 418 aa, 402 aa ,,,96.20%,418 aa overlap,,," In Mycobacterium bovis, a 36 bp insertion leads to a longer product compared to its homolog in Mycobacterium tuberculosis strain H37Rv (418 aa versus 402 aa).",Elongated protein in M. bovis AF2122/97,esx-1 secretion-associated protein espe,cell wall and cell processes
+Rv3868,Mb3898,ecca1, 573 aa, 573 aa ,,,99.80%,573 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),esx conserved component ecca1. esx-1 type vii secretion system protein.,cell wall and cell processes
+Rv3878,Mb3908,espj, 280 aa, 280 aa ,,,99.60%,280 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),esx-1 secretion-associated protein espj. conserved alanine rich protein.,cell wall and cell processes
+Rv3879c,Mb3909c,espk, 744 aa, 729 aa ,,,98.00%,743 aa overlap,,," In Mycobacterium bovis, insertions of 27 bp and 18 bp lead to a longer product compared to the homolog in Mycobacterium tuberculosis strain H37Rv (744 aa versus 729 aa).",Elongated protein in M. bovis AF2122/97,esx-1 secretion-associated protein espk. alanine and proline rich protein.,cell wall and cell processes
+Rv3881c,Mb3911c,espb, 460 aa, 460 aa ,,,98.70%,460 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),secreted esx-1 substrate protein bc espb. conserved alanine and glycine rich protein,cell wall and cell processes
+Rv3884c,Mb3914c,ecca2, 619 aa, 619 aa ,,,99.80%,619 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),esx conserved component ecca2. esx-2 type vii secretion system protein. probable cbxx/cfqx family protein.,cell wall and cell processes
+Rv3885c,Mb3915c,ecce2, 537 aa, 537 aa ,,,99.80%,537 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),esx conserved component ecce2. esx-2 type vii secretion system protein. possible membrane protein.,cell wall and cell processes
+3' end of Rv3887c,Mb3917c,eccd2, 289 aa, 509 aa ,,,99.70%,288 aa overlap,,," In Mycobacterium bovis, a deletion of 2406 bp leads to the loss of the NH2 part of Rv3887c, the entire Rv3888c and the COOH part of Rv3889c compared to Mycobacterium tuberculosis strain H37Rv.",Frameshift in M. bovis AF2122/97,esx conserved component eccd2. esx-2 type vii secretion system protein. probable transmembrane protein.,cell wall and cell processes
+5' end of Rv3889c,Mb3918c,espg2, 72 aa, 276 aa ,,,100.00%,68 aa overlap,,," In Mycobacterium bovis, a deletion of 2406 bases leads to the loss of the NH2 part of Rv3887c, the entire Rv3888c and the COOH part of Rv3889c compared to Mycobacterium tuberculosis strain H37Rv.",Frameshift in M. bovis AF2122/97,esx-2 secretion-associated protein espg2,cell wall and cell processes
+Rv3890c,Mb3919c,esxC, 124 aa ,537 aa,,,99.80%,537 aa overlap,,," In Mycobacterium bovis, a frameshift due to a single base deletion (c-*) leads to a longer product with a different COOH part compared to its homolog in Mycobacterium tuberculosis strain H37Rv (125 aa versus 95 aa).",Elongated protein in M. bovis AF2122/97,esat-6 like protein esxc esat-6 like protein 11,cell wall and cell processes
+Rv3891c,Mb3920c,esxD, 107 aa, 107 aa ,,,99.10%,107 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible esat-6 like protein esxd,cell wall and cell processes
+3' end of Rv3894c,Mb3923c,eccc2, 561 aa, 1396 aa ,,,100.00%,561 aa overlap,,," In Mycobacterium tuberculosis, Rv3894c exists as a single gene. In Mycobacterium bovis, a frameshift due to a single base insertion (*-c), splits Rv3894c into 2 parts, Mb3923c and Mb3924c.",Frameshift in M. bovis AF2122/97,possible conserved membrane protein [second part],cell wall and cell processes
+5' end of Rv3894c,Mb3924c,eccc2, 833 aa, 1396 aa ,,,99.90%,771 aa overlap,,," In Mycobacterium tuberculosis, Rv3894c exists as a single gene. In Mycobacterium bovis, a frameshift due to a single base insertion (*-c), splits Rv3894c into 2 parts, Mb3923c and Mb3924c.",Frameshift in M. bovis AF2122/97,possible conserved membrane protein [first part],cell wall and cell processes
+Rv3895c,Mb3925c,eccb2, 495 aa, 495 aa ,,,99.80%,495 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),esx conserved component eccb2. esx-2 type vii secretion system protein. probable membrane protein.,cell wall and cell processes
+Rv3901c,Mb3931c,, 149 aa, 149 aa ,,,99.30%,149 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),possible membrane protein,cell wall and cell processes
+Rv3904c,Mb3934c,esxE, 90 aa, 90 aa ,,,98.90%,90 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),putative esat-6 like protein esxe hypothetical alanine rich protein esat-6 like protein 12,cell wall and cell processes
+Rv3905c,Mb3935c,esxF, 57 aa, 103 aa ,,,100.00%,57 aa overlap,,," In Mycobacterium bovis, a single base transition (g-a) introducing a premature stop codon, leads to a shorter product compared to its homolog in Mycobacterium tuberculosis strain H37Rv (57 aa versus 103 aa).",Truncated protein in M. bovis AF2122/97,putative esat-6 like protein esxf hypothetical alanine and glycine rich protein esat-6 like protein 13,cell wall and cell processes
+Rv3910,Mb3940,, 1184 aa, 1184 aa ,,,99.90%,1184 aa overlap,,,Non-synonymous SNP leading to amino acid change(s) between Mycobacterium tuberculosis H37Rv and Mycobacterium bovis AF2122/97,Non-syn SNP(s),probable conserved transmembrane protein,cell wall and cell processes
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,

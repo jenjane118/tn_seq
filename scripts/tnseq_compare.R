@@ -321,7 +321,6 @@ bovis_hmm<-unique(bovis_hmm)
 # order
 bovis_hmm<-bovis_hmm[order(bovis_hmm$ORF),]
 # remove all but MB orf names
-# put into df1 all rows where pedigree_dhl starts with CCB133$
 p1 <- 'Mb'
 bovis_hmm <- subset(bovis_hmm, grepl(p1, bovis_hmm$ORF) )
 # remove any hyphens after the orf name
@@ -338,8 +337,8 @@ View(orthologs)
 nrow(orthologs)
 
 # make table with orf names, calls in bovis and mtb
-comp_calls<-as.data.frame(matrix(0, nrow = length(orthologs$bovis), ncol = 5))
-colnames(comp_calls)<-c("bovis", "mt", "v/i", "mb_call", "mt_call")
+comp_calls<-as.data.frame(matrix(0, nrow = length(orthologs$bovis), ncol = 6))
+colnames(comp_calls)<-c("bovis", "mt", "gene", "v/i", "mb_call", "mt_call")
 head(comp_calls)
 
 for (i in 1:nrow(orthologs)){
@@ -353,8 +352,10 @@ for (i in 1:nrow(orthologs)){
     comp_calls$mb_call[i] <- "N/A"
     }
   if (orthologs$mtb[i] %in% mtb_hmm$ORF){
+    comp_calls$gene[i]    <- mtb_hmm[which(mtb_hmm$ORF == orthologs$mtb[i]), 2]
     comp_calls$mt_call[i] <- mtb_hmm[which(mtb_hmm$ORF == orthologs$mtb[i]),3]
   }else{
+    comp_calls$gene[i]    <- ""
     comp_calls$mt_call[i] <- "N/A"
     }
 }
@@ -362,3 +363,123 @@ View(comp_calls)
 
 # write table
 write.table(comp_calls, file = 'results/comp_orfs.txt', quote = FALSE, sep = '\t', row.names=FALSE)
+
+
+#pull in malone tables of functional categories
+
+library(dplyr)
+
+# get info from sheet 3 including orf pairs, gene names, functional categories, identical
+malone_df<-read.delim("data/Malone_orthologs.csv", sep=",", header=FALSE, stringsAsFactors=F, skip=3)
+head(malone_df)
+malone_3<-select(malone_df, 2,3,4,6,11)
+head(malone_3)
+# remove duplicates (36 duplicates based on mbovis orf name)
+malone_3<-malone_3[!duplicated(malone_3$V3), ]
+
+# make dataframe for complete comparison based on mbovis ORFs
+bovis_mtb_df<-as.data.frame(matrix(0, nrow = length(bovis_hmm$gene), ncol = 8))
+colnames(bovis_mtb_df)<-c("Mbovis", "Mtb", "gene", "func_cat", "i/v", "alteration", "ess_bovis", "ess_mtb")
+head(bovis_mtb_df)
+
+bovis_mtb_df$Mbovis    <- bovis_hmm$ORF
+bovis_mtb_df$gene      <- bovis_hmm$gene
+bovis_mtb_df$ess_bovis <- bovis_hmm$call
+head(bovis_mtb_df)
+
+for (i in 1:nrow(bovis_mtb_df)){
+  if (bovis_mtb_df$Mbovis[i] %in% malone_3$V3){
+    bovis_mtb_df$Mtb[i]    <- malone_3[which(malone_3$V3 == bovis_mtb_df$Mbovis[i]), 1]
+    bovis_mtb_df$`i/v`[i]  <- malone_3[which(malone_3$V3 == bovis_mtb_df$Mbovis[i]), 5]
+  }else{
+    bovis_mtb_df$Mtb[i]    <- ""
+    bovis_mtb_df$`i/v`[i]  <- ""
+  }
+  if (bovis_mtb_df$Mtb[i] %in% mtb_hmm$ORF){
+    bovis_mtb_df$ess_mtb[i] <- mtb_hmm[which(mtb_hmm$ORF == bovis_mtb_df$Mtb[i]), 3]
+  }
+  if (bovis_mtb_df$Mbovis[i] %in% malone_3$V3){
+    bovis_mtb_df$func_cat[i] <- malone_3[which(malone_3$V3 == bovis_mtb_df$Mbovis[i]), 4]
+  }else{
+    bovis_mtb_df$func_cat[i]    <- ""
+  }
+}
+
+View(bovis_mtb_df)
+
+# work on getting alteration from other sheets
+# column 2 is mbovis name, 13 is alteration
+#need to do for each of 9(?) sheets
+
+filenames <- list.files("data/Malone", pattern="*.csv", full.names=TRUE)
+filenames
+
+for (i in 1:9){
+    temp<-read.delim(filenames[i], sep=",", header=FALSE, stringsAsFactors=F, skip=1)
+    malone_temp<-select(temp, 2, 13)
+    for (j in 1:nrow(malone_temp)){
+      if (malone_temp$V2[j] %in% bovis_mtb_df$Mbovis){
+          bovis_mtb_df[which(bovis_mtb_df$Mbovis == malone_temp$V2[j]), 6] <- malone_temp$V13[j]
+      }
+    }
+}
+
+for (i in 1:nrow(bovis_mtb_df)){
+  if (bovis_mtb_df$alteration[i] == 0){
+      bovis_mtb_df$alteration[i] <- ""
+  }
+}
+
+View(bovis_mtb_df)
+
+#write table
+write.table(bovis_mtb_df, file = 'results/full_compare.csv', quote = FALSE, sep = '\t', row.names=FALSE)
+
+#compare Dejesus published results with mtb_hmm calls
+# get info from sheet 3 including orf pairs, gene names, functional categories, identical
+temp_df<-read.delim("data/DeJesus_ORF_ess_calls.csv", sep=",", header=FALSE, stringsAsFactors=F, skip = 4)
+dejesus_df<-select(temp_df, 1, 13)
+
+mtb_compare<-as.data.frame(matrix(0, nrow = nrow(dejesus_df), ncol = 3))
+colnames(mtb_compare)<-c("ORF", "dejesus_call", "mtb_call")
+
+head(mtb_compare)
+mtb_compare$ORF<-dejesus_df[,1]
+mtb_compare$dejesus_call<-dejesus_df[,2]
+
+head(mtb_hmm)
+
+for (i in 1:nrow(mtb_compare)){
+  if (mtb_compare$ORF[i] %in% mtb_hmm$ORF){
+    mtb_compare$mtb_call[i] <- mtb_hmm[which(mtb_hmm$ORF == mtb_compare$ORF[i]), 3]
+  }else{
+    mtb_compare$mtb_call[i] <- ""
+  }
+  # n/a is not analysed, therefore same as uncertain in paper?
+  if (mtb_compare$dejesus_call[i] == "Uncertain"){
+    mtb_compare$dejesus_call[i] <- "N/A"
+  }
+}
+View(mtb_compare)
+
+length(which(mtb_compare$dejesus_call=="ESD"))
+
+## list orfs with different calls
+ess_diff<-NULL
+for (i in 1:nrow(mtb_compare)){
+  if (mtb_compare$dejesus_call[i] != mtb_compare$mtb_call[i]){
+    ess_diff<-c(ess_diff, mtb_compare$ORF[i])
+  }
+}
+length(ess_diff)
+#402 differences are these down to terminology?
+length(which(mtb_compare$dejesus_call=="ESD"))
+# 29 are ESD which is an essential domain within ORF
+length(which(mtb_compare$mtb_call==""))
+# 134 orfs not annotated in our file (are these new novel regions?)
+length(which(mtb_compare$dejesus_call=="N/A"))
+length(which(mtb_compare$mtb_call=="N/A"))
+#76 are uncertain in dejesus paper, only 5 in our analysis (same 5)
+length(which(mtb_compare$mtb_call=="N/A" & mtb_compare$dejesus_call=="N/A"))
+# 11 ESD calls in paper are ES in our analysis
+length(which(mtb_compare$dejesus_call=="ESD" & mtb_compare$mtb_call=="ES"))
